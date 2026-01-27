@@ -133,7 +133,10 @@ jaxsod-website/
 - jaxsod-seo-keywords.md - SEO keyword map + competitor analysis
 - jaxsod_seo_strategy.md - Strategy for ranking improvement
 - jaxsod-new-articles-plan.md - Plan for the 200 article batch
-- jaxsod-chatbot-research.md - AI chatbot platform comparison (Tidio recommended)
+- jaxsod-chatbot-research.md - AI chatbot feature ideas (will be custom-built, no paid services)
+
+## Rules
+- **No paid subscriptions or services.** Everything gets built custom. No Tidio, no SaaS chatbots, no paid analytics platforms. If it costs money, we build it ourselves.
 
 ## History
 - Original site built as simple 23-page brochure site

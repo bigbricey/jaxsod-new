@@ -41,7 +41,7 @@
 15. Unify nav links — Header has 10 items, Footer has 9 (missing Calculators).
 
 ## Future
-16. AI chatbot — Tidio AI recommended (see docs/jaxsod-chatbot-research.md).
+16. AI chatbot — Build custom (no paid services). See docs/jaxsod-chatbot-research.md for feature ideas.
 17. Gallery page — Was in earlier version, could return with real project photos.
 18. Upgrade to Next.js 15 / React 19.
 19. Add Tailwind Typography plugin to replace hand-rolled prose styles.
