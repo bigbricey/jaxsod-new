@@ -19,70 +19,91 @@ export interface MarkdownArticleData {
 const KEYWORD_PATTERNS = [
   // Sod-specific keywords
   { keywords: ['new-sod', 'sod-care', 'lay-sod', 'install-sod', 'sod-installation', 'laying-sod', 'fresh-sod'], category: 'sodCloseup', weight: 10 },
-  
-  // Grass types
-  { keywords: ['st-augustine', 'bermuda', 'zoysia', 'bahia', 'centipede', 'grass-type', 'which-grass', 'best-grass'], category: 'sodCloseup', weight: 9 },
-  
+
+  // Specific grass types - route to dedicated folders
+  { keywords: ['st-augustine', 'st augustine', 'floratam', 'palmetto-grass'], category: 'stAugustineGrass', weight: 12 },
+  { keywords: ['bermuda', 'bermudagrass', 'tifway', 'celebration'], category: 'bermudaGrass', weight: 12 },
+  { keywords: ['zoysia', 'zoysiagrass', 'empire', 'emerald-zoysia'], category: 'zoysiaGrass', weight: 12 },
+
+  // Generic grass type articles (fallback)
+  { keywords: ['bahia', 'centipede', 'grass-type', 'which-grass', 'best-grass'], category: 'sodCloseup', weight: 9 },
+
+  // New construction & renovation
+  { keywords: ['new-construction', 'new-home', 'builder', 'subdivision', 'development'], category: 'newConstruction', weight: 10 },
+
+  // Pets & lawns
+  { keywords: ['pet', 'dog', 'cat', 'pet-friendly', 'urine', 'dog-spot', 'pet-damage'], category: 'petsAndLawns', weight: 10 },
+
+  // Waterfront properties
+  { keywords: ['waterfront', 'lakefront', 'riverside', 'oceanfront', 'beach', 'coastal-lawn'], category: 'waterfront', weight: 10 },
+
+  // Sports turf & golf
+  { keywords: ['sports', 'athletic', 'field', 'soccer', 'football', 'baseball'], category: 'sportsTurf', weight: 10 },
+  { keywords: ['golf', 'putting-green', 'fairway', 'tee-box'], category: 'golfCourse', weight: 10 },
+
+  // Drought tolerant landscaping
+  { keywords: ['drought', 'xeriscape', 'water-wise', 'low-water', 'drought-tolerant'], category: 'droughtTolerant', weight: 10 },
+
   // Mowing & edging
   { keywords: ['mow', 'mowing', 'edge', 'edging', 'trim', 'trimming', 'cut', 'cutting-height', 'lawn-height'], category: 'lawnMowing', weight: 10 },
-  
+
   // Irrigation & watering
   { keywords: ['irrigation', 'sprinkler', 'water', 'watering', 'hose', 'drip-system', 'smart-irrigation'], category: 'irrigation', weight: 10 },
-  
+
   // Drainage
   { keywords: ['drainage', 'puddle', 'flooding', 'standing-water', 'runoff', 'french-drain'], category: 'drainage', weight: 10 },
-  
+
   // DIY & installation services
   { keywords: ['diy', 'professional', 'install', 'cost', 'price', 'estimate', 'contractor', 'crew'], category: 'crewsWorking', weight: 9 },
-  
+
   // Florida-specific
   { keywords: ['florida', 'jacksonville', 'subtropical', 'hot-humid', 'zone-9', 'coastal'], category: 'floridaYards', weight: 8 },
-  
+
   // Palm trees & tropical
   { keywords: ['palm', 'palmetto', 'sago', 'tropical', 'hibiscus', 'birds-of-paradise', 'bougainvillea'], category: 'palmTrees', weight: 10 },
-  
+
   // Oak & shade trees
   { keywords: ['oak', 'live-oak', 'shade-tree', 'magnolia', 'maple', 'tree-selection', 'canopy'], category: 'oakTrees', weight: 10 },
-  
+
   // Flowers & gardens
   { keywords: ['flower', 'garden-bed', 'raised-bed', 'perennial', 'annual', 'blooming', 'colorful'], category: 'flowerBeds', weight: 10 },
-  
+
   // Mulch & ground cover
   { keywords: ['mulch', 'pine-straw', 'bark', 'wood-chips', 'ground-cover', 'weed-barrier'], category: 'mulch', weight: 10 },
-  
+
   // Pavers & hardscaping
   { keywords: ['paver', 'patio', 'walkway', 'pathway', 'stone', 'hardscape', 'retaining-wall', 'brick'], category: 'pavers', weight: 10 },
-  
+
   // Pests & diseases
   { keywords: ['pest', 'chinch-bug', 'grub', 'fungus', 'disease', 'brown-patch', 'damage', 'dying-lawn', 'bare-spot'], category: 'pestDamage', weight: 10 },
-  
+
   // Lush green lawns (default good lawn)
   { keywords: ['lush', 'green', 'healthy', 'perfect-lawn', 'thick-lawn', 'dense'], category: 'lushLawn', weight: 7 },
-  
+
   // Pools
   { keywords: ['pool', 'swimming', 'poolside', 'deck'], category: 'pools', weight: 10 },
-  
+
   // Commercial
   { keywords: ['commercial', 'business', 'hoa', 'community', 'apartment', 'property-management'], category: 'commercial', weight: 9 },
-  
+
   // Seasonal
   { keywords: ['spring', 'summer', 'fall', 'autumn', 'winter', 'seasonal', 'season'], category: 'seasonal', weight: 8 },
-  
+
   // Soil & fertilizer
   { keywords: ['soil', 'dirt', 'sand', 'clay', 'topsoil', 'compost', 'fertilize', 'fertilizer', 'nutrients'], category: 'soil', weight: 10 },
-  
+
   // Tools & equipment
   { keywords: ['tool', 'equipment', 'mower', 'trimmer', 'blower', 'aerator', 'dethatcher'], category: 'tools', weight: 9 },
-  
+
   // Rain & storms
   { keywords: ['rain', 'storm', 'hurricane', 'weather', 'lightning', 'wind', 'prepare-for'], category: 'rain', weight: 10 },
-  
+
   // Shade gardening
   { keywords: ['shade', 'shady', 'low-light', 'under-tree'], category: 'shadeGarden', weight: 10 },
-  
+
   // Lighting
   { keywords: ['light', 'lighting', 'outdoor-light', 'landscape-light', 'path-light', 'accent-light'], category: 'lighting', weight: 10 },
-  
+
   // General yards
   { keywords: ['yard', 'front-yard', 'backyard', 'landscape', 'landscaping', 'curb-appeal'], category: 'yards', weight: 6 },
 ]
@@ -101,10 +122,10 @@ function hashString(str: string): number {
 // Find the best matching category for an article
 function findBestCategory(slug: string, title: string): string {
   const text = `${slug} ${title}`.toLowerCase()
-  
+
   let bestMatch = 'lushLawn' // default fallback
   let bestScore = 0
-  
+
   for (const pattern of KEYWORD_PATTERNS) {
     let score = 0
     for (const keyword of pattern.keywords) {
@@ -117,7 +138,7 @@ function findBestCategory(slug: string, title: string): string {
       bestMatch = pattern.category
     }
   }
-  
+
   return bestMatch
 }
 
@@ -128,7 +149,7 @@ function getLocalImagesForCategory(category: string): string[] {
     if (!fs.existsSync(imagesDir)) {
       return []
     }
-    
+
     // Read files and filter for valid image extensions
     const files = fs.readdirSync(imagesDir)
     return files
@@ -152,31 +173,31 @@ function getImageForArticle(
 ): string {
   // 1. Determine local category
   const category = findBestCategory(slug, title)
-  
+
   // 2. Fetch local files
   let imagePool = getLocalImagesForCategory(category)
-  
+
   // 3. Fallback if category is empty
   if (imagePool.length === 0) {
     imagePool = getLocalImagesForCategory(FALLBACK_CATEGORY)
   }
-  
+
   // 4. If still empty (lushLawn missing?), use a placeholder or safe hardcoded one
   // (Ideally this never happens since we just moved files, but good for safety)
   if (imagePool.length === 0) {
     return '/images/placeholder.jpg' // You should ensure this exists or similar
   }
-  
+
   // 5. Filter out recently used images to add variety
   const availableImages = imagePool.filter(img => !recentImages.includes(img))
-  
+
   // 6. If all images in this category were recently used, use the full pool again
   const finalPool = availableImages.length > 0 ? availableImages : imagePool
-  
+
   // 7. Use hash to deterministically select an image from the pool
   const hash = hashString(slug)
   const index = hash % finalPool.length
-  
+
   return finalPool[index]
 }
 
@@ -233,7 +254,7 @@ export function getMarkdownArticles(excludeSlugs: string[] = []): MarkdownArticl
   const excludeSet = new Set(excludeSlugs)
   const files = fs.readdirSync(CONTENT_DIR).filter((f) => f.endsWith('.md'))
   const articles: MarkdownArticleData[] = []
-  
+
   // Track recently assigned images to ensure variety (last 5 images)
   const recentImages: string[] = []
   const RECENT_LIMIT = 5
@@ -269,13 +290,13 @@ export function getMarkdownArticles(excludeSlugs: string[] = []): MarkdownArticl
 
     // Get image using smart assignment logic
     const image = getImageForArticle(slug, title, recentImages)
-    
+
     // Update recent images tracker
     recentImages.push(image)
     if (recentImages.length > RECENT_LIMIT) {
       recentImages.shift() // Remove oldest
     }
-    
+
     const category = assignCategory(slug, title)
 
     articles.push({

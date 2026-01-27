@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: article.excerpt,
       type: 'article',
       publishedTime: article.date,
-      images: [{ url: article.image }],
+      images: [{ url: `${SITE_URL}${article.image}` }],
     },
   }
 }
@@ -54,7 +54,7 @@ export default function ArticlePage({ params }: Props) {
     headline: article.title,
     description: article.excerpt,
     datePublished: article.date,
-    image: article.image,
+    image: `${SITE_URL}${article.image}`,
     author: { '@type': 'Organization', name: BUSINESS_NAME },
     publisher: {
       '@type': 'Organization',
