@@ -14,11 +14,13 @@ import {
   FiUsers,
   FiArrowRight,
 } from 'react-icons/fi'
+import { BUSINESS_NAME, getExperienceText } from '@/lib/constants'
+
+const experienceText = getExperienceText()
 
 export const metadata = {
-  title: 'Professional Sod Installation Jacksonville FL | Nearly 40 Years | Jax Sod',
-  description:
-    'Transform your lawn with professional sod installation in Jacksonville, FL. Nearly 40 years of experience, expert installers, St. Augustine, Zoysia, Bermuda & Bahia sod. Free quotes!',
+  title: `Professional Sod Installation Jacksonville FL | ${experienceText} | ${BUSINESS_NAME}`,
+  description: `Transform your lawn with professional sod installation in Jacksonville, FL. ${experienceText} of experience, expert installers, St. Augustine, Zoysia, Bermuda & Bahia sod. Free quotes!`,
 }
 
 export default function Home() {
@@ -92,7 +94,7 @@ export default function Home() {
     <>
       <Hero
         title="Professional Sod Installation in Jacksonville, FL"
-        subtitle="Nearly 40 Years of Excellence"
+        subtitle={`${experienceText} of Excellence`}
         description="Transform your property with expert sod installation services. Our network of professional installers delivers beautiful, healthy lawns for residential and commercial properties throughout Jacksonville."
         ctaText="Get a Free Quote"
         ctaLink="/contact"
@@ -105,7 +107,7 @@ export default function Home() {
       <section className="section-padding bg-secondary-50">
         <div className="container-custom">
           <div className="text-center mb-16">
-            <h2 className="heading-lg mb-4">Why Choose Jax Sod?</h2>
+            <h2 className="heading-lg mb-4">Why Choose {BUSINESS_NAME}?</h2>
             <p className="text-lg text-secondary-600 max-w-2xl mx-auto">
               Nearly four decades of expertise delivering beautiful, healthy lawns across
               Jacksonville and Northeast Florida.
@@ -116,7 +118,7 @@ export default function Home() {
             {[
               {
                 icon: <FiAward />,
-                title: 'Nearly 40 Years Experience',
+                title: `${experienceText} Experience`,
                 desc: 'Decades of sod installation expertise serving the Jacksonville area.',
               },
               {
@@ -314,7 +316,7 @@ export default function Home() {
           <div className="text-center mb-16">
             <h2 className="heading-lg mb-4">What Our Customers Say</h2>
             <p className="text-lg text-secondary-600 max-w-2xl mx-auto">
-              Hear from Jacksonville homeowners and businesses who trust Jax Sod.
+              Hear from Jacksonville homeowners and businesses who trust {BUSINESS_NAME}.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

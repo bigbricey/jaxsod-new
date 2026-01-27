@@ -1,18 +1,19 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
+import Breadcrumbs from '@/components/Breadcrumbs'
 import CTASection from '@/components/CTASection'
 import { FiArrowRight, FiGrid } from 'react-icons/fi'
+import { BUSINESS_NAME, SITE_URL } from '@/lib/constants'
 
 export const metadata: Metadata = {
-  title: 'Landscaping Calculators Jacksonville FL | Jax Sod',
-  description:
-    'Free landscaping calculators for Jacksonville, FL homeowners. Estimate sod, mulch, rock, and topsoil needs for your next project. Get instant quotes from Jax Sod.',
-  alternates: { canonical: 'https://jaxsod.com/calculators' },
+  title: `Landscaping Calculators Jacksonville FL | ${BUSINESS_NAME}`,
+  description: `Free landscaping calculators for Jacksonville, FL homeowners. Estimate sod, mulch, rock, and topsoil needs for your next project. Get instant quotes from ${BUSINESS_NAME}.`,
+  alternates: { canonical: `${SITE_URL}/calculators` },
   openGraph: {
-    title: 'Free Landscaping Calculators – Jax Sod Jacksonville FL',
+    title: `Free Landscaping Calculators – ${BUSINESS_NAME} Jacksonville FL`,
     description:
       'Estimate your landscaping materials with our free calculators. Sod, mulch, rock, topsoil, and more for Jacksonville, FL projects.',
-    url: 'https://jaxsod.com/calculators',
+    url: `${SITE_URL}/calculators`,
     type: 'website',
   },
 }
@@ -99,13 +100,6 @@ export default function CalculatorsPage() {
           <div className="absolute bottom-0 left-0 w-64 h-64 bg-white rounded-full -translate-x-1/4 translate-y-1/4" />
         </div>
         <div className="container-custom relative z-10 py-16 md:py-20">
-          <nav aria-label="Breadcrumb" className="mb-6">
-            <ol className="flex items-center gap-2 text-sm text-primary-200">
-              <li><Link href="/" className="hover:text-white transition-colors">Home</Link></li>
-              <li>/</li>
-              <li className="text-white font-medium">Calculators</li>
-            </ol>
-          </nav>
           <div className="max-w-3xl">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-12 h-12 bg-white/15 rounded-xl flex items-center justify-center">
@@ -123,6 +117,7 @@ export default function CalculatorsPage() {
       {/* ── Calculator Grid ────────────────────────────────── */}
       <section className="section-padding bg-secondary-50">
         <div className="container-custom">
+          <Breadcrumbs items={[{ label: 'Calculators' }]} />
           <div className="grid sm:grid-cols-2 lg:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {calculators.map((calc) => (
               <div key={calc.title} className="relative group">

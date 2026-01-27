@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { FiPhone, FiMenu, FiX } from 'react-icons/fi'
+import { BUSINESS_NAME, PHONE, PHONE_HREF, getExperienceText } from '@/lib/constants'
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -26,14 +27,14 @@ const Header = () => {
         <div className="container-custom py-2">
           <div className="flex justify-between items-center text-sm">
             <span className="hidden sm:inline font-medium">
-              Nearly 40 Years of Professional Sod Installation in Jacksonville
+              {getExperienceText()} of Professional Sod Installation in Jacksonville
             </span>
             <a
-              href="tel:9049011457"
+              href={PHONE_HREF}
               className="flex items-center gap-2 hover:text-primary-200 transition-colors"
             >
               <FiPhone className="text-lg" />
-              <span className="font-semibold">(904) 901-1457</span>
+              <span className="font-semibold">{PHONE}</span>
             </a>
           </div>
         </div>
@@ -45,7 +46,7 @@ const Header = () => {
             <div className="w-10 h-10 bg-primary-600 rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-xl">J</span>
             </div>
-            <span className="text-2xl font-bold text-primary-700">Jax Sod</span>
+            <span className="text-2xl font-bold text-primary-700">{BUSINESS_NAME}</span>
           </Link>
 
           <div className="hidden lg:flex items-center gap-5 xl:gap-6">
@@ -64,7 +65,7 @@ const Header = () => {
           </div>
 
           <div className="lg:hidden flex items-center gap-3">
-            <a href="tel:9049011457" className="btn-primary text-sm py-2 px-3">
+            <a href={PHONE_HREF} className="btn-primary text-sm py-2 px-3">
               <FiPhone className="inline mr-1" /> Call
             </a>
             <button

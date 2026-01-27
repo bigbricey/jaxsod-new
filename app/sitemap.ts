@@ -1,9 +1,10 @@
 import { MetadataRoute } from 'next'
-import { articles } from '@/data/articles'
+import { getAllArticles } from '@/data/articles'
 import { serviceAreas } from '@/data/service-areas'
+import { SITE_URL } from '@/lib/constants'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://jaxsod.com'
+  const baseUrl = SITE_URL
 
   const staticPages = [
     { url: baseUrl, lastModified: new Date(), changeFrequency: 'weekly' as const, priority: 1 },
@@ -22,7 +23,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/calculators/topsoil-calculator`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.9 },
   ]
 
-  const articlePages = articles.map((article) => ({
+  const allArticles = getAllArticles()
+
+  const articlePages = allArticles.map((article) => ({
     url: `${baseUrl}/articles/${article.slug}`,
     lastModified: new Date(article.date),
     changeFrequency: 'monthly' as const,

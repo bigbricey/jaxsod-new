@@ -1,9 +1,10 @@
 import { Metadata } from 'next'
+import { BUSINESS_NAME, PHONE, SITE_URL } from '@/lib/constants'
 
 export const metadata: Metadata = {
   title: 'Terms of Service',
-  description: 'Terms of service for Jax Sod - Professional sod installation in Jacksonville, FL.',
-  alternates: { canonical: 'https://jaxsod.com/terms' },
+  description: `Terms of service for ${BUSINESS_NAME} - Professional sod installation in Jacksonville, FL.`,
+  alternates: { canonical: `${SITE_URL}/terms` },
 }
 
 export default function TermsPage() {
@@ -15,7 +16,7 @@ export default function TermsPage() {
           <p className="text-secondary-600 mb-6">Last updated: January 2025</p>
 
           <h2>Services</h2>
-          <p>Jax Sod provides professional sod installation services in the Jacksonville, Florida area. All services are subject to availability, weather conditions, and site accessibility.</p>
+          <p>{BUSINESS_NAME} provides professional sod installation services in the Jacksonville, Florida area. All services are subject to availability, weather conditions, and site accessibility.</p>
 
           <h2>Estimates and Pricing</h2>
           <p>All estimates are provided free of charge and are valid for 30 days unless otherwise noted. Final pricing may vary if site conditions differ from the initial assessment.</p>
@@ -27,7 +28,7 @@ export default function TermsPage() {
           <p>We stand behind the quality of our installation work. Warranty details are provided with each project contract. Note that sod is a living product and its long-term success depends on proper aftercare including watering, mowing, and maintenance.</p>
 
           <h2>Contact</h2>
-          <p>For questions about these terms, contact us at (904) 901-1457.</p>
+          <p>For questions about these terms, contact us at {PHONE}.</p>
         </div>
       </div>
     </section>

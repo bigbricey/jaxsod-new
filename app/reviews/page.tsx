@@ -1,13 +1,14 @@
 import { Metadata } from 'next'
 import Hero from '@/components/Hero'
+import Breadcrumbs from '@/components/Breadcrumbs'
 import TestimonialCard from '@/components/TestimonialCard'
 import CTASection from '@/components/CTASection'
+import { BUSINESS_NAME, SITE_URL, RATING, REVIEW_COUNT } from '@/lib/constants'
 
 export const metadata: Metadata = {
-  title: 'Reviews & Testimonials | Jax Sod Jacksonville FL',
-  description:
-    'Read reviews from satisfied Jax Sod customers across Jacksonville, FL. See why homeowners and businesses trust us for professional sod installation.',
-  alternates: { canonical: 'https://jaxsod.com/reviews' },
+  title: `Reviews & Testimonials | ${BUSINESS_NAME} Jacksonville FL`,
+  description: `Read reviews from satisfied ${BUSINESS_NAME} customers across Jacksonville, FL. See why homeowners and businesses trust us for professional sod installation.`,
+  alternates: { canonical: `${SITE_URL}/reviews` },
 }
 
 export default function ReviewsPage() {
@@ -81,13 +82,14 @@ export default function ReviewsPage() {
     <>
       <Hero
         title="Customer Reviews"
-        description="Don't just take our word for it — hear from Jacksonville homeowners and businesses who trust Jax Sod for their sod installation needs."
+        description={`Don't just take our word for it — hear from Jacksonville homeowners and businesses who trust ${BUSINESS_NAME} for their sod installation needs.`}
         backgroundImage="https://images.unsplash.com/photo-1595757872761-992fd6d3ab25?auto=format&fit=crop&w=2000&q=80"
         height="small"
       />
 
       <section className="section-padding">
         <div className="container-custom">
+          <Breadcrumbs items={[{ label: 'Reviews' }]} />
           {/* Summary */}
           <div className="bg-primary-50 rounded-lg p-8 mb-12 text-center">
             <div className="flex items-center justify-center gap-1 mb-3">
@@ -95,8 +97,8 @@ export default function ReviewsPage() {
                 <span key={i} className="text-yellow-400 text-3xl">★</span>
               ))}
             </div>
-            <p className="text-2xl font-bold text-secondary-900 mb-2">4.9 out of 5 Stars</p>
-            <p className="text-secondary-600">Based on 150+ verified customer reviews</p>
+            <p className="text-2xl font-bold text-secondary-900 mb-2">{RATING} out of 5 Stars</p>
+            <p className="text-secondary-600">Based on {REVIEW_COUNT}+ verified customer reviews</p>
           </div>
 
           {/* Review Grid */}
@@ -110,7 +112,7 @@ export default function ReviewsPage() {
 
       <CTASection
         title="Ready to Join Our Satisfied Customers?"
-        description="Get a free quote and see why Jacksonville trusts Jax Sod for professional sod installation."
+        description={`Get a free quote and see why Jacksonville trusts ${BUSINESS_NAME} for professional sod installation.`}
       />
     </>
   )

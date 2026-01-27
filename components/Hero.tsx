@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { PHONE, PHONE_HREF } from '@/lib/constants'
 
 interface HeroProps {
   title: string
@@ -61,10 +62,10 @@ const Hero = ({
               </Link>
             )}
             <a
-              href="tel:9049011457"
+              href={PHONE_HREF}
               className="btn-outline text-lg px-8 py-4 sm:hidden"
             >
-              Call (904) 901-1457
+              Call {PHONE}
             </a>
           </div>
         </div>

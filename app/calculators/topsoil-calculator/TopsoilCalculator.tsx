@@ -3,6 +3,7 @@
 import { useState, useMemo, useCallback } from 'react'
 import Link from 'next/link'
 import { FiPhone, FiMail, FiCheckCircle, FiInfo, FiArrowRight, FiTruck } from 'react-icons/fi'
+import { PHONE, PHONE_HREF } from '@/lib/constants'
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -496,10 +497,10 @@ export default function TopsoilCalculator() {
                 Get a Free Quote <FiArrowRight />
               </Link>
               <a
-                href="tel:9049011457"
+                href={PHONE_HREF}
                 className="flex-1 bg-white/15 text-white border-2 border-white/30 px-6 py-4 rounded-xl font-bold text-center hover:bg-white/25 transition-colors duration-200 text-lg flex items-center justify-center gap-2"
               >
-                <FiPhone /> (904) 901-1457
+                <FiPhone /> {PHONE}
               </a>
             </div>
           </div>
@@ -559,7 +560,7 @@ export default function TopsoilCalculator() {
         </div>
         <div className="px-6 py-4 sm:px-8 bg-primary-50 border-t border-primary-100">
           <p className="text-sm text-primary-800 font-medium">
-            Not sure which soil type is right for your project? <Link href="/contact" className="underline font-bold hover:text-primary-900">Contact us</Link> or call <a href="tel:9049011457" className="underline font-bold hover:text-primary-900">(904) 901-1457</a> for a free recommendation.
+            Not sure which soil type is right for your project? <Link href="/contact" className="underline font-bold hover:text-primary-900">Contact us</Link> or call <a href={PHONE_HREF} className="underline font-bold hover:text-primary-900">{PHONE}</a> for a free recommendation.
           </p>
         </div>
       </div>

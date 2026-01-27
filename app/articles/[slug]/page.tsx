@@ -3,8 +3,12 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import Image from 'next/image'
 import { getAllArticles } from '@/data/articles'
+import Breadcrumbs from '@/components/Breadcrumbs'
 import CTASection from '@/components/CTASection'
 import { FiCalendar, FiTag, FiClock, FiArrowLeft } from 'react-icons/fi'
+import { BUSINESS_NAME, PHONE, PHONE_HREF, SITE_URL, getExperienceText } from '@/lib/constants'
+
+const experienceText = getExperienceText()
 
 interface Props {
   params: { slug: string }
@@ -22,7 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: article.title,
     description: article.excerpt,
-    alternates: { canonical: `https://jaxsod.com/articles/${article.slug}` },
+    alternates: { canonical: `${SITE_URL}/articles/${article.slug}` },
     openGraph: {
       title: article.title,
       description: article.excerpt,
@@ -51,15 +55,15 @@ export default function ArticlePage({ params }: Props) {
     description: article.excerpt,
     datePublished: article.date,
     image: article.image,
-    author: { '@type': 'Organization', name: 'Jax Sod' },
+    author: { '@type': 'Organization', name: BUSINESS_NAME },
     publisher: {
       '@type': 'Organization',
-      name: 'Jax Sod',
-      url: 'https://jaxsod.com',
+      name: BUSINESS_NAME,
+      url: SITE_URL,
     },
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': `https://jaxsod.com/articles/${article.slug}`,
+      '@id': `${SITE_URL}/articles/${article.slug}`,
     },
   }
 
@@ -117,21 +121,22 @@ export default function ArticlePage({ params }: Props) {
       <section className="py-12">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
+            <Breadcrumbs items={[{ label: 'Articles', href: '/articles' }, { label: article.title }]} />
             <div className="prose max-w-none">{article.content}</div>
 
             {/* CTA */}
             <div className="mt-12 bg-primary-50 border-2 border-primary-200 rounded-lg p-8 text-center">
               <h3 className="text-2xl font-bold mb-3">Need Professional Sod Installation?</h3>
               <p className="text-secondary-700 mb-6 max-w-2xl mx-auto">
-                Jax Sod connects you with expert installers across Jacksonville and Northeast
-                Florida. Nearly 40 years of experience. Free quotes!
+                {BUSINESS_NAME} connects you with expert installers across Jacksonville and Northeast
+                Florida. {experienceText} of experience. Free quotes!
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link href="/contact" className="btn-primary">
                   Get a Free Quote
                 </Link>
-                <a href="tel:9049011457" className="btn-secondary">
-                  Call (904) 901-1457
+                <a href={PHONE_HREF} className="btn-secondary">
+                  Call {PHONE}
                 </a>
               </div>
             </div>

@@ -1,11 +1,13 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import SodCalculator from './SodCalculator'
+import Breadcrumbs from '@/components/Breadcrumbs'
 import CTASection from '@/components/CTASection'
 import { FiCheckCircle, FiMapPin, FiTarget, FiGrid, FiClipboard, FiArrowRight } from 'react-icons/fi'
+import { BUSINESS_NAME, PHONE, SITE_URL, getExperienceText } from '@/lib/constants'
 
 export const metadata: Metadata = {
-  title: 'Sod Calculator Jacksonville FL – Estimate Square Footage & Pallets | Jax Sod',
+  title: `Sod Calculator Jacksonville FL – Estimate Square Footage & Pallets | ${BUSINESS_NAME}`,
   description:
     'Free sod calculator for Jacksonville, FL homeowners. Instantly estimate square footage and pallets needed for St. Augustine, Zoysia, Bermuda, and Bahia sod installation.',
   keywords: [
@@ -18,12 +20,12 @@ export const metadata: Metadata = {
     'sod installation jacksonville fl',
     'how many pallets of sod',
   ],
-  alternates: { canonical: 'https://jaxsod.com/calculators/sod-calculator' },
+  alternates: { canonical: `${SITE_URL}/calculators/sod-calculator` },
   openGraph: {
-    title: 'Sod Calculator – Estimate Your Jacksonville Lawn Needs | Jax Sod',
+    title: `Sod Calculator – Estimate Your Jacksonville Lawn Needs | ${BUSINESS_NAME}`,
     description:
       'Free sod calculator: enter your lawn dimensions and get an instant estimate for square footage and pallets needed in Jacksonville, FL.',
-    url: 'https://jaxsod.com/calculators/sod-calculator',
+    url: `${SITE_URL}/calculators/sod-calculator`,
     type: 'website',
   },
 }
@@ -33,10 +35,10 @@ function SodCalculatorSchema() {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'WebApplication',
-    name: 'Sod Calculator – Jax Sod Jacksonville FL',
+    name: `Sod Calculator – ${BUSINESS_NAME} Jacksonville FL`,
     description:
       'Free sod calculator for Jacksonville homeowners. Estimate square footage and pallets needed for St. Augustine, Zoysia, Bermuda, and Bahia sod.',
-    url: 'https://jaxsod.com/calculators/sod-calculator',
+    url: `${SITE_URL}/calculators/sod-calculator`,
     applicationCategory: 'UtilityApplication',
     operatingSystem: 'Web',
     offers: {
@@ -46,8 +48,8 @@ function SodCalculatorSchema() {
     },
     provider: {
       '@type': 'LocalBusiness',
-      name: 'Jax Sod',
-      telephone: '(904) 901-1457',
+      name: BUSINESS_NAME,
+      telephone: PHONE,
       areaServed: {
         '@type': 'City',
         name: 'Jacksonville',
@@ -109,15 +111,6 @@ export default function SodCalculatorPage() {
           <div className="absolute bottom-0 right-0 w-72 h-72 bg-white rounded-full translate-x-1/3 translate-y-1/3" />
         </div>
         <div className="container-custom relative z-10 py-16 md:py-20">
-          <nav aria-label="Breadcrumb" className="mb-6">
-            <ol className="flex items-center gap-2 text-sm text-primary-200">
-              <li><Link href="/" className="hover:text-white transition-colors">Home</Link></li>
-              <li>/</li>
-              <li><Link href="/calculators" className="hover:text-white transition-colors">Calculators</Link></li>
-              <li>/</li>
-              <li className="text-white font-medium">Sod Calculator</li>
-            </ol>
-          </nav>
           <div className="max-w-3xl">
             <h1 className="heading-xl text-white mb-4">
               Sod Calculator
@@ -135,6 +128,7 @@ export default function SodCalculatorPage() {
       {/* ── Calculator Section ─────────────────────────────────── */}
       <section className="section-padding bg-secondary-50">
         <div className="container-custom max-w-5xl">
+          <Breadcrumbs items={[{ label: 'Calculators', href: '/calculators' }, { label: 'Sod Calculator' }]} />
           <SodCalculator />
         </div>
       </section>
@@ -259,7 +253,7 @@ export default function SodCalculatorPage() {
       {/* ── CTA Section ────────────────────────────────────────── */}
       <CTASection
         title="Ready to Get Your Sod Installed?"
-        description="Use your calculator estimate as a starting point, then get an exact quote from Jacksonville's trusted sod professionals. Nearly 40 years of experience — free quotes, no obligation."
+        description={`Use your calculator estimate as a starting point, then get an exact quote from Jacksonville's trusted sod professionals. ${getExperienceText()} of experience — free quotes, no obligation.`}
       />
     </>
   )

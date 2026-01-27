@@ -1,13 +1,14 @@
 import { Metadata } from 'next'
 import Hero from '@/components/Hero'
+import Breadcrumbs from '@/components/Breadcrumbs'
 import CTASection from '@/components/CTASection'
 import Link from 'next/link'
+import { BUSINESS_NAME, PHONE, PHONE_HREF, SITE_URL } from '@/lib/constants'
 
 export const metadata: Metadata = {
   title: 'FAQ | Sod Installation Questions Jacksonville FL',
-  description:
-    'Frequently asked questions about sod installation in Jacksonville, FL. Learn about costs, timing, sod types, aftercare, and more from Jax Sod experts.',
-  alternates: { canonical: 'https://jaxsod.com/faq' },
+  description: `Frequently asked questions about sod installation in Jacksonville, FL. Learn about costs, timing, sod types, aftercare, and more from ${BUSINESS_NAME} experts.`,
+  alternates: { canonical: `${SITE_URL}/faq` },
 }
 
 export default function FAQPage() {
@@ -17,7 +18,7 @@ export default function FAQPage() {
       questions: [
         {
           q: 'How do I get a quote for sod installation?',
-          a: 'The easiest way is to text us at (904) 901-1457 with your name, address, and which areas of your yard you want sodded. We\'ll schedule a free on-site assessment and provide a detailed quote. Most quotes are delivered within 1-2 business days of the site visit.',
+          a: `The easiest way is to text us at ${PHONE} with your name, address, and which areas of your yard you want sodded. We'll schedule a free on-site assessment and provide a detailed quote. Most quotes are delivered within 1-2 business days of the site visit.`,
         },
         {
           q: 'How quickly can you install after I approve a quote?',
@@ -133,13 +134,14 @@ export default function FAQPage() {
 
       <Hero
         title="Frequently Asked Questions"
-        description="Everything you need to know about sod installation in Jacksonville. Can't find your answer? Text us at (904) 901-1457."
+        description={`Everything you need to know about sod installation in Jacksonville. Can't find your answer? Text us at ${PHONE}.`}
         backgroundImage="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?q=80&w=2000&auto=format&fit=crop"
         height="small"
       />
 
       <section className="section-padding">
         <div className="container-custom">
+          <Breadcrumbs items={[{ label: 'FAQ' }]} />
           <div className="max-w-4xl mx-auto">
             {faqs.map((category) => (
               <div key={category.category} className="mb-12">
@@ -169,8 +171,8 @@ export default function FAQPage() {
             <Link href="/contact" className="btn-primary">
               Contact Us
             </Link>
-            <a href="tel:9049011457" className="btn-secondary">
-              Call (904) 901-1457
+            <a href={PHONE_HREF} className="btn-secondary">
+              Call {PHONE}
             </a>
           </div>
         </div>

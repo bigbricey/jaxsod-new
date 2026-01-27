@@ -1,13 +1,15 @@
 import { Metadata } from 'next'
 import Hero from '@/components/Hero'
+import Breadcrumbs from '@/components/Breadcrumbs'
 import CTASection from '@/components/CTASection'
 import Link from 'next/link'
+import { SITE_URL } from '@/lib/constants'
 
 export const metadata: Metadata = {
   title: 'Sod Types for Jacksonville FL | St. Augustine, Zoysia, Bermuda, Bahia',
   description:
     'Compare the best sod types for Jacksonville, FL lawns: St. Augustine, Zoysia, Bermuda, and Bahia. Expert guide to choosing the right grass for your property.',
-  alternates: { canonical: 'https://jaxsod.com/sod-types' },
+  alternates: { canonical: `${SITE_URL}/sod-types` },
 }
 
 export default function SodTypesPage() {
@@ -121,6 +123,7 @@ export default function SodTypesPage() {
       {/* Comparison Table */}
       <section className="section-padding">
         <div className="container-custom">
+          <Breadcrumbs items={[{ label: 'Sod Types' }]} />
           <h2 className="heading-lg text-center mb-8">Quick Comparison</h2>
           <div className="overflow-x-auto">
             <table className="w-full border-collapse border border-secondary-200 text-sm md:text-base">

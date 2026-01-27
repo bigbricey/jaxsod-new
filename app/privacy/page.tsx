@@ -1,9 +1,10 @@
 import { Metadata } from 'next'
+import { BUSINESS_NAME, PHONE, SITE_URL } from '@/lib/constants'
 
 export const metadata: Metadata = {
   title: 'Privacy Policy',
-  description: 'Privacy policy for Jax Sod - Professional sod installation in Jacksonville, FL.',
-  alternates: { canonical: 'https://jaxsod.com/privacy' },
+  description: `Privacy policy for ${BUSINESS_NAME} - Professional sod installation in Jacksonville, FL.`,
+  alternates: { canonical: `${SITE_URL}/privacy` },
 }
 
 export default function PrivacyPage() {
@@ -15,7 +16,7 @@ export default function PrivacyPage() {
           <p className="text-secondary-600 mb-6">Last updated: January 2025</p>
 
           <h2>Information We Collect</h2>
-          <p>When you contact Jax Sod, we may collect your name, phone number, email address, and property address for the purpose of providing sod installation estimates and services.</p>
+          <p>When you contact {BUSINESS_NAME}, we may collect your name, phone number, email address, and property address for the purpose of providing sod installation estimates and services.</p>
 
           <h2>How We Use Your Information</h2>
           <p>We use the information you provide to:</p>
@@ -30,7 +31,7 @@ export default function PrivacyPage() {
           <p>We do not sell, trade, or otherwise transfer your personal information to third parties. We may share information with trusted service providers who assist in operating our business, provided they agree to keep your information confidential.</p>
 
           <h2>Contact</h2>
-          <p>If you have questions about this privacy policy, contact us at (904) 901-1457.</p>
+          <p>If you have questions about this privacy policy, contact us at {PHONE}.</p>
         </div>
       </div>
     </section>

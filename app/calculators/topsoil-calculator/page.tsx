@@ -1,11 +1,13 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import TopsoilCalculator from './TopsoilCalculator'
+import Breadcrumbs from '@/components/Breadcrumbs'
 import CTASection from '@/components/CTASection'
 import { FiCheckCircle, FiMapPin, FiTarget, FiGrid, FiClipboard, FiLayers } from 'react-icons/fi'
+import { BUSINESS_NAME, PHONE, SITE_URL } from '@/lib/constants'
 
 export const metadata: Metadata = {
-  title: 'Topsoil Calculator Jacksonville FL – Estimate Cubic Yards Needed | Jax Sod',
+  title: `Topsoil Calculator Jacksonville FL – Estimate Cubic Yards Needed | ${BUSINESS_NAME}`,
   description:
     'Free topsoil calculator for Jacksonville, FL homeowners. Instantly estimate cubic yards of topsoil, garden mix, compost, or fill dirt needed for your project.',
   keywords: [
@@ -19,12 +21,12 @@ export const metadata: Metadata = {
     'soil calculator for raised beds',
     'landscaping soil jacksonville fl',
   ],
-  alternates: { canonical: 'https://jaxsod.com/calculators/topsoil-calculator' },
+  alternates: { canonical: `${SITE_URL}/calculators/topsoil-calculator` },
   openGraph: {
-    title: 'Topsoil Calculator – Estimate Your Jacksonville Soil Needs | Jax Sod',
+    title: `Topsoil Calculator – Estimate Your Jacksonville Soil Needs | ${BUSINESS_NAME}`,
     description:
       'Free topsoil calculator: enter your area dimensions and get an instant estimate for cubic yards of soil needed in Jacksonville, FL.',
-    url: 'https://jaxsod.com/calculators/topsoil-calculator',
+    url: `${SITE_URL}/calculators/topsoil-calculator`,
     type: 'website',
   },
 }
@@ -33,10 +35,10 @@ function TopsoilCalculatorSchema() {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'WebApplication',
-    name: 'Topsoil Calculator – Jax Sod Jacksonville FL',
+    name: `Topsoil Calculator – ${BUSINESS_NAME} Jacksonville FL`,
     description:
       'Free topsoil calculator for Jacksonville homeowners. Estimate cubic yards of topsoil, garden mix, compost, or fill dirt needed for your project.',
-    url: 'https://jaxsod.com/calculators/topsoil-calculator',
+    url: `${SITE_URL}/calculators/topsoil-calculator`,
     applicationCategory: 'UtilityApplication',
     operatingSystem: 'Web',
     offers: {
@@ -46,8 +48,8 @@ function TopsoilCalculatorSchema() {
     },
     provider: {
       '@type': 'LocalBusiness',
-      name: 'Jax Sod',
-      telephone: '(904) 901-1457',
+      name: BUSINESS_NAME,
+      telephone: PHONE,
       areaServed: {
         '@type': 'City',
         name: 'Jacksonville',
@@ -116,15 +118,6 @@ export default function TopsoilCalculatorPage() {
           <div className="absolute bottom-0 right-0 w-72 h-72 bg-white rounded-full translate-x-1/3 translate-y-1/3" />
         </div>
         <div className="container-custom relative z-10 py-16 md:py-20">
-          <nav aria-label="Breadcrumb" className="mb-6">
-            <ol className="flex items-center gap-2 text-sm text-primary-200">
-              <li><Link href="/" className="hover:text-white transition-colors">Home</Link></li>
-              <li>/</li>
-              <li><Link href="/calculators" className="hover:text-white transition-colors">Calculators</Link></li>
-              <li>/</li>
-              <li className="text-white font-medium">Topsoil Calculator</li>
-            </ol>
-          </nav>
           <div className="max-w-3xl">
             <h1 className="heading-xl text-white mb-4">
               Topsoil Calculator
@@ -142,6 +135,7 @@ export default function TopsoilCalculatorPage() {
       {/* ── Calculator Section ─────────────────────────────────── */}
       <section className="section-padding bg-secondary-50">
         <div className="container-custom max-w-5xl">
+          <Breadcrumbs items={[{ label: 'Calculators', href: '/calculators' }, { label: 'Topsoil Calculator' }]} />
           <TopsoilCalculator />
         </div>
       </section>

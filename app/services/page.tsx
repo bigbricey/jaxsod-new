@@ -1,14 +1,16 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import Hero from '@/components/Hero'
+import Breadcrumbs from '@/components/Breadcrumbs'
 import CTASection from '@/components/CTASection'
 import { FiCheckCircle } from 'react-icons/fi'
+import { BUSINESS_NAME, SITE_URL } from '@/lib/constants'
 
 export const metadata: Metadata = {
   title: 'Sod Installation Services Jacksonville FL',
   description:
     'Professional residential and commercial sod installation services in Jacksonville, FL. Lawn replacement, new construction sod, erosion control, and more. Free quotes!',
-  alternates: { canonical: 'https://jaxsod.com/services' },
+  alternates: { canonical: `${SITE_URL}/services` },
 }
 
 export default function ServicesPage() {
@@ -16,13 +18,14 @@ export default function ServicesPage() {
     <>
       <Hero
         title="Our Sod Installation Services"
-        description="From residential lawns to large commercial projects, Jax Sod delivers professional sod installation tailored to your property's needs."
+        description={`From residential lawns to large commercial projects, ${BUSINESS_NAME} delivers professional sod installation tailored to your property's needs.`}
         backgroundImage="https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=2000&auto=format&fit=crop"
         height="medium"
       />
 
       <section className="section-padding" id="residential">
         <div className="container-custom">
+          <Breadcrumbs items={[{ label: 'Services' }]} />
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             <div>
               <h2 className="heading-lg mb-6">Residential Sod Installation</h2>

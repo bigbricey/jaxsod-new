@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { PHONE, PHONE_HREF, getExperienceText } from '@/lib/constants'
 
 interface CTASectionProps {
   title?: string
@@ -7,7 +8,7 @@ interface CTASectionProps {
 
 const CTASection = ({
   title = 'Ready to Transform Your Lawn?',
-  description = 'Get a free, no-obligation quote from Jacksonville\'s trusted sod experts. With nearly 40 years of experience, we\'ll connect you with the right installers for a perfect lawn.',
+  description = `Get a free, no-obligation quote from Jacksonville's trusted sod experts. With ${getExperienceText().toLowerCase()} of experience, we'll connect you with the right installers for a perfect lawn.`,
 }: CTASectionProps) => {
   return (
     <section className="section-padding bg-primary-700 text-white">
@@ -20,10 +21,10 @@ const CTASection = ({
               Get a Free Quote
             </Link>
             <a
-              href="tel:9049011457"
+              href={PHONE_HREF}
               className="bg-white text-primary-700 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors inline-block text-center"
             >
-              Call (904) 901-1457
+              Call {PHONE}
             </a>
           </div>
         </div>

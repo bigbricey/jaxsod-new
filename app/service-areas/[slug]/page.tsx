@@ -2,10 +2,15 @@ import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import Hero from '@/components/Hero'
+import Breadcrumbs from '@/components/Breadcrumbs'
 import CTASection from '@/components/CTASection'
 import ContactForm from '@/components/ContactForm'
+import ServiceAreaSchema from '@/components/ServiceAreaSchema'
 import { serviceAreas } from '@/data/service-areas'
 import { FiCheckCircle, FiMapPin } from 'react-icons/fi'
+import { SITE_URL, getExperienceText } from '@/lib/constants'
+
+const experienceText = getExperienceText()
 
 interface Props {
   params: { slug: string }
@@ -21,7 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: area.title,
     description: area.metaDescription,
-    alternates: { canonical: `https://jaxsod.com/service-areas/${area.slug}` },
+    alternates: { canonical: `${SITE_URL}/service-areas/${area.slug}` },
     openGraph: {
       title: area.title,
       description: area.metaDescription,
@@ -38,16 +43,18 @@ export default function ServiceAreaPage({ params }: Props) {
 
   return (
     <>
+      <ServiceAreaSchema area={area} />
       <Hero
         title={`Sod Installation in ${area.name}`}
         subtitle="Professional Sod Installation"
-        description={`Expert sod installation services for ${area.name}, FL. Nearly 40 years of experience delivering beautiful lawns with St. Augustine, Zoysia, Bermuda, and Bahia sod.`}
+        description={`Expert sod installation services for ${area.name}, FL. ${experienceText} of experience delivering beautiful lawns with St. Augustine, Zoysia, Bermuda, and Bahia sod.`}
         backgroundImage="https://images.unsplash.com/photo-1558904541-efa843a96f01?q=80&w=2000&auto=format&fit=crop"
         height="medium"
       />
 
       <section className="section-padding">
         <div className="container-custom">
+          <Breadcrumbs items={[{ label: 'Service Areas', href: '/service-areas' }, { label: area.name }]} />
           <div className="grid lg:grid-cols-3 gap-12">
             <div className="lg:col-span-2">
               <h2 className="heading-lg mb-6">

@@ -15,246 +15,7 @@ export interface MarkdownArticleData {
   image: string
 }
 
-// Comprehensive image library organized by category
-// All real Unsplash photo IDs verified for Florida/Jacksonville lawn & landscape content
-const IMAGE_LIBRARY = {
-  // Sod & grass close-ups (10 images)
-  sodCloseup: [
-    'https://images.unsplash.com/photo-1558904541-efa843a96f01?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1589923188651-268a9765e432?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1544914379-806667cd9489?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1593617589445-a9cb66fbae15?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1595757872761-992fd6d3ab25?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1560750395-5a82e72d7991?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1592296829563-d80d3e3a3d79?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1592595896551-12b371d546d5?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1525498128493-380d1990a112?q=80&w=1200&auto=format&fit=crop',
-  ],
-
-  // Lawn mowing & maintenance (8 images)
-  lawnMowing: [
-    'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1580048915913-4f8f5cb481c4?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1592296815763-e24c7a468fa0?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1616428727345-4e768c1aa47e?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1588880331179-bc9b93a8cb5e?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1592296829563-d80d3e3a3d79?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1600298881974-6be191ceeda1?q=80&w=1200&auto=format&fit=crop',
-  ],
-
-  // Sprinklers & irrigation (8 images)
-  irrigation: [
-    'https://images.unsplash.com/photo-1509316785289-025f5b846b35?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1584004737914-1b6f2f87eb42?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1604250952635-5c58b4c9f9a8?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1572198284213-d4db2e6e3a28?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1622383563227-04401ab4e5ea?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1527176930608-09cb256ab504?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1563207153-f403bf289096?q=80&w=1200&auto=format&fit=crop',
-  ],
-
-  // Landscaping crews & people working (6 images)
-  crewsWorking: [
-    'https://images.unsplash.com/photo-1597040827713-24d4c7e4b0e2?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1589656966895-2f33e7653819?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1605731414615-0e4e7a7d2e0e?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1592930729308-4e55b36fd0f1?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1622383563227-04401ab4e5ea?q=80&w=1200&auto=format&fit=crop',
-  ],
-
-  // Florida yards & tropical landscapes (10 images)
-  floridaYards: [
-    'https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1593035421994-992c4c4d8c33?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1598902108854-d1446413a259?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1584738766473-61c083514bf4?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1600566752355-35792bedcfea?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1592595896551-12b371d546d5?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1609766857041-ed402ea8069a?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1533659828870-95ee305cee3e?q=80&w=1200&auto=format&fit=crop',
-  ],
-
-  // Palm trees & tropical plants (8 images)
-  palmTrees: [
-    'https://images.unsplash.com/photo-1519046904884-53103b34b206?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1509233725247-49e657c54213?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1499209974431-9dddcece7f88?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1530347776.8-22eeef9fe046?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1502921451607-29fa99d270d4?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1502933691298-84fc14542831?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1513415564515-763d91423bdd?q=80&w=1200&auto=format&fit=crop',
-  ],
-
-  // Oak trees & shade trees (7 images)
-  oakTrees: [
-    'https://images.unsplash.com/photo-1502082553048-f009c37129b9?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1511497584788-876760111969?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1473448912268-2022ce9509d8?q=80&w=1200&auto=format&fit=crop',
-  ],
-
-  // Flower beds & gardens (8 images)
-  flowerBeds: [
-    'https://images.unsplash.com/photo-1591857177580-dc82b9ac4e1e?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1459411552884-841db9b3cc2a?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1592419044706-39796d40f98c?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1560750395-5a82e72d7991?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1605731414615-0e4e7a7d2e0e?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1584738766473-61c083514bf4?q=80&w=1200&auto=format&fit=crop',
-  ],
-
-  // Mulch & ground cover (6 images)
-  mulch: [
-    'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1464226184884-fa280b87c399?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1603048588665-791ca8aea617?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1617791160505-6f00504e3519?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1592296829563-d80d3e3a3d79?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1584004737914-1b6f2f87eb42?q=80&w=1200&auto=format&fit=crop',
-  ],
-
-  // Pavers & hardscaping (7 images)
-  pavers: [
-    'https://images.unsplash.com/photo-1598902108854-d1446413a259?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1563207153-f403bf289096?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1600566752355-35792bedcfea?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1594498257673-9f36b767286c?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?q=80&w=1200&auto=format&fit=crop',
-  ],
-
-  // Drainage & water features (6 images)
-  drainage: [
-    'https://images.unsplash.com/photo-1534274988757-a28bf1a57c17?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1572198284213-d4db2e6e3a28?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1527176930608-09cb256ab504?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1563207153-f403bf289096?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1604250952635-5c58b4c9f9a8?q=80&w=1200&auto=format&fit=crop',
-  ],
-
-  // Pest damage & brown patches (5 images)
-  pestDamage: [
-    'https://images.unsplash.com/photo-1595757872761-992fd6d3ab25?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1455659817273-f96807779a8a?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1589923188651-268a9765e432?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1592296829563-d80d3e3a3d79?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1560750395-5a82e72d7991?q=80&w=1200&auto=format&fit=crop',
-  ],
-
-  // Lush green lawns (8 images)
-  lushLawn: [
-    'https://images.unsplash.com/photo-1544914379-806667cd9489?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1593617589445-a9cb66fbae15?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1558904541-efa843a96f01?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1609766857041-ed402ea8069a?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1525498128493-380d1990a112?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1600298881974-6be191ceeda1?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1533659828870-95ee305cee3e?q=80&w=1200&auto=format&fit=crop',
-  ],
-
-  // Pools with landscaping (5 images)
-  pools: [
-    'https://images.unsplash.com/photo-1600566752355-35792bedcfea?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1584738766473-61c083514bf4?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1593035421994-992c4c4d8c33?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?q=80&w=1200&auto=format&fit=crop',
-  ],
-
-  // Commercial properties & front yards (6 images)
-  commercial: [
-    'https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1609766857041-ed402ea8069a?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1598902108854-d1446413a259?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1600566752355-35792bedcfea?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1533659828870-95ee305cee3e?q=80&w=1200&auto=format&fit=crop',
-  ],
-
-  // Seasonal - fall leaves, spring flowers (6 images)
-  seasonal: [
-    'https://images.unsplash.com/photo-1459411552884-841db9b3cc2a?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1592419044706-39796d40f98c?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1560750395-5a82e72d7991?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1605731414615-0e4e7a7d2e0e?q=80&w=1200&auto=format&fit=crop',
-  ],
-
-  // Soil & dirt (5 images)
-  soil: [
-    'https://images.unsplash.com/photo-1464226184884-fa280b87c399?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1603048588665-791ca8aea617?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1617791160505-6f00504e3519?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1592296829563-d80d3e3a3d79?q=80&w=1200&auto=format&fit=crop',
-  ],
-
-  // Tools & equipment (5 images)
-  tools: [
-    'https://images.unsplash.com/photo-1597040827713-24d4c7e4b0e2?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1589656966895-2f33e7653819?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1605731414615-0e4e7a7d2e0e?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1592930729308-4e55b36fd0f1?q=80&w=1200&auto=format&fit=crop',
-  ],
-
-  // Rain & storms (5 images)
-  rain: [
-    'https://images.unsplash.com/photo-1527482797697-8795b05a13fe?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1534274988757-a28bf1a57c17?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1572198284213-d4db2e6e3a28?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1604250952635-5c58b4c9f9a8?q=80&w=1200&auto=format&fit=crop',
-  ],
-
-  // Shade gardens (5 images)
-  shadeGarden: [
-    'https://images.unsplash.com/photo-1459411552884-841db9b3cc2a?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1502082553048-f009c37129b9?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1591857177580-dc82b9ac4e1e?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1584738766473-61c083514bf4?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?q=80&w=1200&auto=format&fit=crop',
-  ],
-
-  // Outdoor lighting (5 images)
-  lighting: [
-    'https://images.unsplash.com/photo-1513584684374-8bab748fbf90?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1563207153-f403bf289096?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1598902108854-d1446413a259?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1600566752355-35792bedcfea?q=80&w=1200&auto=format&fit=crop',
-  ],
-
-  // Front yards & backyards (8 images)
-  yards: [
-    'https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1609766857041-ed402ea8069a?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1533659828870-95ee305cee3e?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1598902108854-d1446413a259?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1600566752355-35792bedcfea?q=80&w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1584738766473-61c083514bf4?q=80&w=1200&auto=format&fit=crop',
-  ],
-}
-
-// Keyword-to-category mapping
+// Keyword-to-category mapping - matches local folder names in public/images/
 const KEYWORD_PATTERNS = [
   // Sod-specific keywords
   { keywords: ['new-sod', 'sod-care', 'lay-sod', 'install-sod', 'sod-installation', 'laying-sod', 'fresh-sod'], category: 'sodCloseup', weight: 10 },
@@ -338,10 +99,10 @@ function hashString(str: string): number {
 }
 
 // Find the best matching category for an article
-function findBestCategory(slug: string, title: string): keyof typeof IMAGE_LIBRARY {
+function findBestCategory(slug: string, title: string): string {
   const text = `${slug} ${title}`.toLowerCase()
   
-  let bestMatch: keyof typeof IMAGE_LIBRARY = 'lushLawn' // default fallback
+  let bestMatch = 'lushLawn' // default fallback
   let bestScore = 0
   
   for (const pattern of KEYWORD_PATTERNS) {
@@ -353,36 +114,73 @@ function findBestCategory(slug: string, title: string): keyof typeof IMAGE_LIBRA
     }
     if (score > bestScore) {
       bestScore = score
-      bestMatch = pattern.category as keyof typeof IMAGE_LIBRARY
+      bestMatch = pattern.category
     }
   }
   
   return bestMatch
 }
 
-// Get a deterministic image from a category, avoiding recently used ones
+// Helper to get all image files from a directory
+function getLocalImagesForCategory(category: string): string[] {
+  try {
+    const imagesDir = path.join(process.cwd(), 'public', 'images', category)
+    if (!fs.existsSync(imagesDir)) {
+      return []
+    }
+    
+    // Read files and filter for valid image extensions
+    const files = fs.readdirSync(imagesDir)
+    return files
+      .filter(file => /\.(png|jpg|jpeg|webp)$/i.test(file))
+      .map(file => `/images/${category}/${file}`)
+  } catch (error) {
+    console.warn(`Could not read images for category: ${category}`, error)
+    return []
+  }
+}
+
+// Fallback images if a category is empty or missing locally
+// Using a generic placeholder relative logic or hardcoded trusted fallback if absolute despair
+const FALLBACK_CATEGORY = 'lushLawn'
+
+// Get a deterministic visual asset from the local filesystem
 function getImageForArticle(
   slug: string,
   title: string,
   recentImages: string[]
 ): string {
+  // 1. Determine local category
   const category = findBestCategory(slug, title)
-  const imagePool = IMAGE_LIBRARY[category]
   
-  // Filter out recently used images to add variety
+  // 2. Fetch local files
+  let imagePool = getLocalImagesForCategory(category)
+  
+  // 3. Fallback if category is empty
+  if (imagePool.length === 0) {
+    imagePool = getLocalImagesForCategory(FALLBACK_CATEGORY)
+  }
+  
+  // 4. If still empty (lushLawn missing?), use a placeholder or safe hardcoded one
+  // (Ideally this never happens since we just moved files, but good for safety)
+  if (imagePool.length === 0) {
+    return '/images/placeholder.jpg' // You should ensure this exists or similar
+  }
+  
+  // 5. Filter out recently used images to add variety
   const availableImages = imagePool.filter(img => !recentImages.includes(img))
   
-  // If all images in this category were recently used, use the full pool
+  // 6. If all images in this category were recently used, use the full pool again
   const finalPool = availableImages.length > 0 ? availableImages : imagePool
   
-  // Use hash to deterministically select an image from the pool
+  // 7. Use hash to deterministically select an image from the pool
   const hash = hashString(slug)
   const index = hash % finalPool.length
   
   return finalPool[index]
 }
 
-// Category assignment based on slug keywords
+// Category assignment based on slug keywords (Display Category)
 function assignCategory(slug: string, title: string): string {
   const text = `${slug} ${title}`.toLowerCase()
 
@@ -453,6 +251,7 @@ export function getMarkdownArticles(excludeSlugs: string[] = []): MarkdownArticl
     }
 
     // Convert markdown to HTML synchronously using remark
+    // Added table support if needed, but keeping basic for now
     const processed = remark().use(remarkHtml, { sanitize: false }).processSync(markdownBody)
     const htmlContent = processed.toString()
 

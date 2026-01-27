@@ -2,14 +2,16 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import Hero from '@/components/Hero'
+import Breadcrumbs from '@/components/Breadcrumbs'
 import { getAllArticles } from '@/data/articles'
 import { FiArrowRight, FiCalendar, FiTag } from 'react-icons/fi'
+import { SITE_URL } from '@/lib/constants'
 
 export const metadata: Metadata = {
   title: 'Sod & Lawn Care Articles | Expert Guides for Jacksonville FL',
   description:
     'Expert articles on sod installation, lawn care, and landscaping for Jacksonville, FL. Guides on St. Augustine, Zoysia, irrigation, pest control, and more.',
-  alternates: { canonical: 'https://jaxsod.com/articles' },
+  alternates: { canonical: `${SITE_URL}/articles` },
 }
 
 export default function ArticlesPage() {
@@ -31,6 +33,7 @@ export default function ArticlesPage() {
 
       <section className="section-padding">
         <div className="container-custom">
+          <Breadcrumbs items={[{ label: 'Articles' }]} />
           {/* Category tags */}
           <div className="flex flex-wrap gap-2 mb-10">
             {categories.map((cat) => (

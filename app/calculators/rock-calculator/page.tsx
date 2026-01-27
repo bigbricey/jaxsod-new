@@ -1,11 +1,13 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import RockCalculator from './RockCalculator'
+import Breadcrumbs from '@/components/Breadcrumbs'
 import CTASection from '@/components/CTASection'
 import { FiCheckCircle, FiMapPin, FiTarget, FiGrid, FiClipboard, FiLayers } from 'react-icons/fi'
+import { BUSINESS_NAME, PHONE, SITE_URL } from '@/lib/constants'
 
 export const metadata: Metadata = {
-  title: 'Rock & Gravel Calculator Jacksonville FL – Estimate Cubic Yards & Tons | Jax Sod',
+  title: `Rock & Gravel Calculator Jacksonville FL – Estimate Cubic Yards & Tons | ${BUSINESS_NAME}`,
   description:
     'Free rock and gravel calculator for Jacksonville, FL homeowners. Instantly estimate cubic yards and tons needed for pea gravel, river rock, crushed limestone, and more.',
   keywords: [
@@ -20,12 +22,12 @@ export const metadata: Metadata = {
     'river rock calculator',
     'landscaping rock jacksonville fl',
   ],
-  alternates: { canonical: 'https://jaxsod.com/calculators/rock-calculator' },
+  alternates: { canonical: `${SITE_URL}/calculators/rock-calculator` },
   openGraph: {
-    title: 'Rock & Gravel Calculator – Estimate Your Jacksonville Project Needs | Jax Sod',
+    title: `Rock & Gravel Calculator – Estimate Your Jacksonville Project Needs | ${BUSINESS_NAME}`,
     description:
       'Free rock and gravel calculator: enter your area dimensions and get an instant estimate for cubic yards and tons needed in Jacksonville, FL.',
-    url: 'https://jaxsod.com/calculators/rock-calculator',
+    url: `${SITE_URL}/calculators/rock-calculator`,
     type: 'website',
   },
 }
@@ -34,10 +36,10 @@ function RockCalculatorSchema() {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'WebApplication',
-    name: 'Rock & Gravel Calculator – Jax Sod Jacksonville FL',
+    name: `Rock & Gravel Calculator – ${BUSINESS_NAME} Jacksonville FL`,
     description:
       'Free rock and gravel calculator for Jacksonville homeowners. Estimate cubic yards and tons for pea gravel, river rock, crushed limestone, and more.',
-    url: 'https://jaxsod.com/calculators/rock-calculator',
+    url: `${SITE_URL}/calculators/rock-calculator`,
     applicationCategory: 'UtilityApplication',
     operatingSystem: 'Web',
     offers: {
@@ -47,8 +49,8 @@ function RockCalculatorSchema() {
     },
     provider: {
       '@type': 'LocalBusiness',
-      name: 'Jax Sod',
-      telephone: '(904) 901-1457',
+      name: BUSINESS_NAME,
+      telephone: PHONE,
       areaServed: {
         '@type': 'City',
         name: 'Jacksonville',
@@ -117,15 +119,6 @@ export default function RockCalculatorPage() {
           <div className="absolute bottom-0 right-0 w-72 h-72 bg-white rounded-full translate-x-1/3 translate-y-1/3" />
         </div>
         <div className="container-custom relative z-10 py-16 md:py-20">
-          <nav aria-label="Breadcrumb" className="mb-6">
-            <ol className="flex items-center gap-2 text-sm text-primary-200">
-              <li><Link href="/" className="hover:text-white transition-colors">Home</Link></li>
-              <li>/</li>
-              <li><Link href="/calculators" className="hover:text-white transition-colors">Calculators</Link></li>
-              <li>/</li>
-              <li className="text-white font-medium">Rock &amp; Gravel Calculator</li>
-            </ol>
-          </nav>
           <div className="max-w-3xl">
             <h1 className="heading-xl text-white mb-4">
               Rock &amp; Gravel Calculator
@@ -143,6 +136,7 @@ export default function RockCalculatorPage() {
       {/* ── Calculator Section ─────────────────────────────────── */}
       <section className="section-padding bg-secondary-50">
         <div className="container-custom max-w-5xl">
+          <Breadcrumbs items={[{ label: 'Calculators', href: '/calculators' }, { label: 'Rock Calculator' }]} />
           <RockCalculator />
         </div>
       </section>

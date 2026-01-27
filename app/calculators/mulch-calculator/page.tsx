@@ -1,11 +1,13 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import MulchCalculator from './MulchCalculator'
+import Breadcrumbs from '@/components/Breadcrumbs'
 import CTASection from '@/components/CTASection'
 import { FiCheckCircle, FiMapPin, FiTarget, FiGrid, FiClipboard, FiLayers } from 'react-icons/fi'
+import { BUSINESS_NAME, PHONE, SITE_URL } from '@/lib/constants'
 
 export const metadata: Metadata = {
-  title: 'Mulch Calculator Jacksonville FL – Estimate Cubic Yards & Bags | Jax Sod',
+  title: `Mulch Calculator Jacksonville FL – Estimate Cubic Yards & Bags | ${BUSINESS_NAME}`,
   description:
     'Free mulch calculator for Jacksonville, FL homeowners. Instantly estimate cubic yards and bags needed for pine bark, cypress, hardwood, cedar, and more.',
   keywords: [
@@ -18,12 +20,12 @@ export const metadata: Metadata = {
     'pine bark mulch calculator',
     'cypress mulch calculator',
   ],
-  alternates: { canonical: 'https://jaxsod.com/calculators/mulch-calculator' },
+  alternates: { canonical: `${SITE_URL}/calculators/mulch-calculator` },
   openGraph: {
-    title: 'Mulch Calculator – Estimate Your Jacksonville Mulch Needs | Jax Sod',
+    title: `Mulch Calculator – Estimate Your Jacksonville Mulch Needs | ${BUSINESS_NAME}`,
     description:
       'Free mulch calculator: enter your bed dimensions and get an instant estimate for cubic yards and bags needed in Jacksonville, FL.',
-    url: 'https://jaxsod.com/calculators/mulch-calculator',
+    url: `${SITE_URL}/calculators/mulch-calculator`,
     type: 'website',
   },
 }
@@ -32,10 +34,10 @@ function MulchCalculatorSchema() {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'WebApplication',
-    name: 'Mulch Calculator – Jax Sod Jacksonville FL',
+    name: `Mulch Calculator – ${BUSINESS_NAME} Jacksonville FL`,
     description:
       'Free mulch calculator for Jacksonville homeowners. Estimate cubic yards and bags needed for pine bark, cypress, hardwood, cedar, and more.',
-    url: 'https://jaxsod.com/calculators/mulch-calculator',
+    url: `${SITE_URL}/calculators/mulch-calculator`,
     applicationCategory: 'UtilityApplication',
     operatingSystem: 'Web',
     offers: {
@@ -45,8 +47,8 @@ function MulchCalculatorSchema() {
     },
     provider: {
       '@type': 'LocalBusiness',
-      name: 'Jax Sod',
-      telephone: '(904) 901-1457',
+      name: BUSINESS_NAME,
+      telephone: PHONE,
       areaServed: {
         '@type': 'City',
         name: 'Jacksonville',
@@ -115,15 +117,6 @@ export default function MulchCalculatorPage() {
           <div className="absolute bottom-0 right-0 w-72 h-72 bg-white rounded-full translate-x-1/3 translate-y-1/3" />
         </div>
         <div className="container-custom relative z-10 py-16 md:py-20">
-          <nav aria-label="Breadcrumb" className="mb-6">
-            <ol className="flex items-center gap-2 text-sm text-primary-200">
-              <li><Link href="/" className="hover:text-white transition-colors">Home</Link></li>
-              <li>/</li>
-              <li><Link href="/calculators" className="hover:text-white transition-colors">Calculators</Link></li>
-              <li>/</li>
-              <li className="text-white font-medium">Mulch Calculator</li>
-            </ol>
-          </nav>
           <div className="max-w-3xl">
             <h1 className="heading-xl text-white mb-4">
               Mulch Calculator
@@ -141,6 +134,7 @@ export default function MulchCalculatorPage() {
       {/* ── Calculator Section ─────────────────────────────────── */}
       <section className="section-padding bg-secondary-50">
         <div className="container-custom max-w-5xl">
+          <Breadcrumbs items={[{ label: 'Calculators', href: '/calculators' }, { label: 'Mulch Calculator' }]} />
           <MulchCalculator />
         </div>
       </section>

@@ -1,6 +1,7 @@
 'use client'
 
 import { FiMessageCircle, FiCheckCircle, FiPhone } from 'react-icons/fi'
+import { PHONE, PHONE_HREF, SMS_HREF } from '@/lib/constants'
 
 const ContactForm = () => {
   return (
@@ -18,10 +19,10 @@ const ContactForm = () => {
       <div className="bg-white rounded-lg p-6 mb-6">
         <p className="font-bold text-secondary-900 mb-4 text-lg">Text this information to:</p>
         <a
-          href="sms:9049011457"
+          href={SMS_HREF}
           className="text-3xl font-bold text-primary-600 hover:text-primary-700 block mb-6"
         >
-          (904) 901-1457
+          {PHONE}
         </a>
 
         <p className="font-bold text-secondary-900 mb-3">Please include:</p>
@@ -44,14 +45,14 @@ const ContactForm = () => {
 
       <div className="flex flex-col sm:flex-row gap-3">
         <a
-          href="sms:9049011457"
+          href={SMS_HREF}
           className="flex-1 bg-primary-600 text-white rounded-lg p-4 text-center font-semibold hover:bg-primary-700 transition-colors flex items-center justify-center gap-2"
         >
           <FiMessageCircle className="text-xl" />
           Text Us Now
         </a>
         <a
-          href="tel:9049011457"
+          href={PHONE_HREF}
           className="flex-1 bg-secondary-800 text-white rounded-lg p-4 text-center font-semibold hover:bg-secondary-900 transition-colors flex items-center justify-center gap-2"
         >
           <FiPhone className="text-xl" />
@@ -60,7 +61,7 @@ const ContactForm = () => {
       </div>
 
       <p className="text-center text-secondary-600 text-sm mt-4">
-        We typically respond within 1–2 hours during business hours!
+        We typically respond within 1-2 hours during business hours!
       </p>
     </div>
   )

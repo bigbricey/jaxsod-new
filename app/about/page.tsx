@@ -1,21 +1,24 @@
 import { Metadata } from 'next'
 import Hero from '@/components/Hero'
+import Breadcrumbs from '@/components/Breadcrumbs'
 import CTASection from '@/components/CTASection'
 import { FiCheckCircle } from 'react-icons/fi'
+import { BUSINESS_NAME, SITE_URL, getExperienceText } from '@/lib/constants'
+
+const experienceText = getExperienceText()
 
 export const metadata: Metadata = {
-  title: 'About Jax Sod | Jacksonville Sod Installation Experts',
-  description:
-    'Learn about Jax Sod — nearly 40 years of professional sod installation experience in Jacksonville, FL. Connecting customers with expert installers across Northeast Florida.',
-  alternates: { canonical: 'https://jaxsod.com/about' },
+  title: `About ${BUSINESS_NAME} | Jacksonville Sod Installation Experts`,
+  description: `Learn about ${BUSINESS_NAME} — ${experienceText.toLowerCase()} of professional sod installation experience in Jacksonville, FL. Connecting customers with expert installers across Northeast Florida.`,
+  alternates: { canonical: `${SITE_URL}/about` },
 }
 
 export default function AboutPage() {
   return (
     <>
       <Hero
-        title="About Jax Sod"
-        subtitle="Nearly 40 Years Serving Jacksonville"
+        title={`About ${BUSINESS_NAME}`}
+        subtitle={`${experienceText} Serving Jacksonville`}
         description="A trusted name in Northeast Florida sod installation, connecting homeowners and businesses with expert installers who deliver beautiful, lasting results."
         backgroundImage="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?q=80&w=2000&auto=format&fit=crop"
         height="medium"
@@ -23,6 +26,7 @@ export default function AboutPage() {
 
       <section className="section-padding">
         <div className="container-custom">
+          <Breadcrumbs items={[{ label: 'About' }]} />
           <div className="max-w-4xl mx-auto">
             <h2 className="heading-lg mb-6">Jacksonville&apos;s Trusted Sod Company</h2>
             <p className="text-lg text-secondary-700 mb-6">
@@ -32,7 +36,7 @@ export default function AboutPage() {
               and the specific needs of our region.
             </p>
             <p className="text-lg text-secondary-700 mb-6">
-              Our approach is simple: we leverage nearly 40 years of experience to help you choose
+              Our approach is simple: we leverage {experienceText.toLowerCase()} of experience to help you choose
               the right sod for your property, coordinate professional installation through our
               network of expert installers, and ensure you have everything you need for a lawn
               that thrives for years to come.
