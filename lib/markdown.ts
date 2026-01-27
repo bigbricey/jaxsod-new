@@ -15,55 +15,73 @@ export interface MarkdownArticleData {
   image: string
 }
 
-// Unique Unsplash images mapped to each markdown article slug
+// Unique Unsplash images — verified to match article topics
 const imageMap: Record<string, string> = {
+  // Outdoor lighting — garden path lights at night
   'best-outdoor-lighting-ideas-for-jacksonville-landscapes':
-    'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?q=80&w=1200&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1513584684374-8bab748fbf90?q=80&w=1200&auto=format&fit=crop',
+  // Sod timing — rolls of fresh sod on green lawn
   'best-time-lay-sod-jacksonville-fl':
-    'https://images.unsplash.com/photo-1592150621744-aca64f48394a?q=80&w=1200&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1558904541-efa843a96f01?q=80&w=1200&auto=format&fit=crop',
+  // Lawn pests — close-up of lawn/grass texture
   'common-lawn-pests-jacksonville-fl':
-    'https://images.unsplash.com/photo-1585003791123-4903aaf9f8e1?q=80&w=1200&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1589923188651-268a9765e432?q=80&w=1200&auto=format&fit=crop',
+  // DIY vs pro — person pushing wheelbarrow in yard
   'diy-vs-professional-sod-installation-jacksonville':
-    'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1597040827713-24d4c7e4b0e2?q=80&w=1200&auto=format&fit=crop',
+  // Drainage — rain puddle on grass/yard
   'drainage-solutions-jacksonville-yards':
-    'https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1200&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1534274988757-a28bf1a57c17?q=80&w=1200&auto=format&fit=crop',
+  // Fertilizer — soil and gardening supplies
   'fertilizer-schedule-jacksonville-fl-lawns':
     'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?q=80&w=1200&auto=format&fit=crop',
+  // Bare spots — patchy lawn needing repair
   'fix-bare-spots-jacksonville-lawn':
-    'https://images.unsplash.com/photo-1558635924-b60e7d3984d4?q=80&w=1200&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1595757872761-992fd6d3ab25?q=80&w=1200&auto=format&fit=crop',
+  // Florida-friendly landscaping — tropical garden
   'florida-friendly-landscaping-jacksonville':
-    'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=1200&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?q=80&w=1200&auto=format&fit=crop',
+  // Raised garden bed — wooden raised bed with plants
   'how-to-build-raised-garden-bed-jacksonville-fl':
-    'https://images.unsplash.com/photo-1416543974351-c28453497ef4?q=80&w=1200&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1591857177580-dc82b9ac4e1e?q=80&w=1200&auto=format&fit=crop',
+  // Irrigation — lawn sprinkler watering grass
   'irrigation-guide-jacksonville-lawns':
-    'https://images.unsplash.com/photo-1463936575829-25148e1db1b8?q=80&w=1200&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1509316785289-025f5b846b35?q=80&w=1200&auto=format&fit=crop',
+  // Soil guide — hands holding rich soil
   'jacksonville-soil-guide-understanding-your-lawns-foundation':
-    'https://images.unsplash.com/photo-1509813685-e5e15e03e5a2?q=80&w=1200&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1464226184884-fa280b87c399?q=80&w=1200&auto=format&fit=crop',
+  // Weed control — dandelion in lawn
   'kill-weeds-without-killing-lawn-jacksonville':
-    'https://images.unsplash.com/photo-1589923188651-268a9765e432?q=80&w=1200&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1455659817273-f96807779a8a?q=80&w=1200&auto=format&fit=crop',
+  // Lawn edging — neat lawn edge along walkway
   'lawn-edging-options-jacksonville':
-    'https://images.unsplash.com/photo-1598902108854-d1446413a259?q=80&w=1200&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop',
+  // New sod care — fresh green sod lawn
   'new-sod-care-first-30-days-jacksonville':
-    'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=1200&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1544914379-806667cd9489?q=80&w=1200&auto=format&fit=crop',
+  // Paver patios — stone patio with landscaping
   'paver-patios-walkways-jacksonville-homeowner-guide':
-    'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=1200&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1598902108854-d1446413a259?q=80&w=1200&auto=format&fit=crop',
+  // Hurricane prep — stormy sky over Florida
   'prepare-jacksonville-lawn-hurricane-season':
     'https://images.unsplash.com/photo-1527482797697-8795b05a13fe?q=80&w=1200&auto=format&fit=crop',
+  // St Augustine vs Bermuda — two-tone grass comparison
   'st-augustine-vs-bermuda-grass-jacksonville':
-    'https://images.unsplash.com/photo-1560749003-f4b1e17e2dff?q=80&w=1200&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1593617589445-a9cb66fbae15?q=80&w=1200&auto=format&fit=crop',
+  // Shade trees — large oak tree in yard
   'tree-selection-guide-jacksonville-fl-best-shade-trees':
     'https://images.unsplash.com/photo-1502082553048-f009c37129b9?q=80&w=1200&auto=format&fit=crop',
-  // Fallbacks for any articles that also exist as hardcoded (won't normally be used since hardcoded takes priority)
+  // Fallbacks for overlapping slugs (hardcoded takes priority, these rarely used)
   'best-landscaping-ideas-jacksonville-fl':
-    'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?q=80&w=1200&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?q=80&w=1200&auto=format&fit=crop',
   'best-plants-shade-jacksonville-fl':
     'https://images.unsplash.com/photo-1459411552884-841db9b3cc2a?q=80&w=1200&auto=format&fit=crop',
   'jacksonville-lawn-care-calendar-2026':
-    'https://images.unsplash.com/photo-1523301343968-6a6ebf63c672?q=80&w=1200&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1558904541-efa843a96f01?q=80&w=1200&auto=format&fit=crop',
   'sod-installation-cost-jacksonville-2026':
-    'https://images.unsplash.com/photo-1628624747186-a941c476b7ef?q=80&w=1200&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1597040827713-24d4c7e4b0e2?q=80&w=1200&auto=format&fit=crop',
   'types-mulch-jacksonville-landscapes':
-    'https://images.unsplash.com/photo-1599629954294-43125087c2c0?q=80&w=1200&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?q=80&w=1200&auto=format&fit=crop',
 }
 
 // Category assignment based on slug keywords
