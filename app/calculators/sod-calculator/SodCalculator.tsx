@@ -11,8 +11,6 @@ type Shape = 'rectangle' | 'triangle' | 'circle' | 'lshape' | 'irregular'
 interface SodType {
   name: string
   variety: string
-  priceMin: number
-  priceMax: number
   description: string
   best: string
 }
@@ -23,32 +21,24 @@ const SOD_TYPES: SodType[] = [
   {
     name: 'St. Augustine',
     variety: 'Floratam',
-    priceMin: 0.45,
-    priceMax: 0.65,
     description: 'The most popular sod in Jacksonville. Thick, lush, and shade-tolerant.',
     best: 'Best for: Most Jacksonville lawns, partial shade to full sun',
   },
   {
     name: 'Zoysia',
     variety: 'Empire / Emerald',
-    priceMin: 0.55,
-    priceMax: 0.75,
     description: 'Dense, carpet-like turf with excellent drought tolerance.',
     best: 'Best for: High-traffic areas, full sun, low maintenance',
   },
   {
     name: 'Bermuda',
     variety: 'Celebration / TifTuf',
-    priceMin: 0.45,
-    priceMax: 0.65,
     description: 'Fast-growing, durable grass that thrives in Jacksonville heat.',
     best: 'Best for: Sports areas, full sun, active families',
   },
   {
     name: 'Bahia',
     variety: 'Argentine',
-    priceMin: 0.35,
-    priceMax: 0.50,
     description: 'Hardy, low-maintenance grass with deep roots and excellent drought resistance.',
     best: 'Best for: Large areas, budget-friendly, sandy soils',
   },
@@ -293,8 +283,6 @@ export default function SodCalculator() {
   const totalSqFt = Math.ceil(rawSqFt * wasteFactor)
   const pallets = totalSqFt > 0 ? Math.ceil(totalSqFt / SQFT_PER_PALLET) : 0
   const sod = SOD_TYPES[selectedSod]
-  const costMin = totalSqFt * sod.priceMin
-  const costMax = totalSqFt * sod.priceMax
 
   const handleEmailSubmit = (e: React.FormEvent) => {
     e.preventDefault()
@@ -458,7 +446,7 @@ export default function SodCalculator() {
                       )}
                     </div>
                     <p className="text-xs text-secondary-600 mt-2 leading-relaxed">{s.description}</p>
-                    <p className="text-xs font-semibold text-primary-700 mt-1.5">${s.priceMin.toFixed(2)} – ${s.priceMax.toFixed(2)} / sq ft installed</p>
+                    <p className="text-xs font-semibold text-primary-700 mt-1.5">{s.best}</p>
                   </button>
                 )
               })}
@@ -473,7 +461,7 @@ export default function SodCalculator() {
               <span className="w-7 h-7 rounded-full bg-white/20 text-white text-sm font-bold flex items-center justify-center">✓</span>
               Your Estimate
             </h3>
-            <div className="grid sm:grid-cols-3 gap-4 mb-6">
+            <div className="grid sm:grid-cols-2 gap-4 mb-6">
               <div className="bg-white/10 backdrop-blur rounded-xl p-4 text-center">
                 <p className="text-primary-200 text-xs font-semibold uppercase tracking-wider">Total Area</p>
                 <p className="text-3xl font-bold text-white mt-1">{totalSqFt.toLocaleString()}</p>
@@ -484,15 +472,10 @@ export default function SodCalculator() {
                 <p className="text-3xl font-bold text-white mt-1">{pallets}</p>
                 <p className="text-primary-200 text-sm">{SQFT_PER_PALLET} sq ft / pallet</p>
               </div>
-              <div className="bg-white/10 backdrop-blur rounded-xl p-4 text-center">
-                <p className="text-primary-200 text-xs font-semibold uppercase tracking-wider">Estimated Cost</p>
-                <p className="text-3xl font-bold text-white mt-1">${costMin.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 })}</p>
-                <p className="text-primary-200 text-sm">to ${costMax.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 })}</p>
-              </div>
             </div>
 
             <p className="text-primary-200 text-xs mb-6">
-              * Estimates include sod &amp; professional installation. Actual pricing may vary based on site conditions, soil prep, and accessibility. Get an exact quote below.
+              Ready to get an exact price? Contact us for a free, no-obligation quote tailored to your yard.
             </p>
 
             {/* CTAs */}
@@ -539,19 +522,18 @@ export default function SodCalculator() {
         </div>
       </div>
 
-      {/* ── Sod Details Card ───────────────────────────────────── */}
+      {/* ── Sod Types Info Card ───────────────────────────────── */}
       <div className="bg-white rounded-2xl shadow-lg border border-secondary-100 overflow-hidden">
         <div className="px-6 py-5 sm:px-8 border-b border-secondary-100">
-          <h2 className="heading-sm text-secondary-900">Jacksonville Sod Pricing Guide</h2>
-          <p className="text-secondary-600 text-sm mt-1">Average installed prices for Jacksonville, FL area</p>
+          <h2 className="heading-sm text-secondary-900">Jacksonville Sod Types</h2>
+          <p className="text-secondary-600 text-sm mt-1">Popular grass varieties for the Jacksonville, FL area</p>
         </div>
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
             <thead className="bg-secondary-50">
               <tr>
                 <th className="text-left px-6 py-3 font-semibold text-secondary-700">Sod Type</th>
-                <th className="text-left px-6 py-3 font-semibold text-secondary-700">Price / sq ft</th>
-                <th className="text-left px-6 py-3 font-semibold text-secondary-700">Per Pallet (500 sq ft)</th>
+                <th className="text-left px-6 py-3 font-semibold text-secondary-700">Description</th>
                 <th className="text-left px-6 py-3 font-semibold text-secondary-700 hidden sm:table-cell">Best For</th>
               </tr>
             </thead>
@@ -559,13 +541,17 @@ export default function SodCalculator() {
               {SOD_TYPES.map((s) => (
                 <tr key={s.name} className="border-b border-secondary-100 hover:bg-primary-50/30 transition-colors">
                   <td className="px-6 py-4 font-semibold text-secondary-900">{s.name}<br /><span className="font-normal text-xs text-secondary-500">{s.variety}</span></td>
-                  <td className="px-6 py-4 text-secondary-700">${s.priceMin.toFixed(2)} – ${s.priceMax.toFixed(2)}</td>
-                  <td className="px-6 py-4 text-secondary-700">${(s.priceMin * 500).toFixed(0)} – ${(s.priceMax * 500).toFixed(0)}</td>
+                  <td className="px-6 py-4 text-secondary-700">{s.description}</td>
                   <td className="px-6 py-4 text-secondary-600 hidden sm:table-cell">{s.best.replace('Best for: ', '')}</td>
                 </tr>
               ))}
             </tbody>
           </table>
+        </div>
+        <div className="px-6 py-4 sm:px-8 bg-primary-50 border-t border-primary-100">
+          <p className="text-sm text-primary-800 font-medium">
+            Not sure which sod type is right for your yard? <Link href="/contact" className="underline font-bold hover:text-primary-900">Contact us</Link> or call <a href="tel:9049011457" className="underline font-bold hover:text-primary-900">(904) 901-1457</a> for a free recommendation.
+          </p>
         </div>
       </div>
     </div>

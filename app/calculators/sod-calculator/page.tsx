@@ -5,26 +5,24 @@ import CTASection from '@/components/CTASection'
 import { FiCheckCircle, FiMapPin, FiTarget, FiGrid, FiClipboard, FiArrowRight } from 'react-icons/fi'
 
 export const metadata: Metadata = {
-  title: 'Sod Calculator Jacksonville FL – Estimate Cost & Pallets | Jax Sod',
+  title: 'Sod Calculator Jacksonville FL – Estimate Square Footage & Pallets | Jax Sod',
   description:
-    'Free sod calculator for Jacksonville, FL homeowners. Instantly estimate square footage, pallets needed, and cost for St. Augustine, Zoysia, Bermuda, and Bahia sod installation.',
+    'Free sod calculator for Jacksonville, FL homeowners. Instantly estimate square footage and pallets needed for St. Augustine, Zoysia, Bermuda, and Bahia sod installation.',
   keywords: [
     'sod calculator',
     'sod calculator jacksonville',
     'how much sod do I need',
-    'sod cost calculator',
     'sod pallet calculator',
     'lawn calculator',
-    'st augustine sod cost',
-    'jacksonville sod price',
-    'sod installation cost jacksonville fl',
+    'jacksonville sod',
+    'sod installation jacksonville fl',
     'how many pallets of sod',
   ],
   alternates: { canonical: 'https://jaxsod.com/calculators/sod-calculator' },
   openGraph: {
-    title: 'Sod Calculator – Estimate Your Jacksonville Lawn Cost | Jax Sod',
+    title: 'Sod Calculator – Estimate Your Jacksonville Lawn Needs | Jax Sod',
     description:
-      'Free sod calculator: enter your lawn dimensions and get an instant estimate for pallets, square footage, and installed cost in Jacksonville, FL.',
+      'Free sod calculator: enter your lawn dimensions and get an instant estimate for square footage and pallets needed in Jacksonville, FL.',
     url: 'https://jaxsod.com/calculators/sod-calculator',
     type: 'website',
   },
@@ -37,7 +35,7 @@ function SodCalculatorSchema() {
     '@type': 'WebApplication',
     name: 'Sod Calculator – Jax Sod Jacksonville FL',
     description:
-      'Free sod calculator for Jacksonville homeowners. Estimate square footage, pallets needed, and installation cost for St. Augustine, Zoysia, Bermuda, and Bahia sod.',
+      'Free sod calculator for Jacksonville homeowners. Estimate square footage and pallets needed for St. Augustine, Zoysia, Bermuda, and Bahia sod.',
     url: 'https://jaxsod.com/calculators/sod-calculator',
     applicationCategory: 'UtilityApplication',
     operatingSystem: 'Web',
@@ -78,10 +76,10 @@ function FAQSchema() {
       },
       {
         '@type': 'Question',
-        name: 'How much does sod cost in Jacksonville, FL?',
+        name: 'How do I know which sod type is best for my Jacksonville yard?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Sod installation in Jacksonville typically costs $0.35–$0.75 per square foot installed, depending on the grass type. St. Augustine (Floratam) runs $0.45–$0.65/sq ft, Zoysia $0.55–$0.75/sq ft, Bermuda $0.45–$0.65/sq ft, and Bahia $0.35–$0.50/sq ft.',
+          text: 'The best sod for your Jacksonville yard depends on sun exposure, foot traffic, and maintenance preferences. St. Augustine is the most popular all-around choice. Zoysia is great for high-traffic sunny yards. Bermuda is ideal for large open areas. Bahia works best for large, low-maintenance properties. Contact a local sod professional for a personalized recommendation.',
         },
       },
       {
@@ -125,10 +123,10 @@ export default function SodCalculatorPage() {
               Sod Calculator
             </h1>
             <p className="text-xl text-primary-100 leading-relaxed mb-2">
-              Estimate how much sod you need for your Jacksonville lawn in seconds. Calculate square footage, pallets, and cost — completely free.
+              Estimate how much sod you need for your Jacksonville lawn in seconds. Calculate square footage and pallets — completely free.
             </p>
             <p className="text-primary-200 text-sm flex items-center gap-2">
-              <FiMapPin className="flex-shrink-0" /> Pricing based on Jacksonville, FL market rates
+              <FiMapPin className="flex-shrink-0" /> Serving Jacksonville, FL and surrounding areas
             </p>
           </div>
         </div>
@@ -211,16 +209,17 @@ export default function SodCalculatorPage() {
         <div className="container-custom max-w-4xl">
           <h2 className="heading-lg text-center mb-4">Sod Installation in Jacksonville, FL</h2>
           <p className="text-center text-secondary-600 text-lg mb-10 max-w-2xl mx-auto">
-            Everything you need to know about sod costs and installation in the Jacksonville area.
+            Everything you need to know about sod and installation in the Jacksonville area.
           </p>
 
           <div className="prose max-w-none">
-            <h3>What Does Sod Cost in Jacksonville?</h3>
+            <h3>Why Install New Sod in Jacksonville?</h3>
             <p>
-              Sod installation in Jacksonville, Florida typically ranges from <strong>$0.35 to $0.75 per square foot</strong>, 
-              depending on the grass variety, soil preparation required, and site accessibility. The most popular choice for 
-              Jacksonville lawns is <strong>St. Augustine (Floratam)</strong>, which costs between $0.45 and $0.65 per square foot 
-              installed — offering the best balance of appearance, shade tolerance, and value.
+              New sod instantly transforms your yard, boosts curb appeal, and increases property value. 
+              Jacksonville&apos;s warm climate means sod establishes quickly, and with the right variety 
+              for your yard conditions, you&apos;ll have a lush lawn in weeks — not months.
+              The best way to get an accurate quote is to <strong>contact a local professional</strong> who 
+              can assess your soil, sunlight, and drainage conditions.
             </p>
 
             <h3>Which Sod Type Is Best for Jacksonville?</h3>
