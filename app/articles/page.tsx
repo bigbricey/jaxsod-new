@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import Hero from '@/components/Hero'
-import { articles } from '@/data/articles'
+import { getAllArticles } from '@/data/articles'
 import { FiArrowRight, FiCalendar, FiTag } from 'react-icons/fi'
 
 export const metadata: Metadata = {
@@ -13,6 +13,7 @@ export const metadata: Metadata = {
 }
 
 export default function ArticlesPage() {
+  const articles = getAllArticles()
   const sortedArticles = [...articles].sort(
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
   )

@@ -1,4 +1,6 @@
 import Link from 'next/link'
+import { getMarkdownArticles } from '@/lib/markdown'
+import MarkdownContent from '@/components/MarkdownContent'
 
 // --- ARTICLE DATA & CONTENT ---
 export interface Article {
@@ -2641,4 +2643,29 @@ export const articles: Article[] = [
     )
   }
 ]
+
+/**
+ * Returns all articles: hardcoded JSX articles + markdown articles from content/articles/*.md
+ * Hardcoded articles take priority when slugs overlap.
+ */
+export function getAllArticles(): Article[] {
+  const hardcodedSlugs = articles.map((a) => a.slug)
+
+  // Load markdown articles, excluding any slugs that already exist in the hardcoded list
+  const markdownArticles = getMarkdownArticles(hardcodedSlugs)
+
+  // Convert markdown data to Article objects with JSX content
+  const mdAsArticles: Article[] = markdownArticles.map((md) => ({
+    slug: md.slug,
+    title: md.title,
+    excerpt: md.excerpt,
+    date: md.date,
+    category: md.category,
+    wordCount: md.wordCount,
+    image: md.image,
+    content: <MarkdownContent html={md.htmlContent} />,
+  }))
+
+  return [...articles, ...mdAsArticles]
+}
 

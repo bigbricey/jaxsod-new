@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import Image from 'next/image'
-import { articles } from '@/data/articles'
+import { getAllArticles } from '@/data/articles'
 import CTASection from '@/components/CTASection'
 import { FiCalendar, FiTag, FiClock, FiArrowLeft } from 'react-icons/fi'
 
@@ -11,10 +11,12 @@ interface Props {
 }
 
 export async function generateStaticParams() {
+  const articles = getAllArticles()
   return articles.map((article) => ({ slug: article.slug }))
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const articles = getAllArticles()
   const article = articles.find((a) => a.slug === params.slug)
   if (!article) return {}
   return {
@@ -32,6 +34,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default function ArticlePage({ params }: Props) {
+  const articles = getAllArticles()
   const article = articles.find((a) => a.slug === params.slug)
   if (!article) notFound()
 
