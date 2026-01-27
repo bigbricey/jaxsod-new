@@ -138,16 +138,16 @@ Some drainage projects are well within the reach of a handy homeowner — extend
 - **Your yard needs regrading.** Getting proper slope and drainage patterns right requires equipment and experience. Too much grade change can create new problems or send water onto a neighbor's property (which can create legal issues in Duval County).
 - **You've tried a DIY fix and it didn't work.** There's no shame in calling for backup. Drainage is one of those areas where experience and local knowledge make a huge difference.
 
-## Protecting Your Lawn Investment
+## Drainage and your lawn
 
-Here's something worth considering: if you've invested in quality sod — whether it's a lush St. Augustine, a drought-tough Zoysia, or a sun-loving Bermuda — poor drainage can undo that investment faster than almost anything else. Grass roots sitting in waterlogged soil develop root rot, fungal diseases like Brown Patch and Take-All Root Rot thrive in wet conditions, and chronically soggy turf becomes thin and weak, opening the door for weeds to take over.
+Here's the thing: if you've put money into quality sod — St. Augustine, Zoysia, Bermuda, whatever — poor drainage can undo that investment faster than almost anything else. Grass roots sitting in waterlogged soil develop root rot, fungal diseases like Brown Patch and Take-All Root Rot thrive in wet conditions, and chronically soggy turf becomes thin and weak, opening the door for weeds to take over.
 
 Fixing your drainage isn't just about keeping water off your patio or away from your foundation. It's about creating the conditions where your lawn can actually thrive. Healthy turf needs moist soil, not saturated soil — and there's a big difference.
 
 At Jax Sod, we see this connection every day. Homeowners call us wanting new sod because their lawn looks terrible, and when we visit the property, the first thing we notice is a drainage problem. Laying fresh sod on a waterlogged yard is like putting new paint on a rotten wall. That's why we always recommend addressing drainage issues before or during a sod installation — so your new lawn has the best possible chance to establish strong roots and stay healthy for years to come.
 
-## Take the First Step Toward a Dry, Healthy Yard
+## Get started
 
-Standing water in your Jacksonville yard isn't something you just have to live with. Whether your solution is as simple as extending a downspout or as involved as installing a complete French drain system with dry wells, the right drainage fix will transform your property.
+Standing water in your Jacksonville yard isn't something you just have to live with. Whether the fix is as simple as extending a downspout or as involved as a full French drain system with dry wells, there's a solution that fits your property and budget.
 
-If you're not sure where to start, [contact the team at Jax Sod](/contact). We've helped hundreds of Jacksonville homeowners solve drainage problems and establish beautiful, healthy lawns that hold up to everything our Florida weather throws at them. From initial assessment to soil grading to laying fresh sod on properly drained ground, we can handle the whole project — so you can get back to enjoying your yard instead of worrying about it every time dark clouds roll in.
+If you're not sure where to start, [contact the team at Jax Sod](/contact). We've helped hundreds of Jacksonville homeowners solve drainage problems and get healthy lawns established on properly drained ground. We can handle the whole thing — from the initial assessment to grading to fresh sod — so you can stop dreading every afternoon thunderstorm.

@@ -48,8 +48,8 @@ const calculators: CalculatorCard[] = [
     title: 'Mulch Calculator',
     description:
       'Calculate how many cubic yards of mulch you need for your flower beds, garden, and landscaping areas.',
-    href: '/calculators',
-    available: false,
+    href: '/calculators/mulch-calculator',
+    available: true,
     icon: (
       <svg viewBox="0 0 48 48" className="w-10 h-10" fill="none">
         <path d="M8 38 L14 22 L24 30 L34 18 L42 38Z" className="fill-amber-100 stroke-amber-600" strokeWidth="2" strokeLinejoin="round" />
@@ -62,8 +62,8 @@ const calculators: CalculatorCard[] = [
     title: 'Rock & Gravel Calculator',
     description:
       'Determine the tons of decorative rock, gravel, or river stone needed for your landscaping project.',
-    href: '/calculators',
-    available: false,
+    href: '/calculators/rock-calculator',
+    available: true,
     icon: (
       <svg viewBox="0 0 48 48" className="w-10 h-10" fill="none">
         <ellipse cx="16" cy="30" rx="10" ry="8" className="fill-slate-100 stroke-slate-500" strokeWidth="2" />
@@ -77,8 +77,8 @@ const calculators: CalculatorCard[] = [
     title: 'Topsoil Calculator',
     description:
       'Figure out how much topsoil to order for leveling, garden beds, raised beds, and new lawn preparation.',
-    href: '/calculators',
-    available: false,
+    href: '/calculators/topsoil-calculator',
+    available: true,
     icon: (
       <svg viewBox="0 0 48 48" className="w-10 h-10" fill="none">
         <rect x="6" y="24" width="36" height="16" rx="2" className="fill-yellow-100 stroke-yellow-700" strokeWidth="2" />
@@ -159,7 +159,7 @@ export default function CalculatorsPage() {
 
           <div className="text-center mt-12">
             <p className="text-secondary-500 text-sm">
-              More calculators are on the way! Need help with your project now?
+              Need help estimating your project? Use any of our free calculators above, or contact us directly.
             </p>
             <Link href="/contact" className="btn-primary mt-4 inline-block">
               Get a Free Quote

@@ -124,9 +124,9 @@ On the other hand, professional installation is worth the investment when:
 - **Time matters**: If you need the lawn ready for an event, a home sale, or an HOA deadline, a professional crew gets it done in a day with a predictable result.
 - **You want a warranty**: Professional installers — including Jax Sod — typically offer guarantees on their work. If something doesn't establish properly due to installation issues, it gets addressed. With DIY, you absorb all the risk.
 
-## What Professionals Actually Do Differently
+## What professionals actually do differently
 
-It's worth understanding what you're paying for when you hire a pro. It's not just "laying grass" — it's the preparation and precision that determine whether your lawn thrives or struggles.
+Here's what you're paying for when you hire a pro — it's not just "laying grass." The prep work and precision are what determine whether your lawn thrives or struggles.
 
 ### Soil Analysis and Amendment
 
@@ -164,9 +164,9 @@ Jacksonville's water table is high in many areas. Combined with flat terrain and
 
 Northeast Florida's warm, humid climate means sod can face chinch bugs, sod webworms, brown patch fungus, and take-all root rot — sometimes within weeks of installation. Starting with healthy, certified sod from a reputable farm and maintaining proper cultural practices (correct mowing height, appropriate watering, right fertilizer at the right time) gives your new lawn the best chance.
 
-## Warranty and Guarantee Considerations
+## Warranty and guarantees
 
-When you install sod yourself, you own every outcome — good and bad. If the sod was bad quality, if a section doesn't take, if drainage drowns a corner of your yard — it's on you to diagnose and fix it.
+When you install sod yourself, you own every outcome — good and bad. If the sod was bad quality, if a section doesn't take, if drainage drowns a corner of your yard — that's all on you to figure out and fix.
 
 Professional installers typically offer some form of establishment guarantee, contingent on proper homeowner watering and maintenance. At Jax Sod, we stand behind our installations because we control the process from soil prep through final roll. We know the sod source, we know the soil was properly prepared, and we know it was installed correctly. That chain of accountability matters.
 
