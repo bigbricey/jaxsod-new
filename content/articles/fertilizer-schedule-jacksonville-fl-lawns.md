@@ -1,7 +1,7 @@
 ---
 title: "Best Fertilizer Schedule for Jacksonville, FL Lawns"
 description: "Month-by-month fertilizer schedule for Jacksonville lawns. Covers St. Augustine, Bermuda, and Zoysia grass types, NPK ratios, Duval County fertilizer regulations, organic vs synthetic options, and local soil tips."
-date: 2026-01-27
+date: 2026-01-17
 slug: fertilizer-schedule-jacksonville-fl-lawns
 ---
 

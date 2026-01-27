@@ -1,7 +1,7 @@
 ---
 title: "How Much Does Sod Installation Cost in Jacksonville? (2026 Pricing Guide)"
 description: "Complete 2026 pricing guide for sod installation in Jacksonville, FL. Compare costs for St. Augustine, Zoysia, and Bermuda grass with professional vs DIY options."
-date: "2025-01-28"
+date: 2025-10-29
 slug: "sod-installation-cost-jacksonville-2026"
 ---
 

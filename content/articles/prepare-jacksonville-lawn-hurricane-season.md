@@ -1,7 +1,7 @@
 ---
 title: "How to Prepare Your Jacksonville Lawn for Hurricane Season"
 description: "Essential guide to protecting your Jacksonville lawn before, during, and after hurricane season. Learn pre-storm prep, post-storm recovery, flood damage repair, and when to re-sod in Northeast Florida."
-date: 2026-01-27
+date: 2025-11-19
 slug: "prepare-jacksonville-lawn-hurricane-season"
 ---
 

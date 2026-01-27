@@ -1,7 +1,7 @@
 ---
 title: "Best Outdoor Lighting Ideas for Jacksonville Landscapes"
 description: "Transform your Jacksonville landscape with strategic outdoor lighting. Discover path lights, spotlights, and solar options that work best in Northeast Florida's climate."
-date: 2026-01-27
+date: 2025-12-17
 slug: best-outdoor-lighting-ideas-for-jacksonville-landscapes
 ---
 

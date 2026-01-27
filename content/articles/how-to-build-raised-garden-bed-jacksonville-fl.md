@@ -1,7 +1,7 @@
 ---
 title: "How to Build a Raised Garden Bed in Jacksonville, FL"
 description: "Complete guide to building raised garden beds in Northeast Florida. Learn the best materials, soil mixes, and what to grow in Jacksonville's Zone 9a/9b climate."
-date: 2026-01-27
+date: 2025-12-24
 slug: how-to-build-raised-garden-bed-jacksonville-fl
 ---
 

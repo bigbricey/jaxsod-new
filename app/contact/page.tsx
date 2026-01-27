@@ -16,7 +16,7 @@ export default function ContactPage() {
       <Hero
         title="Get Your Free Quote"
         description="Ready to transform your lawn? Contact Jax Sod for a free, no-obligation estimate. We respond fast — usually within 1-2 hours during business hours."
-        backgroundImage="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=2000&auto=format&fit=crop"
+        backgroundImage="https://images.unsplash.com/photo-1560749003-f4b1e17e2dff?q=80&w=2000&auto=format&fit=crop"
         height="small"
       />
 

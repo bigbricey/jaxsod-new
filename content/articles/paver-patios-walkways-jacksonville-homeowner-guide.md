@@ -1,7 +1,7 @@
 ---
 title: "Paver Patios and Walkways — A Jacksonville Homeowner's Guide"
 description: "Complete guide to paver patios and walkways in Jacksonville, FL. Learn about materials, design ideas, costs, and maintenance for Florida's humid climate."
-date: 2026-01-27
+date: 2026-01-03
 slug: paver-patios-walkways-jacksonville-homeowner-guide
 ---
 

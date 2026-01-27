@@ -1,7 +1,7 @@
 ---
 title: "St. Augustine vs Bermuda Grass: Which Is Best for Jacksonville Lawns?"
 description: "Comparing St. Augustine and Bermuda grass for Jacksonville, FL lawns. Learn which sod type handles our sandy soil, shade, salt air, and humidity best — plus cost, maintenance, and neighborhood recommendations."
-date: 2026-01-27
+date: 2026-01-13
 slug: st-augustine-vs-bermuda-grass-jacksonville
 ---
 

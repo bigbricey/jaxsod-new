@@ -1,7 +1,7 @@
 ---
 title: "Florida-Friendly Landscaping — Save Water and Money in Jacksonville"
 description: "Create a beautiful, low-maintenance landscape in Jacksonville with Florida-friendly plants for Zone 9a/9b. Learn xeriscaping principles, native plant selection, and money-saving techniques for Northeast Florida."
-date: 2026-01-27
+date: 2025-12-10
 slug: "florida-friendly-landscaping-jacksonville"
 ---
 

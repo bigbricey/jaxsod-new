@@ -1,7 +1,7 @@
 ---
 title: "Jacksonville Lawn Care Calendar — Month-by-Month Guide for 2026"
 description: "Complete month-by-month lawn care guide for Jacksonville, FL. Expert schedule for St. Augustine, Zoysia, and Bermuda grass maintenance in Northeast Florida."
-date: "2025-01-28"
+date: 2025-11-05
 slug: "jacksonville-lawn-care-calendar-2026"
 ---
 

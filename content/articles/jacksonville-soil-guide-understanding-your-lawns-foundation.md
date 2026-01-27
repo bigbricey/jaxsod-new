@@ -1,7 +1,7 @@
 ---
 title: "Jacksonville Soil Guide — Understanding Your Lawn's Foundation"
 description: "Master Jacksonville's sandy soil challenges for better sod growth. Learn soil testing, amendments, pH management, and solutions for Northeast Florida lawns."
-date: 2026-01-27
+date: 2025-12-31
 slug: jacksonville-soil-guide-understanding-your-lawns-foundation
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "When Is the Best Time to Lay Sod in Jacksonville, FL?"
 description: "Discover the ideal time to lay sod in Jacksonville, Florida. Learn how Zone 9a/9b climate, grass type, and seasonal conditions affect sod installation success for a lush, lasting lawn."
-date: 2026-01-27
+date: 2026-01-10
 slug: best-time-lay-sod-jacksonville-fl
 ---
 

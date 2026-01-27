@@ -1,7 +1,7 @@
 ---
 title: "DIY vs Professional Sod Installation in Jacksonville: What You Need to Know"
 description: "Weighing DIY sod installation against hiring a professional in Jacksonville? Get an honest cost comparison, common mistakes to avoid, and expert tips for Northeast Florida's unique soil and climate challenges."
-date: 2026-01-27
+date: 2026-01-21
 slug: diy-vs-professional-sod-installation-jacksonville
 ---
 

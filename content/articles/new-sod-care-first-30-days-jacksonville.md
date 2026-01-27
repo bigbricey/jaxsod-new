@@ -1,7 +1,7 @@
 ---
 title: "How to Care for New Sod in Jacksonville, FL: First 30 Days Guide"
 description: "Your complete day-by-day guide to caring for new sod in Jacksonville, FL. Learn the exact watering schedule, when to mow, signs of stress, and how to ensure your new lawn takes root in Northeast Florida's climate."
-date: 2026-01-27
+date: 2026-01-26
 slug: new-sod-care-first-30-days-jacksonville
 ---
 

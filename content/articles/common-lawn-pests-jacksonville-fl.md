@@ -1,7 +1,7 @@
 ---
 title: "Common Lawn Pests in Jacksonville, FL — How to Identify and Treat Them"
 description: "Learn to identify and treat the most common lawn pests in Jacksonville, FL including chinch bugs, sod webworms, mole crickets, armyworms, and grubs. Expert treatment advice for Northeast Florida homeowners."
-date: 2026-01-27
+date: 2025-11-12
 slug: "common-lawn-pests-jacksonville-fl"
 ---
 

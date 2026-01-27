@@ -1,7 +1,7 @@
 ---
 title: "How to Kill Weeds Without Killing Your Jacksonville Lawn"
 description: "Learn how to safely eliminate dollarweed, crabgrass, torpedograss, and other common Jacksonville weeds without damaging your St. Augustine, Bermuda, or Zoysia grass. Expert tips from local lawn care professionals."
-date: 2026-01-27
+date: 2026-01-19
 slug: kill-weeds-without-killing-lawn-jacksonville
 ---
 

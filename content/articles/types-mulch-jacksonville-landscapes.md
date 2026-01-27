@@ -1,7 +1,7 @@
 ---
 title: "Types of Mulch for Jacksonville Landscapes — Which One Should You Use?"
 description: "Expert guide to choosing the best mulch for Northeast Florida gardens. Compare pine bark, pine straw, cypress, and other mulch types for Jacksonville's climate."
-date: "2025-01-28"
+date: 2025-10-22
 slug: "types-mulch-jacksonville-landscapes"
 ---
 

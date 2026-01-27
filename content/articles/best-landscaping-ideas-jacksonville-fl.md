@@ -1,7 +1,7 @@
 ---
 title: "Best Landscaping Ideas for Jacksonville, FL Homes"
 description: "Expert landscaping ideas for Jacksonville homes featuring drought-tolerant plants, Florida-friendly designs, and curb appeal tips that work in Northeast Florida's climate."
-date: "2025-01-28"
+date: 2025-10-08
 slug: "best-landscaping-ideas-jacksonville-fl"
 ---
 

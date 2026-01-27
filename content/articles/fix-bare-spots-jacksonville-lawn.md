@@ -1,7 +1,7 @@
 ---
 title: "How to Fix Bare Spots in Your Jacksonville Lawn"
 description: "Learn how to diagnose and repair bare spots in your Jacksonville lawn. Expert tips on causes like chinch bugs, fungus, and pet damage — plus step-by-step repair methods using sod plugs, patches, and reseeding for Zone 9a/9b."
-date: 2026-01-27
+date: 2026-01-15
 slug: fix-bare-spots-jacksonville-lawn
 ---
 

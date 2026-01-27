@@ -1,7 +1,7 @@
 ---
 title: "Concrete Edging vs. Natural Borders — Best Lawn Edging for Jacksonville Homes"
 description: "Compare lawn edging options for Jacksonville homes including concrete, natural borders, metal, stone and plastic. Find the best edging for Florida's climate with cost analysis and installation tips."
-date: 2026-01-27
+date: 2025-12-03
 slug: "lawn-edging-options-jacksonville"
 ---
 

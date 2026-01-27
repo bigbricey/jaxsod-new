@@ -1,7 +1,7 @@
 ---
 title: "Tree Selection Guide for Jacksonville, FL — Best Shade Trees for Your Yard"
 description: "Comprehensive guide to selecting the best shade trees for Jacksonville, FL. Learn about native species, growth rates, placement strategies, and energy savings."
-date: 2026-01-27
+date: 2026-01-07
 slug: tree-selection-guide-jacksonville-fl-best-shade-trees
 ---
 

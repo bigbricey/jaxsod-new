@@ -1,7 +1,7 @@
 ---
 title: "Best Plants for Shade in Jacksonville, FL — A Complete Guide"
 description: "Discover the best shade plants for Northeast Florida's unique climate. Expert guide to thriving shade plants for zones 9a/9b with planting schedules and care tips."
-date: "2025-01-28"
+date: 2025-10-15
 slug: "best-plants-shade-jacksonville-fl"
 ---
 

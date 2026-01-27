@@ -1,7 +1,7 @@
 ---
 title: "Irrigation Guide for Jacksonville Lawns — How Much Water Does Your Grass Need?"
 description: "Complete irrigation guide for Jacksonville lawns covering water requirements for St. Augustine, Zoysia, Bermuda, and Bahia grass. Includes SJRWMD restrictions and smart watering tips for Northeast Florida."
-date: 2026-01-27
+date: 2025-11-26
 slug: "irrigation-guide-jacksonville-lawns"
 ---
 
