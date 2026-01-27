@@ -243,7 +243,7 @@ Well-chosen plants require less pruning, deadheading, and other maintenance acti
 Proper plant placement can significantly reduce home energy costs, providing additional financial benefits beyond direct landscape savings.
 
 **Shade Trees:**
-Deciduous trees planted on the south and west sides of homes provide summer cooling while allowing winter sun penetration after leaves fall. Energy savings can be $100-300 annually for typical Jacksonville homes.
+Deciduous trees planted on the south and west sides of homes provide summer cooling while allowing winter sun penetration after leaves fall. This strategic placement can lead to meaningful energy savings for typical Jacksonville homes.
 
 **Wind Breaks:**
 Evergreen plantings can reduce winter heating costs by blocking cold north winds, though this is less critical in Jacksonville's mild winter climate.

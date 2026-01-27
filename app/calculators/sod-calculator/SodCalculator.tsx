@@ -44,7 +44,12 @@ const SOD_TYPES: SodType[] = [
   },
 ]
 
-const SQFT_PER_PALLET = 500
+const PALLET_SIZES = [
+  { value: 0, label: "I don't know yet" },
+  { value: 400, label: '400 sq ft' },
+  { value: 450, label: '450 sq ft' },
+  { value: 500, label: '500 sq ft' },
+]
 
 // ─── Shape Icons (SVG) ──────────────────────────────────────────────────────
 
@@ -253,6 +258,7 @@ export default function SodCalculator() {
   })
   const [selectedSod, setSelectedSod] = useState(0)
   const [wasteToggle, setWasteToggle] = useState(true)
+  const [palletSize, setPalletSize] = useState(0)
   const [email, setEmail] = useState('')
   const [emailSent, setEmailSent] = useState(false)
 
@@ -281,7 +287,7 @@ export default function SodCalculator() {
 
   const wasteFactor = wasteToggle ? 1.1 : 1.0
   const totalSqFt = Math.ceil(rawSqFt * wasteFactor)
-  const pallets = totalSqFt > 0 ? Math.ceil(totalSqFt / SQFT_PER_PALLET) : 0
+  const pallets = (palletSize > 0 && totalSqFt > 0) ? Math.ceil(totalSqFt / palletSize) : 0
   const sod = SOD_TYPES[selectedSod]
 
   const handleEmailSubmit = (e: React.FormEvent) => {
@@ -461,21 +467,46 @@ export default function SodCalculator() {
               <span className="w-7 h-7 rounded-full bg-white/20 text-white text-sm font-bold flex items-center justify-center">✓</span>
               Your Estimate
             </h3>
-            <div className="grid sm:grid-cols-2 gap-4 mb-6">
-              <div className="bg-white/10 backdrop-blur rounded-xl p-4 text-center">
-                <p className="text-primary-200 text-xs font-semibold uppercase tracking-wider">Total Area</p>
-                <p className="text-3xl font-bold text-white mt-1">{totalSqFt.toLocaleString()}</p>
-                <p className="text-primary-200 text-sm">sq ft{wasteToggle && rawSqFt > 0 ? ' (incl. 10% waste)' : ''}</p>
+            <div className="mb-6">
+              <div className="bg-white/10 backdrop-blur rounded-xl p-6 text-center mb-4">
+                <p className="text-primary-200 text-xs font-semibold uppercase tracking-wider">Total Area Needed</p>
+                <p className="text-4xl font-bold text-white mt-1">{totalSqFt.toLocaleString()}</p>
+                <p className="text-primary-200 text-sm">square feet{wasteToggle && rawSqFt > 0 ? ' (incl. 10% waste)' : ''}</p>
               </div>
-              <div className="bg-white/10 backdrop-blur rounded-xl p-4 text-center">
-                <p className="text-primary-200 text-xs font-semibold uppercase tracking-wider">Pallets Needed</p>
-                <p className="text-3xl font-bold text-white mt-1">{pallets}</p>
-                <p className="text-primary-200 text-sm">{SQFT_PER_PALLET} sq ft / pallet</p>
+
+              {/* Optional pallet calculator */}
+              <div className="bg-white/10 backdrop-blur rounded-xl p-4">
+                <p className="text-white text-sm font-semibold mb-2">Know your pallet size? (Optional)</p>
+                <p className="text-primary-200 text-xs mb-3">
+                  Pallet sizes vary by sod type and supplier — commonly 400, 450, or 500 sq ft. Check with your supplier for exact sizes.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {PALLET_SIZES.map((ps) => (
+                    <button
+                      key={ps.value}
+                      onClick={() => setPalletSize(ps.value)}
+                      className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-all duration-200 ${
+                        palletSize === ps.value
+                          ? 'bg-white text-primary-700'
+                          : 'bg-white/15 text-white hover:bg-white/25'
+                      }`}
+                    >
+                      {ps.label}
+                    </button>
+                  ))}
+                </div>
+                {pallets > 0 && (
+                  <div className="mt-3 text-center">
+                    <p className="text-white text-lg font-bold">
+                      ≈ {pallets} pallet{pallets !== 1 ? 's' : ''} <span className="text-primary-200 text-sm font-normal">at {palletSize} sq ft each</span>
+                    </p>
+                  </div>
+                )}
               </div>
             </div>
 
             <p className="text-primary-200 text-xs mb-6">
-              Ready to get an exact price? Contact us for a free, no-obligation quote tailored to your yard.
+              Ready for an exact quote? Contact us — we&apos;ll assess your yard and give you a free, no-obligation estimate.
             </p>
 
             {/* CTAs */}

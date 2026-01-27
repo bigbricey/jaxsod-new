@@ -162,13 +162,13 @@ Soil testing provides the foundation for all successful lawn care decisions in J
 - **Pros:** Immediate results, low cost, convenient
 - **Cons:** Limited accuracy, fewer parameters tested, basic recommendations
 - **Best For:** Quick pH checks and basic nutrient screening
-- **Cost:** $10-30 per test
+- **Cost:** Affordable — available at most garden centers
 
 **Professional Laboratory Testing:**
 - **Pros:** Comprehensive analysis, precise results, detailed recommendations
 - **Cons:** Higher cost, longer wait times for results
 - **Best For:** New installations, problem diagnosis, comprehensive planning
-- **Cost:** $25-75 for complete analysis
+- **Cost:** Moderately priced for comprehensive results
 
 **University of Florida Extension Service:**
 - Offers reliable, affordable soil testing specifically for Florida conditions
@@ -397,20 +397,20 @@ pH directly affects how well your grass can access nutrients, even when those nu
 
 **pH Test Strips:**
 - **Accuracy:** ±0.5 pH units
-- **Cost:** $5-15 for multiple tests
+- **Cost:** Very affordable, available at garden centers
 - **Speed:** Immediate results
 - **Limitations:** pH only, no nutrient information
 
 **Digital pH Meters:**
 - **Accuracy:** ±0.1-0.2 pH units with calibration
-- **Cost:** $20-100 depending on quality
+- **Cost:** Ranges from budget to professional-grade models
 - **Maintenance:** Requires calibration and proper storage
 - **Benefits:** Reusable, quick results, good accuracy
 
 **Complete Home Test Kits:**
 - **Parameters:** pH, N-P-K, sometimes organic matter
 - **Accuracy:** Variable, generally less precise than lab tests
-- **Cost:** $25-50 per test
+- **Cost:** Mid-range, available online and at garden centers
 - **Convenience:** No waiting for lab results
 
 ### Optimal Testing Schedules

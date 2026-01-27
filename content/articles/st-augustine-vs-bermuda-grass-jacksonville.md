@@ -153,24 +153,26 @@ Many Jacksonville homeowners get the best of both worlds by using **St. Augustin
 
 ## Cost Comparison: What You'll Actually Pay in Jacksonville
 
-Price matters, and there are real differences between these two options. Here's what Jacksonville homeowners can expect as of 2026:
+Price matters, and there are real differences between these two options. Here's how they compare:
 
 ### Installation Costs
 
 | Cost Factor | St. Augustine | Bermuda |
 |---|---|---|
-| **Sod per pallet (400–500 sq ft)** | $250–$350 | $200–$300 |
-| **Professional installation (per sq ft)** | $1.50–$2.50 | $1.25–$2.25 |
-| **Seed (Bermuda only, per 1,000 sq ft)** | N/A | $15–$30 |
-| **Average 5,000 sq ft lawn (sod + install)** | $3,500–$5,500 | $2,800–$4,800 |
+| **Sod cost** | Higher | More affordable |
+| **Professional installation** | Standard rates | Slightly lower |
+| **Seed option** | Not available (sod only) | Can be seeded or sodded |
+| **Overall project cost** | Higher initial investment | More budget-friendly |
+
+Bermuda is generally the more affordable option upfront, while St. Augustine commands a premium due to its popularity and shade tolerance. Contact us for current pricing on both varieties.
 
 ### Ongoing Maintenance Costs
 
-St. Augustine typically costs more to maintain annually due to higher water requirements, more frequent fertilization needs (4–6 times per year), and targeted pest treatments for chinch bugs. Budget roughly **$1,200–$2,000 per year** for professional lawn care on a St. Augustine lawn.
+St. Augustine typically costs more to maintain annually due to higher water requirements, more frequent fertilization needs (4–6 times per year), and targeted pest treatments for chinch bugs.
 
-Bermuda's ongoing costs are somewhat lower thanks to reduced irrigation needs, though the more frequent mowing can offset savings if you're paying a lawn service. Budget roughly **$900–$1,600 per year** for a professionally maintained Bermuda lawn.
+Bermuda's ongoing costs are somewhat lower thanks to reduced irrigation needs, though the more frequent mowing can offset savings if you're paying a lawn service.
 
-At Jax Sod, we provide transparent pricing on all our sod varieties and can deliver directly to your property or handle the full installation. [Get a free quote](https://jaxsod.com) based on your yard's specific measurements.
+At Jax Sod, we can help you choose the right grass for your yard and budget. [Get a free quote](https://jaxsod.com) based on your yard's specific measurements, or call **(904) 901-1457** for personalized guidance.
 
 ## Maintenance Requirements: What Each Grass Demands
 

@@ -57,10 +57,12 @@ The material's thermal mass can actually benefit adjacent plantings during Jacks
 ### Cost Analysis and Longevity
 
 **Initial Installation Costs:**
-- Poured-in-place: $8-15 per linear foot installed
-- Precast sections: $6-12 per linear foot installed
-- Concrete pavers: $10-20 per linear foot installed
-- Professional installation typically doubles material costs
+- Poured-in-place: Premium option, highest initial investment
+- Precast sections: Mid-range option, good balance of cost and quality
+- Concrete pavers: Varies widely based on style and design complexity
+- Professional installation adds to the total project cost
+
+Contact us for current pricing on edging installation.
 
 **Long-term Value Considerations:**
 Concrete edging represents a higher initial investment than many alternatives but offers excellent long-term value through minimal maintenance requirements and exceptional durability. In Jacksonville's climate, properly installed concrete edging can last 20-30 years with minimal care.
@@ -128,14 +130,16 @@ Natural borders require more ongoing attention than permanent materials but offe
 Natural borders often require lower initial investments than permanent materials but have higher ongoing maintenance costs. However, these costs can be offset by the ecological benefits and the opportunity to use readily available local materials.
 
 **Initial Costs:**
-- Organic mulches: $2-5 per linear foot
-- Native plant installations: $5-15 per linear foot
-- Stone or natural material borders: $8-25 per linear foot
+- Organic mulches: Most affordable option
+- Native plant installations: Mid-range, varies by plant selection
+- Stone or natural material borders: Premium option depending on material
 
 **Ongoing Expenses:**
-- Annual mulch replacement: $1-3 per linear foot
-- Plant replacement and maintenance: Variable
-- Labor for regular upkeep: $20-40 per hour if hired
+- Annual mulch replacement
+- Plant replacement and maintenance (variable)
+- Labor for regular upkeep if hiring help
+
+Contact us for a free quote on your edging project.
 
 ## Alternative Edging Materials
 
@@ -144,7 +148,7 @@ Natural borders often require lower initial investments than permanent materials
 Metal edging, particularly aluminum and steel options, provides crisp, precise lines that work well with contemporary landscape designs. These materials offer excellent durability in Jacksonville's climate while maintaining clean aesthetics.
 
 **Aluminum Edging:**
-Lightweight and corrosion-resistant, aluminum edging installs easily and maintains its appearance in coastal environments. The material's flexibility allows for smooth curves while its strength provides effective grass barriers. Costs typically range from $3-8 per linear foot for materials.
+Lightweight and corrosion-resistant, aluminum edging installs easily and maintains its appearance in coastal environments. The material's flexibility allows for smooth curves while its strength provides effective grass barriers. It's a budget-friendly to mid-range option depending on the profile and finish.
 
 **Steel Edging:**
 Both painted and weathering steel (Cor-Ten) options are available, with weathering steel developing an attractive rust patina that many homeowners prefer. Steel provides superior strength for containing aggressive grasses but may require periodic maintenance in coastal areas due to salt exposure.
@@ -157,7 +161,7 @@ Modern plastic and composite edging materials offer cost-effective solutions tha
 Commercial-grade plastic edging can provide years of service when properly installed. UV-resistant formulations prevent degradation from Jacksonville's intense sunlight, while flexible materials accommodate soil movement during wet/dry cycles.
 
 **Composite Materials:**
-Made from recycled plastics and other materials, composite edging often mimics the appearance of wood or stone while requiring minimal maintenance. These products typically cost $4-10 per linear foot and offer good durability in subtropical conditions.
+Made from recycled plastics and other materials, composite edging often mimics the appearance of wood or stone while requiring minimal maintenance. These products offer good durability in subtropical conditions at a moderate price point.
 
 ### Stone and Masonry Borders
 

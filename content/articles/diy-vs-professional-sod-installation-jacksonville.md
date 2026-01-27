@@ -17,43 +17,37 @@ As Jacksonville landscaping professionals who've installed sod across Duval, St.
 
 Let's start where most people start — the money. On the surface, DIY looks significantly cheaper. But the gap narrows once you account for everything involved.
 
-### DIY Sod Installation Costs
+### DIY Sod Installation: What You'll Need to Budget For
 
-For a typical 5,000-square-foot Jacksonville lawn, here's what you're realistically looking at:
+For a typical 5,000-square-foot Jacksonville lawn, here are the cost categories you'll need to plan for:
 
-| Item | Estimated Cost |
-|------|---------------|
-| Sod (St. Augustine or Zoysia, per pallet) | $180–$320 per pallet (covers ~450 sq ft) |
-| Sod for 5,000 sq ft (~11 pallets + 10% extra) | $2,200–$3,800 |
-| Soil amendments (compost, topsoil) | $200–$400 |
-| Starter fertilizer | $30–$60 |
-| Sod cutter rental (if removing old lawn) | $75–$100/day |
-| Tiller rental | $55–$80/day |
-| Lawn roller rental | $30–$50/day |
-| Delivery fee for sod | $75–$150 |
-| Miscellaneous (landscape staples, edging, knife) | $30–$50 |
-| **Total DIY Estimate** | **$2,700–$4,700** |
+| Item | Notes |
+|------|-------|
+| Sod (St. Augustine or Zoysia) | Largest expense; varies by grass type and quantity |
+| Soil amendments (compost, topsoil) | Depends on your existing soil condition |
+| Starter fertilizer | Relatively small expense |
+| Sod cutter rental (if removing old lawn) | Daily rental fee |
+| Tiller rental | Daily rental fee |
+| Lawn roller rental | Daily rental fee |
+| Delivery fee for sod | Varies by distance and quantity |
+| Miscellaneous (landscape staples, edging, knife) | Minor supplies |
 
 That's materials and equipment only — your labor is "free," which we'll come back to.
 
-### Professional Sod Installation Costs
+### Professional Sod Installation
 
-| Item | Estimated Cost |
-|------|---------------|
-| Sod + professional installation (per sq ft) | $1.20–$2.50/sq ft |
-| 5,000 sq ft total (includes soil prep, grading, sod, labor) | $6,000–$12,500 |
-| **Typical mid-range project** | **$7,500–$9,000** |
+Professional pricing in Jacksonville varies widely depending on the scope of soil preparation, whether old sod needs removal, grading complexity, and the grass variety you choose. Premium varieties like Zoysia or CitraBlue typically run higher than standard Floratam St. Augustine. A professional quote will include soil prep, grading, sod material, labor, and cleanup — so you're comparing apples to apples.
 
-Professional pricing in Jacksonville varies widely depending on the scope of soil preparation, whether old sod needs removal, grading complexity, and the grass variety you choose. Premium varieties like Zoysia or CitraBlue typically run higher than standard Floratam St. Augustine.
+**Call (904) 901-1457** or [contact us online](/contact) for a free, personalized quote on your project.
 
 ### The Hidden Costs DIYers Miss
 
 Here's where the math gets tricky. Many DIY homeowners don't budget for:
 
 - **Extra sod**: You need 5–10% overage for cutting around beds, walkways, and irregular edges. Under-ordering means a second delivery or a mismatched patch later.
-- **Soil testing**: Jacksonville's sandy soil often needs amendment. A $15 soil test from the Duval County Extension Office can save you hundreds in wasted fertilizer.
+- **Soil testing**: Jacksonville's sandy soil often needs amendment. An affordable soil test from the Duval County Extension Office can save you money on wasted fertilizer and unnecessary amendments.
 - **Irrigation adjustments**: New sod needs water multiple times a day for the first two weeks. If your sprinkler system doesn't cover evenly, you're looking at dead spots or a plumber's bill.
-- **Tool damage deposits**: Rental shops typically hold $100–$200 on your card.
+- **Tool damage deposits**: Rental shops typically hold a deposit on your card.
 - **The "oops" factor**: Mistakes — and they happen — mean buying more sod, more amendments, or eventually calling a pro anyway.
 
 ## Time Investment: What DIY Actually Takes

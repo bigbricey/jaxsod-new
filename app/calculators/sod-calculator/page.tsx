@@ -87,7 +87,7 @@ function FAQSchema() {
         name: 'How many pallets of sod do I need?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'A standard pallet of sod covers approximately 500 square feet. Divide your total square footage (plus 10% waste) by 500 to get the number of pallets needed.',
+          text: 'Sod pallet sizes vary by grass type and supplier — commonly 400, 450, or 500 square feet per pallet. Calculate your total square footage first, then check with your sod supplier for their pallet size to determine how many you need. Always add 10% extra for waste from cutting and edges.',
         },
       },
     ],
@@ -192,7 +192,7 @@ export default function SodCalculatorPage() {
                 'For oddly shaped areas, use the "irregular" option and estimate total square footage.',
                 'When in doubt, round up. Extra sod is better than running short mid-install.',
                 'Take a photo of your yard from Google Maps — it helps when talking to your installer.',
-                'A standard sod pallet covers approximately 500 sq ft in the Jacksonville area.',
+                'Sod pallet sizes vary (400, 450, or 500 sq ft) depending on sod type and supplier — check with your supplier for exact coverage.',
               ].map((tip) => (
                 <li key={tip} className="flex items-start gap-3">
                   <FiCheckCircle className="text-primary-600 mt-1 flex-shrink-0" />
@@ -235,7 +235,7 @@ export default function SodCalculatorPage() {
 
             <h3>How Many Pallets of Sod Do I Need?</h3>
             <p>
-              A standard pallet of sod in Jacksonville covers approximately <strong>500 square feet</strong>. 
+              Sod pallets in Jacksonville typically cover <strong>400 to 500 square feet</strong>, depending on the grass type and supplier. 
               For example, a typical 2,000 sq ft lawn would need <strong>4 pallets</strong> of sod 
               (plus we recommend an extra 10% for waste). Use our calculator above to get your exact estimate.
             </p>

@@ -49,7 +49,7 @@ A French drain is a trench filled with gravel and a perforated pipe that collect
 
 **Jacksonville-specific tip:** Because of our clay sublayers, French drains often need to be installed slightly deeper than in sandier regions to get below that clay hardpan. A landscaping professional familiar with local soil conditions will know exactly where to set the depth for maximum effectiveness.
 
-**Cost estimate:** $25 to $50 per linear foot installed, depending on depth, length, and site conditions. A typical residential French drain system runs between $2,000 and $6,000.
+**Cost**: Varies based on depth, length, and site conditions. Contact us for a free estimate tailored to your property.
 
 ### Dry Wells: Underground Water Storage
 
@@ -61,7 +61,7 @@ A dry well is essentially an underground chamber that collects excess water and 
 
 **Jacksonville-specific tip:** Dry wells work best when they're installed in a layer of sandy soil below the clay. If your property has deep sand beneath a shallow clay layer, a dry well can be extremely effective. However, if the water table is very high on your lot, a dry well may not have the capacity to drain between storms. A soil test or a quick percolation test can tell you whether a dry well is the right choice.
 
-**Cost estimate:** $1,500 to $4,000 per well, installed.
+**Cost**: Depends on well size, soil conditions, and site access. Contact us for a personalized quote.
 
 ### Yard Regrading: Working With Gravity
 
@@ -73,7 +73,7 @@ Sometimes the simplest solution is the best one. Regrading involves reshaping th
 
 **Jacksonville-specific tip:** If you're regrading and plan to lay new sod afterward, this is the perfect time to address drainage and lawn health in one project. At Jax Sod, we regularly help homeowners combine regrading with fresh sod installation to create a yard that looks great and drains properly from day one.
 
-**Cost estimate:** $1,000 to $5,000 depending on the size of the area and amount of fill dirt needed.
+**Cost**: Depends on the size of the area and amount of fill dirt needed. Reach out for a free assessment.
 
 ### Rain Gardens: Beautiful and Functional
 
@@ -91,7 +91,7 @@ A rain garden is a shallow, planted depression designed to capture and absorb ru
 - Beautyberry (*Callicarpa americana*)
 - Swamp sunflower (*Helianthus angustifolius*)
 
-**Cost estimate:** $1,500 to $5,000 depending on size and plant selections.
+**Cost**: Varies based on garden size and plant selections. Contact us to discuss your project.
 
 ### Swales: Channeling Water Where You Want It
 
@@ -103,7 +103,7 @@ A swale is a shallow, broad channel that directs water across your property to a
 
 **Jacksonville-specific tip:** If you have an existing swale between your property and the street, make sure it's maintained. Over time, swales can fill in with soil and debris, losing their effectiveness. Cleaning out and regrading your swale is one of the cheapest and most effective drainage improvements you can make. Planting a swale with a tough, water-tolerant sod like Zoysia or St. Augustine from Jax Sod helps prevent erosion while keeping the swale looking like a natural part of your lawn.
 
-**Cost estimate:** $1,000 to $3,500 depending on length and depth.
+**Cost**: Depends on length, depth, and site conditions. Get in touch for a quote.
 
 ### Downspout Extensions and Underground Piping
 
@@ -113,18 +113,18 @@ This one is overlooked far too often. Your roof collects a massive amount of wat
 
 **Best for:** Every home in Jacksonville. Seriously. If your downspouts currently end within 3 feet of your foundation, this should be the first thing you fix.
 
-**Cost estimate:** $100 to $500 for simple above-ground extensions. $500 to $2,500 for underground piping, depending on the number of downspouts and the distance to the discharge point.
+**Cost**: Simple above-ground extensions are very affordable. Underground piping costs more depending on the number of downspouts and distance to the discharge point. Contact us for current pricing.
 
 ## Comparing Drainage Solutions: Which Is Right for Your Yard?
 
-| Solution | Best For | Cost Range | DIY Friendly? | Effectiveness |
-|---|---|---|---|---|
-| French Drain | Subsurface water, soggy areas | $2,000–$6,000 | Moderate | High |
-| Dry Well | No surface discharge point | $1,500–$4,000 | Moderate | High |
-| Yard Regrading | Water pooling near home | $1,000–$5,000 | Difficult | High |
-| Rain Garden | Aesthetic + drainage combo | $1,500–$5,000 | Easy-Moderate | Moderate |
-| Swale | Moving water across property | $1,000–$3,500 | Moderate | High |
-| Downspout Extensions | Roof runoff near foundation | $100–$2,500 | Easy | Moderate-High |
+| Solution | Best For | DIY Friendly? | Effectiveness |
+|---|---|---|---|
+| French Drain | Subsurface water, soggy areas | Moderate | High |
+| Dry Well | No surface discharge point | Moderate | High |
+| Yard Regrading | Water pooling near home | Difficult | High |
+| Rain Garden | Aesthetic + drainage combo | Easy-Moderate | Moderate |
+| Swale | Moving water across property | Moderate | High |
+| Downspout Extensions | Roof runoff near foundation | Easy | Moderate-High |
 
 Many Jacksonville yards benefit from a combination of solutions. For example, redirecting downspouts into an underground pipe that feeds a French drain, which outlets into a dry well. A qualified landscape professional can assess your specific situation and design an integrated system.
 

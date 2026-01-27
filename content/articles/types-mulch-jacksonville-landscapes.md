@@ -227,15 +227,15 @@ Made from various deciduous trees, hardwood mulch offers different benefits than
 
 ## Cost Considerations for Jacksonville Homeowners
 
-### Typical Pricing (2026)
+### Relative Pricing by Mulch Type
 
-**Pine Bark**: $3-5 per cubic yard
-**Pine Straw**: $4-6 per bale (covers 100-150 sq ft)
-**Cypress**: $6-8 per cubic yard
-**Hardwood**: $5-7 per cubic yard
-**Rubber**: $8-12 per cubic yard
+**Pine Bark**: Budget-friendly organic option
+**Pine Straw**: Budget-friendly, easy to apply
+**Cypress**: Mid-range organic option
+**Hardwood**: Mid-range, widely available
+**Rubber**: Premium option with longest lifespan
 
-**Installation Costs**: $2-4 per cubic yard for professional installation
+Prices vary by supplier, quantity, and season. **Call (904) 901-1457** or [contact us](/contact) for current mulch pricing and installation quotes.
 
 ### Calculating Your Needs
 
