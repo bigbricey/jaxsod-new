@@ -17,7 +17,7 @@ export default function ServicesPage() {
       <Hero
         title="Our Sod Installation Services"
         description="From residential lawns to large commercial projects, Jax Sod delivers professional sod installation tailored to your property's needs."
-        backgroundImage="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2000&auto=format&fit=crop"
+        backgroundImage="https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=2000&auto=format&fit=crop"
         height="medium"
       />
 
