@@ -30,7 +30,7 @@ const calculators: CalculatorCard[] = [
   {
     title: 'Sod Calculator',
     description:
-      'Estimate square footage, pallets needed, and cost for St. Augustine, Zoysia, Bermuda, or Bahia sod installation.',
+      'Estimate square footage and pallets needed for St. Augustine, Zoysia, Bermuda, or Bahia sod installation.',
     href: '/calculators/sod-calculator',
     available: true,
     icon: (
@@ -114,7 +114,7 @@ export default function CalculatorsPage() {
               <h1 className="heading-xl text-white">Landscaping Calculators</h1>
             </div>
             <p className="text-xl text-primary-100 leading-relaxed">
-              Free tools to help you plan your Jacksonville landscaping project. Estimate materials, costs, and quantities before you buy.
+              Free tools to help you plan your Jacksonville landscaping project. Estimate materials and quantities for your next project.
             </p>
           </div>
         </div>
