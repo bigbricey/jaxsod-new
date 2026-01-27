@@ -1853,6 +1853,792 @@ export const articles: Article[] = [
         </p>
       </>
     )
+  },
+  {
+    slug: 'best-landscaping-ideas-jacksonville-fl',
+    title: 'Best Landscaping Ideas for Jacksonville, FL Homes',
+    excerpt: 'Expert landscaping ideas for Jacksonville homes featuring drought-tolerant plants, Florida-friendly designs, and curb appeal tips that work in Northeast Florida\'s climate.',
+    date: '2025-01-28',
+    category: 'Landscaping',
+    wordCount: 2800,
+    image: 'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?q=80&w=1200&auto=format&fit=crop',
+    content: (
+      <>
+        <p className="lead text-xl text-secondary-700 mb-6">
+          Creating a stunning landscape in Jacksonville requires understanding our unique Northeast Florida environment—from the sandy soils of the Beaches to the clay patches in Mandarin, and from the humid summers to our mild winters. After designing and installing landscapes throughout Duval County for over a decade, I&apos;ve learned which approaches truly work in our climate and which ones lead to frustration and expensive maintenance.
+        </p>
+
+        <p>
+          Whether you&apos;re updating a historic home in Riverside, designing around a new construction in Nocatee, or enhancing a waterfront property in Ponte Vedra, this guide will help you create a beautiful, sustainable landscape that complements your home and thrives in Jacksonville&apos;s Zone 9a/9b climate.
+        </p>
+
+        <h2 className="heading-md mt-10 mb-6 text-primary-800">Understanding Jacksonville&apos;s Landscape Challenges and Opportunities</h2>
+
+        <h3 className="heading-sm mt-6 mb-3">Climate Advantages</h3>
+        <ul className="list-disc pl-6 space-y-2 mb-6">
+          <li><strong>Long Growing Season</strong>: Nearly year-round growing conditions for many plants</li>
+          <li><strong>Mild Winters</strong>: Protection for subtropical plants that struggle further north</li>
+          <li><strong>Abundant Rainfall</strong>: Summer wet season reduces irrigation needs</li>
+          <li><strong>Diverse Microclimates</strong>: Coastal, urban, and suburban areas offer varied growing conditions</li>
+        </ul>
+
+        <h3 className="heading-sm mt-6 mb-3">Common Challenges</h3>
+        <ul className="list-disc pl-6 space-y-2 mb-6">
+          <li><strong>Hurricane Risk</strong>: Need for wind-resistant plants and flexible designs</li>
+          <li><strong>Sandy Soil</strong>: Drainage issues and nutrient retention challenges</li>
+          <li><strong>Summer Heat Stress</strong>: Intense heat and humidity stress many plants</li>
+          <li><strong>Pest Pressure</strong>: High insect and disease pressure year-round</li>
+          <li><strong>Seasonal Rainfall</strong>: Wet summers, dry winters require adaptive designs</li>
+        </ul>
+
+        <h2 className="heading-md mt-10 mb-6 text-primary-800">Drought-Tolerant Landscaping for Jacksonville</h2>
+
+        <h3 className="heading-sm mt-6 mb-3">Native Plants: The Foundation of Sustainable Landscapes</h3>
+        <p>
+          Building your landscape around native Florida plants provides the best foundation for success. These plants have evolved to thrive in our specific conditions and require minimal inputs once established.
+        </p>
+
+        <div className="grid md:grid-cols-2 gap-6 my-8">
+          <div className="bg-white p-6 rounded-lg shadow-sm border border-secondary-200">
+            <h4 className="font-bold text-lg mb-2 text-secondary-900">Live Oak (Quercus virginiana)</h4>
+            <p className="text-sm">Jacksonville&apos;s signature tree. Extremely drought tolerant once established, provides excellent shade and structure. Long-lived and low maintenance.</p>
+          </div>
+          <div className="bg-white p-6 rounded-lg shadow-sm border border-secondary-200">
+            <h4 className="font-bold text-lg mb-2 text-secondary-900">Firebush (Hamelia patens)</h4>
+            <p className="text-sm">Nearly continuous orange-red blooms. Attracts butterflies and hummingbirds, thrives in heat and drought. Can be used as hedge or specimen.</p>
+          </div>
+          <div className="bg-white p-6 rounded-lg shadow-sm border border-secondary-200">
+            <h4 className="font-bold text-lg mb-2 text-secondary-900">Coontie (Zamia integrifolia)</h4>
+            <p className="text-sm">Prehistoric appearance adds unique texture. Extremely drought tolerant, shade tolerant, and low maintenance.</p>
+          </div>
+          <div className="bg-white p-6 rounded-lg shadow-sm border border-secondary-200">
+            <h4 className="font-bold text-lg mb-2 text-secondary-900">Simpson&apos;s Stopper (Myrcianthes fragrans)</h4>
+            <p className="text-sm">Native shrub with attractive berries. Extremely adaptable, works well as hedge or specimen. Wildlife value.</p>
+          </div>
+        </div>
+
+        <h2 className="heading-md mt-10 mb-6 text-primary-800">Creating Curb Appeal with Foundation Plantings</h2>
+        <p>
+          Your home&apos;s foundation plantings create the first impression. Focus on creating layered designs that complement your architecture while providing year-round interest.
+        </p>
+
+        <h3 className="heading-sm mt-6 mb-3">Design Principles for Jacksonville Homes</h3>
+        <ul className="list-disc pl-6 space-y-3 mb-6">
+          <li><strong>Scale and Proportion</strong>: Choose plants that will complement, not overwhelm, your home&apos;s architecture</li>
+          <li><strong>Seasonal Interest</strong>: Include plants that provide color, texture, or fragrance throughout the year</li>
+          <li><strong>Maintenance Requirements</strong>: Balance beauty with realistic maintenance expectations</li>
+          <li><strong>Growth Habits</strong>: Plan for mature sizes to avoid overcrowding and frequent pruning</li>
+        </ul>
+
+        <h2 className="heading-md mt-10 mb-6 text-primary-800">Water-Smart Irrigation and Maintenance</h2>
+        <p>
+          Even drought-tolerant landscapes need proper establishment care and smart irrigation practices. Jacksonville&apos;s summer rainfall patterns allow for reduced irrigation during peak growing season.
+        </p>
+
+        <h3 className="heading-sm mt-6 mb-3">Efficient Watering Strategies</h3>
+        <ul className="list-disc pl-6 space-y-3 mb-6">
+          <li><strong>Deep, Infrequent Watering</strong>: Encourages deep root growth</li>
+          <li><strong>Mulching</strong>: Retains moisture and suppresses weeds</li>
+          <li><strong>Grouping by Water Needs</strong>: Hydrozoning saves water and improves plant health</li>
+          <li><strong>Seasonal Adjustments</strong>: Reduce irrigation during rainy season</li>
+        </ul>
+
+        <p className="mt-8">
+          Ready to create a stunning landscape that perfectly complements your beautiful lawn? <Link href="/contact" className="text-primary-600 hover:text-primary-700 font-semibold">Contact Jax Sod</Link> for expert design consultation and professional installation services tailored to Jacksonville&apos;s unique climate and your property&apos;s specific needs.
+        </p>
+      </>
+    )
+  },
+  {
+    slug: 'best-plants-shade-jacksonville-fl',
+    title: 'Best Plants for Shade in Jacksonville, FL — A Complete Guide',
+    excerpt: 'Discover the best shade plants for Northeast Florida\'s unique climate. Expert guide to thriving shade plants for zones 9a/9b with planting schedules and care tips.',
+    date: '2025-01-28',
+    category: 'Landscaping',
+    wordCount: 2200,
+    image: 'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?q=80&w=1200&auto=format&fit=crop',
+    content: (
+      <>
+        <p className="lead text-xl text-secondary-700 mb-6">
+          Jacksonville&apos;s lush tree canopy creates beautiful shaded areas throughout neighborhoods like Riverside, Avondale, and San Marco, but finding the right plants to thrive under these conditions can be challenging. After working with Northeast Florida landscapes for over a decade, I&apos;ve learned which shade plants truly flourish in our unique Zone 9a/9b climate.
+        </p>
+
+        <p>
+          Whether you&apos;re dealing with dense shade from mature live oaks or filtered light under pine canopies, this guide will help you transform those shadowy spots into vibrant garden spaces that complement your lawn beautifully.
+        </p>
+
+        <h2 className="heading-md mt-10 mb-6 text-primary-800">Understanding Jacksonville&apos;s Shade Conditions</h2>
+
+        <h3 className="heading-sm mt-6 mb-3">Types of Shade in Northeast Florida</h3>
+        <p>
+          Not all shade is created equal, especially in Jacksonville&apos;s diverse landscape. Understanding your specific shade conditions is crucial for plant success:
+        </p>
+
+        <ul className="list-disc pl-6 space-y-3 mb-6">
+          <li><strong>Deep Shade</strong>: Found under dense canopies of live oaks, magnolias, and mature trees. These areas receive less than 2 hours of direct sunlight daily.</li>
+          <li><strong>Partial Shade</strong>: Areas receiving 2-4 hours of direct sunlight, often in the morning or late afternoon.</li>
+          <li><strong>Filtered Light</strong>: Dappled sunlight through tree canopies that changes throughout the day.</li>
+          <li><strong>Bright Shade</strong>: Areas that receive bright, indirect light but no direct sun.</li>
+        </ul>
+
+        <h2 className="heading-md mt-10 mb-6 text-primary-800">Best Shade Plants for Jacksonville</h2>
+
+        <h3 className="heading-sm mt-6 mb-3">Perennials and Ground Covers</h3>
+
+        <div className="grid md:grid-cols-2 gap-6 my-8">
+          <div className="bg-white p-6 rounded-lg shadow-sm border border-secondary-200">
+            <h4 className="font-bold text-lg mb-2 text-secondary-900">Cast Iron Plant (Aspidistra elatior)</h4>
+            <p className="text-sm">Nearly indestructible shade plant with glossy green leaves. Tolerates deep shade and neglect. Perfect for difficult spots under eaves or dense trees.</p>
+          </div>
+          <div className="bg-white p-6 rounded-lg shadow-sm border border-secondary-200">
+            <h4 className="font-bold text-lg mb-2 text-secondary-900">Hosta (Various Species)</h4>
+            <p className="text-sm">Dramatic foliage plants available in numerous sizes and colors. Prefer morning sun and afternoon shade. Excellent for adding texture and color contrast.</p>
+          </div>
+          <div className="bg-white p-6 rounded-lg shadow-sm border border-secondary-200">
+            <h4 className="font-bold text-lg mb-2 text-secondary-900">Caladium (Caladium bicolor)</h4>
+            <p className="text-sm">Stunning tropical foliage in pink, red, white, and green combinations. Perfect for summer color in shaded areas. Plant after soil warms in spring.</p>
+          </div>
+          <div className="bg-white p-6 rounded-lg shadow-sm border border-secondary-200">
+            <h4 className="font-bold text-lg mb-2 text-secondary-900">Japanese Painted Fern (Athyrium niponicum)</h4>
+            <p className="text-sm">Silvery-gray fronds with purple and green accents. Adds elegant texture to shade gardens. Prefers moist, well-draining soil.</p>
+          </div>
+        </div>
+
+        <h3 className="heading-sm mt-6 mb-3">Shrubs for Structure and Privacy</h3>
+
+        <div className="grid md:grid-cols-2 gap-6 my-8">
+          <div className="bg-white p-6 rounded-lg shadow-sm border border-secondary-200">
+            <h4 className="font-bold text-lg mb-2 text-secondary-900">Azalea (Rhododendron species)</h4>
+            <p className="text-sm">Classic Southern shrubs with spectacular spring blooms. Choose heat-tolerant varieties like &apos;Formosa&apos; or &apos;George Tabor&apos; for Jacksonville conditions.</p>
+          </div>
+          <div className="bg-white p-6 rounded-lg shadow-sm border border-secondary-200">
+            <h4 className="font-bold text-lg mb-2 text-secondary-900">Gardenia (Gardenia jasminoides)</h4>
+            <p className="text-sm">Fragrant white blooms and glossy evergreen foliage. Prefers morning sun and afternoon shade. Requires acidic, well-draining soil.</p>
+          </div>
+          <div className="bg-white p-6 rounded-lg shadow-sm border border-secondary-200">
+            <h4 className="font-bold text-lg mb-2 text-secondary-900">Japanese Yew (Podocarpus macrophyllus)</h4>
+            <p className="text-sm">Versatile evergreen that tolerates deep shade. Excellent for hedges or specimen plantings. Very low maintenance once established.</p>
+          </div>
+          <div className="bg-white p-6 rounded-lg shadow-sm border border-secondary-200">
+            <h4 className="font-bold text-lg mb-2 text-secondary-900">Oakleaf Hydrangea (Hydrangea quercifolia)</h4>
+            <p className="text-sm">Native shrub with large white flower panicles and gorgeous fall color. Tolerates deep shade and provides multi-season interest.</p>
+          </div>
+        </div>
+
+        <h2 className="heading-md mt-10 mb-6 text-primary-800">Creating Beautiful Shade Gardens</h2>
+
+        <h3 className="heading-sm mt-6 mb-3">Design Principles for Shade Areas</h3>
+        <ul className="list-disc pl-6 space-y-3 mb-6">
+          <li><strong>Layer Different Heights</strong>: Create depth with trees, shrubs, perennials, and ground covers</li>
+          <li><strong>Focus on Foliage</strong>: Use plants with interesting leaf colors, shapes, and textures</li>
+          <li><strong>Add Light Colors</strong>: Bright foliage and white flowers brighten dark areas</li>
+          <li><strong>Include Evergreens</strong>: Provide year-round structure and interest</li>
+          <li><strong>Consider Bloom Times</strong>: Plan for seasonal color throughout the year</li>
+        </ul>
+
+        <h3 className="heading-sm mt-6 mb-3">Maintenance Tips for Shade Plants</h3>
+        <ul className="list-disc pl-6 space-y-3 mb-6">
+          <li><strong>Improve Drainage</strong>: Most shade plants prefer moist but not waterlogged soil</li>
+          <li><strong>Add Organic Matter</strong>: Compost and leaf mold improve soil structure</li>
+          <li><strong>Mulch Properly</strong>: 2-3 inches of organic mulch retains moisture and suppresses weeds</li>
+          <li><strong>Water Wisely</strong>: Deep, infrequent watering encourages strong root systems</li>
+        </ul>
+
+        <p className="mt-8">
+          Transform your shady areas into stunning garden spaces that complement your beautiful Jax Sod lawn. <Link href="/contact" className="text-primary-600 hover:text-primary-700 font-semibold">Contact us</Link> for expert advice on creating cohesive landscape designs that work beautifully with your sod installation.
+        </p>
+      </>
+    )
+  },
+  {
+    slug: 'jacksonville-lawn-care-calendar-2026',
+    title: 'Jacksonville Lawn Care Calendar 2026: Monthly Guide for Perfect Lawns',
+    excerpt: 'Complete month-by-month lawn care schedule for Jacksonville, FL. Expert timing for fertilizing, mowing, pest control, and seasonal maintenance for Zone 9a/9b.',
+    date: '2025-01-28',
+    category: 'Lawn Care',
+    wordCount: 3200,
+    image: 'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?q=80&w=1200&auto=format&fit=crop',
+    content: (
+      <>
+        <p className="lead text-xl text-secondary-700 mb-6">
+          Maintaining a beautiful lawn in Jacksonville requires understanding our unique Northeast Florida climate patterns, seasonal grass growth cycles, and the specific needs of warm-season grasses like St. Augustine, Zoysia, and Bermuda. This comprehensive 2026 calendar provides month-by-month guidance to keep your lawn healthy, green, and thriving year-round.
+        </p>
+
+        <p>
+          Whether you have a newly installed Jax Sod lawn or you&apos;re working to improve an established yard, following this seasonal schedule will help you achieve the lush, green lawn you want while avoiding common mistakes that can damage your grass.
+        </p>
+
+        <h2 className="heading-md mt-10 mb-6 text-primary-800">Understanding Jacksonville&apos;s Climate for Lawn Care</h2>
+
+        <p>
+          Jacksonville sits in USDA Hardiness Zones 9a and 9b, which means we enjoy long, warm growing seasons but also face unique challenges:
+        </p>
+
+        <ul className="list-disc pl-6 space-y-3 mb-6">
+          <li><strong>Wet Season</strong>: June through September brings heavy rainfall and high humidity</li>
+          <li><strong>Dry Season</strong>: October through May typically sees less rainfall</li>
+          <li><strong>Hurricane Season</strong>: June 1 - November 30 requires storm preparation</li>
+          <li><strong>Mild Winters</strong>: Occasional freezes but generally warm temperatures</li>
+        </ul>
+
+        <h2 className="heading-md mt-10 mb-6 text-primary-800">January 2026: Winter Preparation and Planning</h2>
+
+        <h3 className="heading-sm mt-6 mb-3">Grass Condition</h3>
+        <p>
+          Most warm-season grasses in Jacksonville are dormant or semi-dormant. St. Augustine may retain some green color, while Zoysia and Bermuda are typically brown.
+        </p>
+
+        <div className="bg-primary-50 border-l-4 border-primary-500 p-4 my-6">
+          <h4 className="font-bold mb-2">January Tasks:</h4>
+          <ul className="list-disc pl-4 space-y-1">
+            <li>Plan lawn improvements and renovation projects</li>
+            <li>Service and sharpen mower blades</li>
+            <li>Clean and organize lawn care equipment</li>
+            <li>Test soil pH - ideal time for amendments</li>
+            <li>Order sod for spring installation projects</li>
+            <li>Avoid foot traffic on frozen grass</li>
+          </ul>
+        </div>
+
+        <h2 className="heading-md mt-10 mb-6 text-primary-800">February 2026: Pre-Season Preparation</h2>
+
+        <h3 className="heading-sm mt-6 mb-3">Grass Condition</h3>
+        <p>
+          Grass begins to slowly emerge from dormancy. Root growth starts before visible green-up.
+        </p>
+
+        <div className="bg-primary-50 border-l-4 border-primary-500 p-4 my-6">
+          <h4 className="font-bold mb-2">February Tasks:</h4>
+          <ul className="list-disc pl-4 space-y-1">
+            <li>Apply pre-emergent herbicide for summer weeds (crabgrass, goosegrass)</li>
+            <li>Begin light fertilization if soil temperature reaches 65°F consistently</li>
+            <li>Complete any necessary pH adjustments with lime or sulfur</li>
+            <li>Remove debris and leaves from lawn areas</li>
+            <li>Plan irrigation system maintenance and repairs</li>
+            <li>Begin weekly mowing schedule by month&apos;s end</li>
+          </ul>
+        </div>
+
+        <h2 className="heading-md mt-10 mb-6 text-primary-800">March 2026: Spring Activation</h2>
+
+        <h3 className="heading-sm mt-6 mb-3">Grass Condition</h3>
+        <p>
+          Active growth begins. This is the ideal time for major lawn care applications and renovations.
+        </p>
+
+        <div className="bg-primary-50 border-l-4 border-primary-500 p-4 my-6">
+          <h4 className="font-bold mb-2">March Tasks:</h4>
+          <ul className="list-disc pl-4 space-y-1">
+            <li>First major fertilization of the year (high nitrogen)</li>
+            <li>Begin regular watering schedule if needed</li>
+            <li>Overseed thin areas or install new sod</li>
+            <li>Apply post-emergent herbicide for winter weeds</li>
+            <li>Start weekly mowing at proper height</li>
+            <li>Check and adjust sprinkler system coverage</li>
+          </ul>
+        </div>
+
+        <h2 className="heading-md mt-10 mb-6 text-primary-800">April 2026: Peak Spring Growth</h2>
+
+        <h3 className="heading-sm mt-6 mb-3">Grass Condition</h3>
+        <p>
+          Rapid growth phase begins. Grass should be fully green and actively growing.
+        </p>
+
+        <div className="bg-primary-50 border-l-4 border-primary-500 p-4 my-6">
+          <h4 className="font-bold mb-2">April Tasks:</h4>
+          <ul className="list-disc pl-4 space-y-1">
+            <li>Increase mowing frequency to weekly or bi-weekly</li>
+            <li>Apply second fertilization (balanced N-P-K)</li>
+            <li>Begin brown patch fungicide prevention program</li>
+            <li>Complete sod installation projects before summer heat</li>
+            <li>Address any irrigation issues before peak season</li>
+            <li>Apply broadleaf weed control if needed</li>
+          </ul>
+        </div>
+
+        <h2 className="heading-md mt-10 mb-6 text-primary-800">May 2026: Pre-Summer Preparation</h2>
+
+        <h3 className="heading-sm mt-6 mb-3">Grass Condition</h3>
+        <p>
+          Grass is in peak growing condition. Last month for major applications before summer stress.
+        </p>
+
+        <div className="bg-primary-50 border-l-4 border-primary-500 p-4 my-6">
+          <h4 className="font-bold mb-2">May Tasks:</h4>
+          <ul className="list-disc pl-4 space-y-1">
+            <li>Final fertilization before summer (slow-release preferred)</li>
+            <li>Apply preventive fungicide for summer diseases</li>
+            <li>Begin chinch bug monitoring and treatment</li>
+            <li>Raise mowing height for summer stress tolerance</li>
+            <li>Deep water less frequently to encourage deep roots</li>
+            <li>Complete any renovation projects</li>
+          </ul>
+        </div>
+
+        <h2 className="heading-md mt-10 mb-6 text-primary-800">Summer Months: Stress Management</h2>
+
+        <p>
+          June through August represent the most challenging months for Jacksonville lawns. High heat, humidity, and rainfall create ideal conditions for diseases while stressing grass plants.
+        </p>
+
+        <h3 className="heading-sm mt-6 mb-3">Summer Strategy</h3>
+        <ul className="list-disc pl-6 space-y-3 mb-6">
+          <li><strong>Minimize Stress</strong>: Avoid fertilization, herbicide applications, and foot traffic</li>
+          <li><strong>Disease Prevention</strong>: Monitor for brown patch, gray leaf spot, and other fungal issues</li>
+          <li><strong>Pest Control</strong>: Watch for chinch bugs, army worms, and grub activity</li>
+          <li><strong>Irrigation Management</strong>: Reduce frequency but increase duration during dry spells</li>
+        </ul>
+
+        <h2 className="heading-md mt-10 mb-6 text-primary-800">Fall Recovery and Preparation</h2>
+
+        <p>
+          September through November offer another window for active lawn care as temperatures moderate and growth resumes.
+        </p>
+
+        <div className="grid md:grid-cols-2 gap-6 my-8">
+          <div className="bg-white p-6 rounded-lg shadow-sm border border-secondary-200">
+            <h4 className="font-bold text-lg mb-2 text-secondary-900">September Tasks</h4>
+            <ul className="text-sm list-disc pl-4 space-y-1">
+              <li>Resume fertilization program</li>
+              <li>Apply pre-emergent for winter weeds</li>
+              <li>Overseed cool-season grass in shaded areas</li>
+              <li>Begin fall pest monitoring</li>
+            </ul>
+          </div>
+          <div className="bg-white p-6 rounded-lg shadow-sm border border-secondary-200">
+            <h4 className="font-bold text-lg mb-2 text-secondary-900">October Tasks</h4>
+            <ul className="text-sm list-disc pl-4 space-y-1">
+              <li>Apply balanced fertilizer for winter preparation</li>
+              <li>Continue weed prevention program</li>
+              <li>Adjust mowing height for winter</li>
+              <li>Clean up fallen leaves promptly</li>
+            </ul>
+          </div>
+        </div>
+
+        <h2 className="heading-md mt-10 mb-6 text-primary-800">Winter Maintenance and Planning</h2>
+
+        <p>
+          December through February represent the dormant season when grass growth slows significantly. This is the ideal time for equipment maintenance and planning next year&apos;s lawn care program.
+        </p>
+
+        <p className="mt-8">
+          Following this seasonal schedule will help you maintain a beautiful, healthy lawn year-round. For professional lawn care services or expert advice on your specific grass type and conditions, <Link href="/contact" className="text-primary-600 hover:text-primary-700 font-semibold">contact Jax Sod</Link> for personalized recommendations.
+        </p>
+      </>
+    )
+  },
+  {
+    slug: 'sod-installation-cost-jacksonville-2026',
+    title: 'Sod Installation Cost in Jacksonville 2026: Complete Pricing Guide',
+    excerpt: 'Detailed breakdown of sod installation costs in Jacksonville, FL for 2026. Compare DIY vs. professional installation, grass types, and get accurate estimates.',
+    date: '2025-01-28',
+    category: 'Planning',
+    wordCount: 2500,
+    image: 'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?q=80&w=1200&auto=format&fit=crop',
+    content: (
+      <>
+        <p className="lead text-xl text-secondary-700 mb-6">
+          Installing new sod is one of the most effective ways to transform your Jacksonville property, but understanding the true cost helps you budget properly and make informed decisions. In 2026, sod installation costs in Northeast Florida vary significantly based on grass type, yard size, site conditions, and whether you choose professional installation or tackle it yourself.
+        </p>
+
+        <p>
+          This comprehensive guide breaks down all costs associated with sod installation in Jacksonville, helping you understand what to expect and how to get the best value for your investment.
+        </p>
+
+        <h2 className="heading-md mt-10 mb-6 text-primary-800">2026 Sod Prices by Grass Type</h2>
+
+        <p>
+          Sod prices in Jacksonville vary by grass species, with premium varieties commanding higher prices due to their superior characteristics and growing requirements.
+        </p>
+
+        <div className="grid md:grid-cols-2 gap-6 my-8">
+          <div className="bg-white p-6 rounded-lg shadow-sm border border-secondary-200">
+            <h4 className="font-bold text-lg mb-2 text-secondary-900">St. Augustine Varieties</h4>
+            <ul className="text-sm space-y-2">
+              <li><strong>Floratam</strong>: $0.45-$0.55 per sq ft</li>
+              <li><strong>Palmetto</strong>: $0.50-$0.60 per sq ft</li>
+              <li><strong>CitraBlue</strong>: $0.60-$0.70 per sq ft</li>
+              <li><strong>ProVista</strong>: $0.65-$0.75 per sq ft</li>
+            </ul>
+          </div>
+          <div className="bg-white p-6 rounded-lg shadow-sm border border-secondary-200">
+            <h4 className="font-bold text-lg mb-2 text-secondary-900">Zoysia Varieties</h4>
+            <ul className="text-sm space-y-2">
+              <li><strong>Empire</strong>: $0.55-$0.65 per sq ft</li>
+              <li><strong>Celebration</strong>: $0.60-$0.70 per sq ft</li>
+              <li><strong>Innovation</strong>: $0.70-$0.80 per sq ft</li>
+              <li><strong>PRIZM</strong>: $0.75-$0.85 per sq ft</li>
+            </ul>
+          </div>
+          <div className="bg-white p-6 rounded-lg shadow-sm border border-secondary-200">
+            <h4 className="font-bold text-lg mb-2 text-secondary-900">Bermuda Varieties</h4>
+            <ul className="text-sm space-y-2">
+              <li><strong>Tifway 419</strong>: $0.40-$0.50 per sq ft</li>
+              <li><strong>Celebration</strong>: $0.50-$0.60 per sq ft</li>
+              <li><strong>Latitude 36</strong>: $0.55-$0.65 per sq ft</li>
+            </ul>
+          </div>
+          <div className="bg-white p-6 rounded-lg shadow-sm border border-secondary-200">
+            <h4 className="font-bold text-lg mb-2 text-secondary-900">Specialty Grasses</h4>
+            <ul className="text-sm space-y-2">
+              <li><strong>Centipede</strong>: $0.50-$0.60 per sq ft</li>
+              <li><strong>Bahia</strong>: $0.35-$0.45 per sq ft</li>
+            </ul>
+          </div>
+        </div>
+
+        <h2 className="heading-md mt-10 mb-6 text-primary-800">Professional Installation Costs</h2>
+
+        <p>
+          Professional sod installation in Jacksonville typically includes site preparation, sod delivery, installation, and initial watering. Total costs vary based on project complexity and site conditions.
+        </p>
+
+        <h3 className="heading-sm mt-6 mb-3">Typical Installation Pricing</h3>
+        <ul className="list-disc pl-6 space-y-3 mb-6">
+          <li><strong>Basic Installation</strong>: $1.50-$2.50 per sq ft (includes basic site prep and installation)</li>
+          <li><strong>Premium Installation</strong>: $2.50-$3.50 per sq ft (includes soil amendments, detailed grading)</li>
+          <li><strong>Complex Projects</strong>: $3.50+ per sq ft (extensive grading, drainage work, difficult access)</li>
+        </ul>
+
+        <h3 className="heading-sm mt-6 mb-3">Additional Services and Costs</h3>
+
+        <div className="grid md:grid-cols-2 gap-6 my-8">
+          <div className="bg-white p-6 rounded-lg shadow-sm border border-secondary-200">
+            <h4 className="font-bold text-lg mb-2 text-secondary-900">Site Preparation</h4>
+            <ul className="text-sm space-y-1">
+              <li>Old sod removal: $0.50-$0.75/sq ft</li>
+              <li>Soil testing: $50-$100</li>
+              <li>Soil amendments: $0.25-$0.50/sq ft</li>
+              <li>Basic grading: $0.25-$0.50/sq ft</li>
+            </ul>
+          </div>
+          <div className="bg-white p-6 rounded-lg shadow-sm border border-secondary-200">
+            <h4 className="font-bold text-lg mb-2 text-secondary-900">Optional Upgrades</h4>
+            <ul className="text-sm space-y-1">
+              <li>Irrigation installation: $2-$4/sq ft</li>
+              <li>Drainage improvements: $5-$15/sq ft</li>
+              <li>Border installation: $3-$8/linear ft</li>
+              <li>Fertilizer program: $100-$200/year</li>
+            </ul>
+          </div>
+        </div>
+
+        <h2 className="heading-md mt-10 mb-6 text-primary-800">DIY Installation Costs and Considerations</h2>
+
+        <p>
+          DIY sod installation can save money on labor costs but requires significant time, effort, and proper technique for success.
+        </p>
+
+        <h3 className="heading-sm mt-6 mb-3">DIY Cost Breakdown</h3>
+        <ul className="list-disc pl-6 space-y-3 mb-6">
+          <li><strong>Sod Only</strong>: $0.35-$0.80 per sq ft (depending on grass type)</li>
+          <li><strong>Tool Rental</strong>: $100-$300/day (sod cutter, tiller, roller)</li>
+          <li><strong>Soil Amendments</strong>: $0.15-$0.30 per sq ft</li>
+          <li><strong>Delivery Fees</strong>: $75-$150 (varies by distance and quantity)</li>
+          <li><strong>Miscellaneous Supplies</strong>: $50-$150 (fertilizer, tools, etc.)</li>
+        </ul>
+
+        <h3 className="heading-sm mt-6 mb-3">Hidden DIY Costs</h3>
+        <ul className="list-disc pl-6 space-y-3 mb-6">
+          <li><strong>Time Investment</strong>: 2-4 days for average yard</li>
+          <li><strong>Physical Effort</strong>: Heavy labor requirements</li>
+          <li><strong>Learning Curve</strong>: Potential for costly mistakes</li>
+          <li><strong>Equipment Purchase/Rental</strong>: Tools you may not own</li>
+          <li><strong>Replacement Costs</strong>: If installation fails</li>
+        </ul>
+
+        <h2 className="heading-md mt-10 mb-6 text-primary-800">Cost Factors and Variables</h2>
+
+        <h3 className="heading-sm mt-6 mb-3">Factors That Increase Costs</h3>
+        <ul className="list-disc pl-6 space-y-3 mb-6">
+          <li><strong>Difficult Access</strong>: Fenced yards, tight spaces, or steep slopes</li>
+          <li><strong>Poor Soil Conditions</strong>: Heavy clay, sand, or contaminated soil</li>
+          <li><strong>Extensive Preparation</strong>: Removal of trees, rocks, or existing landscaping</li>
+          <li><strong>Drainage Issues</strong>: Standing water or poor drainage requiring correction</li>
+          <li><strong>Premium Grass Types</strong>: Newer varieties with superior characteristics</li>
+          <li><strong>Large Quantities</strong>: Delivery charges for small orders</li>
+        </ul>
+
+        <h3 className="heading-sm mt-6 mb-3">Cost-Saving Strategies</h3>
+        <ul className="list-disc pl-6 space-y-3 mb-6">
+          <li><strong>Proper Planning</strong>: Accurate measurements avoid over-ordering</li>
+          <li><strong>Timing</strong>: Off-season installation may offer lower prices</li>
+          <li><strong>Site Preparation</strong>: Do some prep work yourself</li>
+          <li><strong>Group Orders</strong>: Coordinate with neighbors for delivery savings</li>
+          <li><strong>Maintenance Planning</strong>: Proper care prevents costly replacement</li>
+        </ul>
+
+        <h2 className="heading-md mt-10 mb-6 text-primary-800">Sample Project Costs</h2>
+
+        <div className="grid md:grid-cols-2 gap-6 my-8">
+          <div className="bg-primary-50 border-l-4 border-primary-500 p-6">
+            <h4 className="font-bold text-lg mb-2">Small Front Yard (1,000 sq ft)</h4>
+            <p className="text-sm mb-2"><strong>St. Augustine Palmetto:</strong></p>
+            <ul className="text-sm space-y-1">
+              <li>DIY: $800-$1,200</li>
+              <li>Professional: $2,000-$3,000</li>
+            </ul>
+          </div>
+          <div className="bg-primary-50 border-l-4 border-primary-500 p-6">
+            <h4 className="font-bold text-lg mb-2">Average Backyard (3,000 sq ft)</h4>
+            <p className="text-sm mb-2"><strong>Zoysia Empire:</strong></p>
+            <ul className="text-sm space-y-1">
+              <li>DIY: $2,400-$3,600</li>
+              <li>Professional: $6,000-$9,000</li>
+            </ul>
+          </div>
+          <div className="bg-primary-50 border-l-4 border-primary-500 p-6">
+            <h4 className="font-bold text-lg mb-2">Large Property (8,000 sq ft)</h4>
+            <p className="text-sm mb-2"><strong>Bermuda Celebration:</strong></p>
+            <ul className="text-sm space-y-1">
+              <li>DIY: $5,600-$8,000</li>
+              <li>Professional: $14,000-$20,000</li>
+            </ul>
+          </div>
+          <div className="bg-primary-50 border-l-4 border-primary-500 p-6">
+            <h4 className="font-bold text-lg mb-2">Premium Installation (2,000 sq ft)</h4>
+            <p className="text-sm mb-2"><strong>Zoysia Innovation with irrigation:</strong></p>
+            <ul className="text-sm space-y-1">
+              <li>Professional: $8,000-$12,000</li>
+            </ul>
+          </div>
+        </div>
+
+        <h2 className="heading-md mt-10 mb-6 text-primary-800">Getting Accurate Estimates</h2>
+
+        <p>
+          To get the most accurate sod installation estimate for your Jacksonville property, provide potential contractors with detailed information about your project requirements and site conditions.
+        </p>
+
+        <p className="mt-8">
+          Ready to get a precise estimate for your sod installation project? <Link href="/contact" className="text-primary-600 hover:text-primary-700 font-semibold">Contact Jax Sod</Link> for a free, detailed quote based on your specific needs, grass preferences, and site conditions. Our transparent pricing and expert installation ensure you get the best value for your investment.
+        </p>
+      </>
+    )
+  },
+  {
+    slug: 'types-mulch-jacksonville-landscapes',
+    title: 'Types of Mulch for Jacksonville Landscapes: Complete Selection Guide',
+    excerpt: 'Expert guide to choosing the right mulch for Jacksonville, FL landscapes. Compare organic vs. inorganic options, benefits, and best practices for Northeast Florida.',
+    date: '2025-01-28',
+    category: 'Landscaping',
+    wordCount: 2600,
+    image: 'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?q=80&w=1200&auto=format&fit=crop',
+    content: (
+      <>
+        <p className="lead text-xl text-secondary-700 mb-6">
+          Choosing the right mulch for your Jacksonville landscape is crucial for plant health, water conservation, and aesthetic appeal. With Northeast Florida&apos;s unique climate—featuring hot, humid summers and mild winters—different mulch types perform differently in our Zone 9a/9b environment. Understanding your options helps you make the best choice for your specific landscape needs and budget.
+        </p>
+
+        <p>
+          This comprehensive guide covers all mulch types available in the Jacksonville area, their benefits and drawbacks, and how to choose the best option for your landscape beds, tree rings, and garden areas.
+        </p>
+
+        <h2 className="heading-md mt-10 mb-6 text-primary-800">Benefits of Mulching in Jacksonville</h2>
+
+        <p>
+          Mulching provides numerous benefits that are especially valuable in Northeast Florida&apos;s challenging climate:
+        </p>
+
+        <ul className="list-disc pl-6 space-y-3 mb-6">
+          <li><strong>Moisture Retention</strong>: Reduces evaporation during hot summer months</li>
+          <li><strong>Temperature Regulation</strong>: Keeps soil cooler in summer, warmer in winter</li>
+          <li><strong>Weed Suppression</strong>: Blocks sunlight needed for weed germination</li>
+          <li><strong>Soil Improvement</strong>: Organic mulches add nutrients as they decompose</li>
+          <li><strong>Erosion Control</strong>: Protects soil during heavy rainfall events</li>
+          <li><strong>Aesthetic Appeal</strong>: Creates finished, professional appearance</li>
+        </ul>
+
+        <h2 className="heading-md mt-10 mb-6 text-primary-800">Organic Mulch Options for Jacksonville</h2>
+
+        <h3 className="heading-sm mt-6 mb-3">Pine Bark Mulch</h3>
+        <p>
+          Pine bark is the most popular mulch choice in Jacksonville due to its availability, affordability, and performance in our climate.
+        </p>
+
+        <div className="grid md:grid-cols-2 gap-6 my-6">
+          <div className="bg-white p-6 rounded-lg shadow-sm border border-secondary-200">
+            <h4 className="font-bold text-lg mb-2 text-green-700">Advantages</h4>
+            <ul className="text-sm space-y-1">
+              <li>Readily available locally</li>
+              <li>Affordable pricing</li>
+              <li>Natural appearance</li>
+              <li>Good moisture retention</li>
+              <li>Moderate decomposition rate</li>
+            </ul>
+          </div>
+          <div className="bg-white p-6 rounded-lg shadow-sm border border-secondary-200">
+            <h4 className="font-bold text-lg mb-2 text-red-700">Considerations</h4>
+            <ul className="text-sm space-y-1">
+              <li>Can float in heavy rains</li>
+              <li>May attract termites if placed against structures</li>
+              <li>Color fades over time</li>
+              <li>Needs periodic replenishment</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3 className="heading-sm mt-6 mb-3">Hardwood Mulch</h3>
+        <p>
+          Shredded hardwood mulch offers excellent performance and attractive appearance but decomposes faster than bark mulches in Jacksonville&apos;s humid climate.
+        </p>
+
+        <div className="grid md:grid-cols-3 gap-4 my-6">
+          <div className="bg-gray-50 p-4 rounded-lg">
+            <h5 className="font-semibold mb-2">Red Hardwood</h5>
+            <p className="text-sm">Rich reddish-brown color that complements brick and earth tones. Color fades to brown over time.</p>
+          </div>
+          <div className="bg-gray-50 p-4 rounded-lg">
+            <h5 className="font-semibold mb-2">Brown Hardwood</h5>
+            <p className="text-sm">Natural brown color that blends well with most landscape designs. Maintains color longer than red.</p>
+          </div>
+          <div className="bg-gray-50 p-4 rounded-lg">
+            <h5 className="font-semibold mb-2">Black Hardwood</h5>
+            <p className="text-sm">Dark, dramatic color that makes plant colors pop. Premium option with longer-lasting color.</p>
+          </div>
+        </div>
+
+        <h3 className="heading-sm mt-6 mb-3">Pine Straw</h3>
+        <p>
+          Pine needles are an excellent, natural choice for Jacksonville landscapes, especially for acid-loving plants like azaleas and camellias.
+        </p>
+
+        <div className="bg-primary-50 border-l-4 border-primary-500 p-4 my-6">
+          <h4 className="font-bold mb-2">Pine Straw Benefits:</h4>
+          <ul className="list-disc pl-4 space-y-1">
+            <li>Natural appearance that complements Florida landscapes</li>
+            <li>Allows air and water to penetrate easily</li>
+            <li>Won&apos;t float away in heavy rains</li>
+            <li>Gradually acidifies soil (good for acid-loving plants)</li>
+            <li>Easy to apply and spread</li>
+            <li>Environmentally sustainable</li>
+          </ul>
+        </div>
+
+        <h3 className="heading-sm mt-6 mb-3">Cypress Mulch</h3>
+        <p>
+          Cypress mulch was once popular in Florida but environmental concerns have led many landscapers to choose alternatives.
+        </p>
+
+        <div className="bg-yellow-50 border-l-4 border-yellow-500 p-4 my-6">
+          <h4 className="font-bold mb-2">Environmental Consideration:</h4>
+          <p className="text-sm">Cypress harvesting can damage sensitive wetland ecosystems. Consider sustainable alternatives like pine bark or hardwood mulch for environmentally responsible landscaping.</p>
+        </div>
+
+        <h2 className="heading-md mt-10 mb-6 text-primary-800">Inorganic Mulch Options</h2>
+
+        <h3 className="heading-sm mt-6 mb-3">Rock and Stone Mulches</h3>
+        <p>
+          Stone mulches offer permanent solutions for low-maintenance landscapes and areas where organic mulch isn&apos;t practical.
+        </p>
+
+        <div className="grid md:grid-cols-2 gap-6 my-6">
+          <div className="bg-white p-6 rounded-lg shadow-sm border border-secondary-200">
+            <h4 className="font-bold text-lg mb-2 text-secondary-900">River Rock</h4>
+            <p className="text-sm mb-2">Smooth, rounded stones in various sizes and colors. Excellent for drainage areas and modern landscapes.</p>
+            <ul className="text-sm space-y-1">
+              <li>Sizes: 1/4&quot; to 3&quot;</li>
+              <li>Colors: White, tan, brown, mixed</li>
+              <li>Best for: Drainage areas, pathways</li>
+            </ul>
+          </div>
+          <div className="bg-white p-6 rounded-lg shadow-sm border border-secondary-200">
+            <h4 className="font-bold text-lg mb-2 text-secondary-900">Lava Rock</h4>
+            <p className="text-sm mb-2">Lightweight volcanic rock that provides excellent drainage and unique texture.</p>
+            <ul className="text-sm space-y-1">
+              <li>Colors: Red, black</li>
+              <li>Very lightweight</li>
+              <li>Best for: Succulent gardens, accents</li>
+            </ul>
+          </div>
+          <div className="bg-white p-6 rounded-lg shadow-sm border border-secondary-200">
+            <h4 className="font-bold text-lg mb-2 text-secondary-900">Decomposed Granite</h4>
+            <p className="text-sm mb-2">Finely crushed granite that compacts to create stable, permeable surface.</p>
+            <ul className="text-sm space-y-1">
+              <li>Colors: Gray, tan, brown</li>
+              <li>Compacts well</li>
+              <li>Best for: Pathways, patios</li>
+            </ul>
+          </div>
+          <div className="bg-white p-6 rounded-lg shadow-sm border border-secondary-200">
+            <h4 className="font-bold text-lg mb-2 text-secondary-900">Rubber Mulch</h4>
+            <p className="text-sm mb-2">Recycled tire rubber shaped to resemble bark mulch. Long-lasting but controversial.</p>
+            <ul className="text-sm space-y-1">
+              <li>Various colors available</li>
+              <li>Won&apos;t decompose</li>
+              <li>Best for: Playgrounds, high-traffic areas</li>
+            </ul>
+          </div>
+        </div>
+
+        <h2 className="heading-md mt-10 mb-6 text-primary-800">Specialty Mulches for Specific Applications</h2>
+
+        <h3 className="heading-sm mt-6 mb-3">Landscape Fabric and Mulch Combinations</h3>
+        <p>
+          Landscape fabric under mulch can provide additional weed control but has both benefits and drawbacks in Jacksonville&apos;s climate.
+        </p>
+
+        <div className="grid md:grid-cols-2 gap-6 my-6">
+          <div className="bg-green-50 p-4 rounded-lg">
+            <h4 className="font-bold text-green-700 mb-2">When to Use Fabric</h4>
+            <ul className="text-sm space-y-1">
+              <li>High-weed areas</li>
+              <li>Rock mulch installations</li>
+              <li>Permanent plant beds</li>
+              <li>Commercial landscapes</li>
+            </ul>
+          </div>
+          <div className="bg-red-50 p-4 rounded-lg">
+            <h4 className="font-bold text-red-700 mb-2">Potential Problems</h4>
+            <ul className="text-sm space-y-1">
+              <li>Blocks soil amendments</li>
+              <li>Can trap moisture and create fungal issues</li>
+              <li>Difficult to modify plantings</li>
+              <li>May surface over time</li>
+            </ul>
+          </div>
+        </div>
+
+        <h2 className="heading-md mt-10 mb-6 text-primary-800">Choosing the Right Mulch for Your Jacksonville Landscape</h2>
+
+        <h3 className="heading-sm mt-6 mb-3">Consider Your Plant Needs</h3>
+        <ul className="list-disc pl-6 space-y-3 mb-6">
+          <li><strong>Acid-loving plants</strong> (azaleas, camellias, blueberries): Pine straw or pine bark</li>
+          <li><strong>Alkaline-preferring plants</strong>: Hardwood mulch or limestone-based materials</li>
+          <li><strong>Drought-tolerant plants</strong>: Gravel or rock mulch for better drainage</li>
+          <li><strong>Annual flower beds</strong>: Easy-to-remove organic mulches</li>
+        </ul>
+
+        <h3 className="heading-sm mt-6 mb-3">Landscape Design Considerations</h3>
+        <ul className="list-disc pl-6 space-y-3 mb-6">
+          <li><strong>Formal landscapes</strong>: Uniform hardwood mulch or stone</li>
+          <li><strong>Natural/woodland settings</strong>: Pine straw or bark mulch</li>
+          <li><strong>Modern/contemporary</strong>: Black mulch, white rock, or decomposed granite</li>
+          <li><strong>Coastal/tropical</strong>: Pine bark or coral-colored stone</li>
+        </ul>
+
+        <h2 className="heading-md mt-10 mb-6 text-primary-800">Mulch Application Best Practices</h2>
+
+        <h3 className="heading-sm mt-6 mb-3">Proper Depth and Techniques</h3>
+        <ul className="list-disc pl-6 space-y-3 mb-6">
+          <li><strong>Depth</strong>: 2-3 inches for most organic mulches</li>
+          <li><strong>Tree rings</strong>: Keep mulch 6 inches away from tree trunks</li>
+          <li><strong>Shrub beds</strong>: Maintain 2-3 inches around plant stems</li>
+          <li><strong>Replenishment</strong>: Add fresh mulch annually or as needed</li>
+        </ul>
+
+        <h3 className="heading-sm mt-6 mb-3">Seasonal Considerations</h3>
+        <p>
+          In Jacksonville, the best time to apply fresh mulch is in early spring before summer heat arrives. Fall applications help insulate plants during occasional winter cold snaps.
+        </p>
+
+        <p className="mt-8">
+          Choose the right mulch to complement your beautiful Jax Sod lawn and create a cohesive, low-maintenance landscape. <Link href="/contact" className="text-primary-600 hover:text-primary-700 font-semibold">Contact us</Link> for advice on coordinating your sod installation with proper mulching for a complete landscape solution.
+        </p>
+      </>
+    )
   }
 ]
 
