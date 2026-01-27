@@ -266,6 +266,29 @@ export default function SodCalculator() {
     setDims((prev) => ({ ...prev, [key]: value }))
   }, [])
 
+  // When switching shapes, carry over dimension values so users don't lose their numbers
+  const handleShapeChange = useCallback((newShape: Shape) => {
+    setDims((prev) => {
+      // Get the "primary" and "secondary" values from current inputs
+      const primary = prev.length || prev.base || prev.l1 || prev.radius || ''
+      const secondary = prev.width || prev.height || prev.w1 || ''
+
+      return {
+        ...prev,
+        // Map values to all shape fields so they persist across switches
+        length: prev.length || primary,
+        width: prev.width || secondary,
+        base: prev.base || primary,
+        height: prev.height || secondary,
+        radius: prev.radius || primary,
+        l1: prev.l1 || primary,
+        w1: prev.w1 || secondary,
+        // Keep l2/w2 and totalSqft as-is
+      }
+    })
+    setShape(newShape)
+  }, [])
+
   // Calculate square footage
   const rawSqFt = useMemo(() => {
     const n = (s: string) => parseFloat(s) || 0
@@ -320,7 +343,7 @@ export default function SodCalculator() {
                 return (
                   <button
                     key={s.id}
-                    onClick={() => setShape(s.id)}
+                    onClick={() => handleShapeChange(s.id)}
                     className={`flex flex-col items-center gap-2 p-4 rounded-xl border-2 transition-all duration-200 cursor-pointer
                       ${active
                         ? 'border-primary-600 bg-primary-600 text-white shadow-lg shadow-primary-600/25 scale-[1.02]'
