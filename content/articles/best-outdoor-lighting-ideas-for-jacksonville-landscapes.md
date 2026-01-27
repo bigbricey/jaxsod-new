@@ -152,29 +152,27 @@ Most residential landscape lighting uses low-voltage (12V) systems for safety an
 
 Many Jacksonville homeowners can tackle basic landscape lighting projects themselves.
 
-**Typical DIY Costs:**
-- **Basic path light kit (6-8 lights)**: $200-500
-- **Low-voltage transformer**: $100-300
-- **Wire and installation supplies**: $50-150
-- **Solar light options**: $25-100 per fixture
-- **String light installations**: $100-400
+**Typical DIY Components:**
+- Basic path light kit (6-8 lights)
+- Low-voltage transformer
+- Wire and installation supplies
+- Solar light options (most affordable per-fixture choice)
+- String light installations
 
-**Total DIY Project Range**: $500-2,000 for basic systems
+DIY systems can be very budget-friendly for basic setups. Costs vary depending on fixture quality and quantity.
 
 ### Professional Installation Investment
 
 Professional installation ensures proper design, electrical safety, and optimal performance.
 
-**Professional Installation Costs:**
-- **Design consultation**: $150-300
-- **Basic system (10-15 fixtures)**: $2,500-4,500
-- **Comprehensive system (20-30 fixtures)**: $4,500-8,000
-- **High-end custom systems**: $8,000-15,000+
+**What Affects Professional Installation Cost:**
+- System size (number of fixtures and coverage area)
+- Fixture quality and style
+- Electrical requirements and permits
+- Trenching distance and terrain complexity
+- Timer and control system options
 
-**Additional Considerations:**
-- Electrical permit fees: $50-200
-- Trenching and wire installation: $3-5 per linear foot
-- Timer and control system upgrades: $300-1,200
+Professional systems range from basic to high-end custom designs. Contact us for a personalized lighting quote tailored to your property.
 
 ### Long-Term Value and Savings
 

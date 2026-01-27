@@ -246,7 +246,7 @@ Some species are known for aggressive root systems that make lawn maintenance di
 - **Installation:** During tree planting, install vertical barriers 18-24 inches deep
 - **Materials:** Plastic or metal barriers redirect root growth
 - **Effectiveness:** 80-90% reduction in surface root interference
-- **Cost:** $3-5 per linear foot for DIY installation
+- **Cost:** Affordable DIY project; materials available at local garden centers
 
 **Strategic Spacing:**
 - **Minimum Distances:** Plant large trees at least 20-30 feet from intensive sod areas
