@@ -5,6 +5,7 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import LocalBusinessSchema from '@/components/LocalBusinessSchema'
 import { BUSINESS_NAME, SITE_URL, getExperienceText } from '@/lib/constants'
+import { Analytics } from '@vercel/analytics/react'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -58,7 +59,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: 'your-google-verification-code',
+    google: 'Wnm-bygOB00tSa6gDG6qoUjjtBsUXmz92sYVnV8kEPA',
   },
   alternates: {
     canonical: SITE_URL,
@@ -75,6 +76,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Header />
         <main className="min-h-screen">{children}</main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   )

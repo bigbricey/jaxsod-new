@@ -3,6 +3,7 @@ import path from 'path'
 import matter from 'gray-matter'
 import { remark } from 'remark'
 import remarkHtml from 'remark-html'
+import { injectCrossLinks } from './crossLinker'
 
 export interface MarkdownArticleData {
   slug: string
@@ -309,6 +310,11 @@ export function getMarkdownArticles(excludeSlugs: string[] = []): MarkdownArticl
       htmlContent,
       image,
     })
+  }
+
+  // Second pass: inject internal cross-links now that we have all articles
+  for (const article of articles) {
+    article.htmlContent = injectCrossLinks(article.htmlContent, article.slug)
   }
 
   return articles

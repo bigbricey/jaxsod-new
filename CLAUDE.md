@@ -1,147 +1,92 @@
-# Jax Sod Website - Project Memory
+# CLAUDE.md
 
-## Overview
-- **Site**: https://jaxsod.com
-- **Business**: Sod installation company, Jacksonville FL, est. 1986
-- **Stack**: Next.js 14.2.15, React 18, TypeScript, Tailwind CSS 3
-- **Hosting**: Vercel (auto-deploys from GitHub `main` branch)
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
+## Project Overview
+
+Marketing website for Jax Sod, a sod installation company in Jacksonville, FL (est. 1986). SEO-focused static site with 221 markdown articles, 9 service area pages, and 4 calculators. Deployed on Vercel from the `main` branch.
+
+- **Live site**: https://jaxsod.com
 - **Repo**: https://github.com/bigbricey/jaxsod-new
-- **Local path**: ~/Desktop/all jax sod stuff/jaxsod-website
-- **Phone**: (904) 901-1457
+- **Stack**: Next.js 14, React 18, TypeScript, Tailwind CSS 3
 
-## Project Structure
-```
-jaxsod-website/
-  app/                    # Next.js App Router pages
-    layout.tsx            # Root layout (Google verification still placeholder)
-    page.tsx              # Home page
-    globals.css           # Tailwind styles + hand-rolled prose styles
-    icon.svg              # Favicon (simple "J" logo)
-    opengraph-image.tsx   # Dynamic OG image generator
-    robots.ts             # Robots.txt config
-    sitemap.ts            # Sitemap (uses getAllArticles - includes all 221 articles)
-    error.tsx             # Error boundary
-    loading.tsx           # Loading skeleton
-    not-found.tsx         # 404 page
-    articles/             # Blog listing + [slug] dynamic routes
-    service-areas/        # Location pages (9 areas)
-    sod-types/            # Grass type page
-    services/             # Services page
-    about/                # About page
-    contact/              # Contact page
-    reviews/              # Reviews page
-    faq/                  # FAQ page
-    privacy/              # Privacy policy
-    terms/                # Terms of service
-    calculators/          # Hub + 4 calculator pages (sod, mulch, rock, topsoil)
-  components/             # 11 React components
-    Header.tsx            # Sticky header, mobile menu, placeholder "J" logo
-    Footer.tsx            # Footer with business info
-    Hero.tsx              # Reusable hero banner
-    CTASection.tsx        # Call-to-action section
-    ContactForm.tsx       # "Text Us" prompt (misnamed - not a form)
-    LocalBusinessSchema.tsx  # JSON-LD structured data
-    ServiceAreaSchema.tsx # Service area JSON-LD
-    MarkdownContent.tsx   # Renders markdown HTML
-    Breadcrumbs.tsx       # Breadcrumb navigation
-    ServiceCard.tsx       # Service display card
-    TestimonialCard.tsx   # Testimonial display card
-  content/articles/       # 221 markdown article files
-  data/
-    articles.tsx          # Article loader (37 lines, refactored from 2600+ lines of JSX)
-    service-areas.ts      # 9 service areas
-  lib/
-    constants.ts          # Centralized business data (phone, address, hours, etc.)
-    markdown.ts           # Markdown processing + IMAGE_LIBRARY + keyword matching
-  public/
-    images/               # 201 AI-generated images across 25 categories (see Image System)
-  docs/                   # Planning & strategy documents (not deployed)
+## Commands
+
+```bash
+npm run dev          # Dev server at localhost:3000
+npm run build        # Production build (SSG for all 221 articles)
+npm run start        # Serve production build locally
+npm run lint         # ESLint
 ```
 
-## Content Inventory (as of 2026-01-27)
-- **221 markdown articles** in content/articles/ (all articles now markdown, no more hardcoded JSX)
-- **10 static pages**: home, services, sod-types, service-areas, articles, reviews, faq, about, contact, calculators
-- **4 calculators**: sod, mulch, rock, topsoil
-- **9 service area pages**: Jacksonville, Atlantic Beach, Fleming Island, Mandarin, Ponte Vedra, Nocatee, Orange Park, St. Augustine, Jacksonville Beach
+No test framework is configured.
 
-## Image System
-- **201 local AI-generated images** in public/images/ across 25 categories
-- Images generated via Google Gemini (Imagen) - rate-limited, ~80% complete
-- Categories with 8 images each: bermudaGrass, commercial, crewsWorking, drainage, flowerBeds, irrigation, lawnMowing, lighting, lushLawn, mulch, oakTrees, palmTrees, pavers, pestDamage, pools, rain, seasonal, shadeGarden, sodCloseup, soil, tools, zoysiaGrass
-- Categories with 10 images: floridaYards, yards
-- Partial: stAugustineGrass (5 images, 3 remaining)
-- Empty (not started): droughtTolerant, golfCourse, newConstruction, petsAndLawns, sportsTurf, waterfront
-- **Also still uses** external Unsplash URLs via lib/markdown.ts IMAGE_LIBRARY (22 categories, ~150 URLs, many broken/irrelevant)
-- Image handoff doc: docs/jax_sod_image_handoff.md (resume instructions for completing remaining images)
-- Image prompts: docs/JAX-SOD-IMAGE-PROMPTS.md
+## Architecture
 
-## What's Been Fixed (vs original audit)
-- Sitemap now uses getAllArticles() - all 221 articles included
-- Constants file created (lib/constants.ts) - phone, address, hours centralized
-- Articles refactored - all markdown now, articles.tsx is just a 37-line loader
-- Security headers configured in next.config.js (X-Frame-Options, HSTS, etc.)
-- X-Powered-By disabled
-- error.tsx and loading.tsx added
-- icon.svg favicon added
-- opengraph-image.tsx dynamic generator added
-- robots.ts added
-- Breadcrumbs component added
-- ServiceAreaSchema component added
-- GitHub repo name restored to jaxsod-new (Gemini had renamed to jaxsod-v2)
+### Content Pipeline
 
-## Known Remaining Issues
+Articles are markdown files in `content/articles/` with YAML frontmatter. The pipeline:
 
-### P0 - Needs Fixing
-1. **Google verification placeholder** - layout.tsx:61 still has `'your-google-verification-code'`
+1. `lib/markdown.ts` — Reads markdown files, parses frontmatter (gray-matter), converts to HTML (remark + remark-html), matches keywords to image categories via `KEYWORD_PATTERNS`
+2. `data/articles.tsx` — `getAllArticles()` wraps the markdown loader, returns `Article[]`
+3. `app/articles/[slug]/page.tsx` — Uses `generateStaticParams()` for SSG, `generateMetadata()` for SEO
 
-### P1 - Images
-- Local images (201) only cover 25 of 31 categories - 6 categories still empty
-- Unsplash IMAGE_LIBRARY still has ~12 broken URLs (404s)
-- Unsplash IMAGE_LIBRARY has ~25 irrelevant images (polar bears, fashion, etc.)
-- Keyword matching too loose (e.g., "waterfront" triggers irrigation)
-- Need to integrate local images into the article image system (currently still using Unsplash URLs)
+All 221 articles are statically generated at build time. The sitemap (`app/sitemap.ts`) also calls `getAllArticles()`.
 
-### P2 - SEO & Analytics
-- Zero analytics (no GA, no Vercel Analytics)
-- Some duplicate article topics with different slugs
-- Near-duplicate meta descriptions on service area pages
-- No internal cross-linking between articles
+### Business Data
 
-### P3 - Nice to Have
-- ContactForm is misnamed (it's a "Text Us" prompt, not a form)
-- No real contact form for desktop users
-- Placeholder "J" logo instead of real logo
-- No sharp package for image optimization
-- HTML sanitization disabled on markdown rendering (uses dangerouslySetInnerHTML)
+`lib/constants.ts` is the single source of truth for all business info (phone, address, hours, service areas, ratings). Used by components, metadata, and JSON-LD schemas. Never hardcode business data elsewhere.
 
-## Architecture Notes
-- Markdown: gray-matter (frontmatter) + remark/remark-html (HTML conversion)
-- getAllArticles() loads all markdown files, deduplicates by slug
-- generateStaticParams() for SSG on article pages
-- JSON-LD Article schema on each article page
-- next.config.js: remote pattern for images.unsplash.com, security headers enabled
-- lib/constants.ts: BUSINESS_NAME, PHONE, SITE_URL, ADDRESS, GEO, BUSINESS_HOURS, FOUNDING_YEAR, dynamic getYearsExperience()
-- No API routes (no app/api/ directory)
-- No environment variables needed (.env doesn't exist)
+### Image System (in transition)
 
-## Planning Docs (in docs/)
-- JAX-SOD-IMAGE-PROMPTS.md - Master list of image generation prompts
-- jax_sod_image_handoff.md - Image generation status & resume instructions
-- image-audit-report.md - Unsplash image library audit
-- jaxsod-article-master-plan.md - Master tracker for all articles
-- jaxsod-articles-tracking.md - Current article status tracking
-- jaxsod-seo-keywords.md - SEO keyword map + competitor analysis
-- jaxsod_seo_strategy.md - Strategy for ranking improvement
-- jaxsod-new-articles-plan.md - Plan for the 200 article batch
-- jaxsod-chatbot-research.md - AI chatbot feature ideas (will be custom-built, no paid services)
+Two systems currently coexist:
+- **Local AI images**: 201 images in `public/images/` across 25 categories (generated via Gemini Imagen)
+- **Unsplash fallback**: `IMAGE_LIBRARY` in `lib/markdown.ts` with external URLs (many broken/irrelevant)
 
-## Rules
-- **No paid subscriptions or services.** Everything gets built custom. No Tidio, no SaaS chatbots, no paid analytics platforms. If it costs money, we build it ourselves.
+`KEYWORD_PATTERNS` in `lib/markdown.ts` maps article content keywords to image categories. The local images are not yet wired into the article rendering — articles still use Unsplash URLs.
 
-## History
-- Original site built as simple 23-page brochure site
-- Expanded with 200+ articles for SEO (batches of 63)
-- Full audit 2026-01-27: found broken sitemap, wrong images, no favicon, no analytics, hardcoded phone in 20+ places, two article systems
-- Major refactor 2026-01-27: constants file, sitemap fix, article consolidation, security headers, error/loading states
-- Image generation started 2026-01-27: 201 of ~252 AI images generated before Gemini rate limit
-- Gemini incident 2026-01-27: Gemini renamed GitHub repo to jaxsod-v2, created confusion. Restored to jaxsod-new.
+### SEO & Structured Data
+
+- `components/LocalBusinessSchema.tsx` — JSON-LD for the business entity
+- `components/ServiceAreaSchema.tsx` — JSON-LD for service area pages
+- `app/opengraph-image.tsx` — Dynamic OG image generation
+- Each article page generates its own Article schema + metadata
+- `app/robots.ts` and `app/sitemap.ts` for crawlers
+
+### Service Areas
+
+Defined in `data/service-areas.ts` (9 Jacksonville-area locations). Rendered via `app/service-areas/[slug]/page.tsx` with SSG.
+
+### Styling
+
+Tailwind CSS with custom green/gray color palettes in `tailwind.config.ts`. Hand-rolled prose styles in `app/globals.css` (no Tailwind Typography plugin). Import alias `@/*` maps to project root.
+
+## Key Files
+
+| File | Purpose |
+|------|---------|
+| `lib/constants.ts` | All business data — phone, address, hours, geo, service areas |
+| `lib/markdown.ts` | Markdown processing, IMAGE_LIBRARY, KEYWORD_PATTERNS |
+| `data/articles.tsx` | Article loader (`getAllArticles()`) |
+| `data/service-areas.ts` | Service area definitions |
+| `app/layout.tsx` | Root layout, global metadata, Google verification (placeholder at line 61) |
+| `next.config.js` | Security headers, Unsplash remote image pattern |
+| `components/ContactForm.tsx` | Misnamed — it's a "Text Us" CTA, not a form |
+
+## Known Issues
+
+- `layout.tsx:61` has placeholder Google Search Console verification code
+- 6 image categories are empty (droughtTolerant, golfCourse, newConstruction, petsAndLawns, sportsTurf, waterfront)
+- Unsplash IMAGE_LIBRARY has ~12 broken URLs and ~25 irrelevant images
+- No analytics configured
+- `MarkdownContent.tsx` uses `dangerouslySetInnerHTML` without sanitization
+
+## Planning Docs
+
+Strategy and tracking documents live in `docs/` (not deployed):
+- `jax_sod_image_handoff.md` — Image generation status & resume instructions
+- `JAX-SOD-IMAGE-PROMPTS.md` — Image generation prompts
+- `jaxsod-article-master-plan.md` — Article tracker
+- `jaxsod-seo-keywords.md` — SEO keyword map
+- `jaxsod_seo_strategy.md` — Ranking strategy
+- `jaxsod-chatbot-research.md` — Future AI chatbot ideas

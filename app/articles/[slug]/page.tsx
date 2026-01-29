@@ -7,6 +7,7 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import CTASection from '@/components/CTASection'
 import { FiCalendar, FiTag, FiClock, FiArrowLeft } from 'react-icons/fi'
 import { BUSINESS_NAME, PHONE, PHONE_HREF, SITE_URL, getExperienceText } from '@/lib/constants'
+import { getRelatedArticles } from '@/lib/relatedArticles'
 
 const experienceText = getExperienceText()
 
@@ -44,9 +45,12 @@ export default function ArticlePage({ params }: Props) {
 
   const readingTime = Math.ceil(article.wordCount / 250)
 
-  const relatedArticles = articles
-    .filter((a) => a.slug !== article.slug && a.category === article.category)
-    .slice(0, 3)
+  const relatedArticles = getRelatedArticles(
+    article.slug,
+    article.title,
+    article.category,
+    articles
+  )
 
   const articleSchema = {
     '@context': 'https://schema.org',
