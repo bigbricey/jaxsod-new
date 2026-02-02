@@ -31,6 +31,8 @@ export async function POST(req: NextRequest) {
     )
   }
 
+  const timestamp = new Date().toLocaleString('en-US', { timeZone: 'America/New_York' })
+
   // Build the lead details text
   const details = [
     `Name: ${name}`,
@@ -43,57 +45,83 @@ export async function POST(req: NextRequest) {
 
   const errors: string[] = []
 
-  // Send email notification via Gmail API
+  // Always log so Vercel logs have it
+  console.log('=== NEW LEAD ===')
+  console.log(details)
+  console.log(`Submitted: ${timestamp}`)
+  console.log('================')
+
+  // 1. Send SMS notification via Twilio
   try {
-    const emailApiKey = process.env.GOOGLE_WORKSPACE_NOTIFY_URL
-    if (emailApiKey) {
-      // If we have a webhook URL for notifications, use it
-      await fetch(emailApiKey, {
+    const accountSid = process.env.TWILIO_ACCOUNT_SID
+    const authToken = process.env.TWILIO_AUTH_TOKEN
+    const twilioPhone = process.env.TWILIO_PHONE_NUMBER
+    const ownerPhone = process.env.OWNER_PHONE
+
+    if (accountSid && authToken && twilioPhone && ownerPhone) {
+      const smsBody = `🌱 NEW LEAD from jaxsod.com\n\n${details}\n\nSubmitted: ${timestamp}`
+
+      const twilioUrl = `https://api.twilio.com/2010-04-01/Accounts/${accountSid}/Messages.json`
+      const auth = Buffer.from(`${accountSid}:${authToken}`).toString('base64')
+
+      await fetch(twilioUrl, {
+        method: 'POST',
+        headers: {
+          'Authorization': `Basic ${auth}`,
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: new URLSearchParams({
+          To: ownerPhone,
+          From: twilioPhone,
+          Body: smsBody,
+        }).toString(),
+      })
+    }
+  } catch (err) {
+    console.error('Failed to send SMS notification:', err)
+    errors.push('sms')
+  }
+
+  // 2. Log to Google Sheet via Apps Script webhook
+  try {
+    const sheetWebhook = process.env.GOOGLE_SHEET_WEBHOOK_URL
+    if (sheetWebhook) {
+      await fetch(sheetWebhook, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          to: process.env.LEAD_NOTIFY_EMAIL || 'brice@jaxsod.com',
-          subject: `New Sod Estimate Lead: ${name}`,
-          body: `New lead from the Jax Sod website chatbot:\n\n${details}\n\nSubmitted: ${new Date().toLocaleString('en-US', { timeZone: 'America/New_York' })}`,
+          date: timestamp,
+          name,
+          phone,
+          address: address || 'Not provided',
+          grassType: grassType || '',
+          yardSize: yardSize || '',
+          notes: notes || '',
         }),
       })
-    } else {
-      // Fallback: use nodemailer or similar if configured
-      // For now, log the lead so it's not lost
-      console.log('=== NEW LEAD ===')
-      console.log(details)
-      console.log('================')
+    }
+  } catch (err) {
+    console.error('Failed to log to Google Sheet:', err)
+    errors.push('sheet')
+  }
+
+  // 3. Send email notification via webhook
+  try {
+    const emailWebhook = process.env.GOOGLE_WORKSPACE_NOTIFY_URL
+    if (emailWebhook) {
+      await fetch(emailWebhook, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          to: process.env.LEAD_NOTIFY_EMAIL || 'bigbricey@gmail.com',
+          subject: `New Sod Estimate Lead: ${name}`,
+          body: `New lead from the Jax Sod website chatbot:\n\n${details}\n\nSubmitted: ${timestamp}`,
+        }),
+      })
     }
   } catch (err) {
     console.error('Failed to send email notification:', err)
     errors.push('email')
-  }
-
-  // Create Google Calendar event for follow-up
-  try {
-    const calendarWebhook = process.env.GOOGLE_CALENDAR_WEBHOOK_URL
-    if (calendarWebhook) {
-      const tomorrow = new Date()
-      tomorrow.setDate(tomorrow.getDate() + 1)
-      tomorrow.setHours(9, 0, 0, 0)
-      const endTime = new Date(tomorrow)
-      endTime.setHours(10, 0, 0, 0)
-
-      await fetch(calendarWebhook, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          summary: `Follow up: ${name} - Sod Estimate`,
-          startTime: tomorrow.toISOString(),
-          endTime: endTime.toISOString(),
-          description: details,
-          location: address || undefined,
-        }),
-      })
-    }
-  } catch (err) {
-    console.error('Failed to create calendar event:', err)
-    errors.push('calendar')
   }
 
   return new Response(
