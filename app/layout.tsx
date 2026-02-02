@@ -6,6 +6,7 @@ import Footer from '@/components/Footer'
 import LocalBusinessSchema from '@/components/LocalBusinessSchema'
 import { BUSINESS_NAME, SITE_URL, getExperienceText } from '@/lib/constants'
 import { Analytics } from '@vercel/analytics/react'
+import ChatWidget from '@/components/ChatWidget'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -76,6 +77,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Header />
         <main className="min-h-screen">{children}</main>
         <Footer />
+        <ChatWidget />
         <Analytics />
       </body>
     </html>
