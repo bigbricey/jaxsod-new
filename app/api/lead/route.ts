@@ -64,7 +64,7 @@ export async function POST(req: NextRequest) {
       const twilioUrl = `https://api.twilio.com/2010-04-01/Accounts/${accountSid}/Messages.json`
       const auth = Buffer.from(`${accountSid}:${authToken}`).toString('base64')
 
-      await fetch(twilioUrl, {
+      const twilioRes = await fetch(twilioUrl, {
         method: 'POST',
         headers: {
           'Authorization': `Basic ${auth}`,
@@ -75,6 +75,21 @@ export async function POST(req: NextRequest) {
           From: twilioPhone,
           Body: smsBody,
         }).toString(),
+      })
+
+      const twilioData = await twilioRes.json()
+      if (!twilioRes.ok) {
+        console.error('Twilio SMS failed:', twilioRes.status, JSON.stringify(twilioData))
+        errors.push('sms')
+      } else {
+        console.log('Twilio SMS sent successfully. SID:', twilioData.sid)
+      }
+    } else {
+      console.warn('Twilio SMS skipped — missing env vars:', {
+        hasAccountSid: !!accountSid,
+        hasAuthToken: !!authToken,
+        hasTwilioPhone: !!twilioPhone,
+        hasOwnerPhone: !!ownerPhone,
       })
     }
   } catch (err) {
