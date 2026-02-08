@@ -175,8 +175,60 @@ export async function POST(req: NextRequest) {
         const leadId = result?.[0]?.id
         console.log('CrewOS lead synced:', leadId)
 
-        // Auto-create estimate if we have enough info
+        // Auto-create customer record so the dashboard has full contact info
+        let customerId: string | null = null
+        try {
+          const custRes = await fetch(`${supabaseUrl}/rest/v1/customers`, {
+            method: 'POST',
+            headers: {
+              'apikey': supabaseKey,
+              'Authorization': `Bearer ${supabaseKey}`,
+              'Content-Type': 'application/json',
+              'Prefer': 'return=representation',
+            },
+            body: JSON.stringify({
+              name,
+              phone: phone || null,
+              email: null,
+              address: address || null,
+              source: 'website_bot',
+              notes: [
+                notes || '',
+                grassType ? `Grass Type: ${grassType}` : '',
+                yardSize ? `Yard Size: ${yardSize}` : '',
+              ].filter(Boolean).join('\n') || null,
+            }),
+          })
+          if (custRes.ok) {
+            const custResult = await custRes.json()
+            customerId = custResult?.[0]?.id || null
+            console.log('CrewOS customer created:', customerId)
+          } else {
+            console.error('Customer creation failed:', custRes.status, await custRes.text())
+          }
+        } catch (custErr) {
+          console.error('Failed to create customer:', custErr)
+        }
+
+        // Auto-create estimate linked to both lead AND customer
         if (leadId) {
+          const estimatePayload: Record<string, unknown> = {
+            lead_id: leadId,
+            service_type: grassType || 'sod',
+            description: [
+              `${name} - website inquiry`,
+              address ? `Address: ${address}` : '',
+              yardSize ? `Yard Size: ${yardSize}` : '',
+              notes || '',
+            ].filter(Boolean).join(' | '),
+            source: 'website_bot',
+            status: 'draft',
+            amount: 0,
+          }
+          if (customerId) {
+            estimatePayload.customer_id = customerId
+          }
+
           await fetch(`${supabaseUrl}/rest/v1/estimates`, {
             method: 'POST',
             headers: {
@@ -184,16 +236,9 @@ export async function POST(req: NextRequest) {
               'Authorization': `Bearer ${supabaseKey}`,
               'Content-Type': 'application/json',
             },
-            body: JSON.stringify({
-              lead_id: leadId,
-              service_type: grassType || 'sod',
-              description: notes || `${name} - website inquiry`,
-              source: 'website_bot',
-              status: 'draft',
-              amount: 0,
-            }),
+            body: JSON.stringify(estimatePayload),
           })
-          console.log('CrewOS estimate created for lead', leadId)
+          console.log('CrewOS estimate created for lead', leadId, 'customer', customerId)
         }
       } else {
         console.error('CrewOS sync failed:', supaRes.status, await supaRes.text())
