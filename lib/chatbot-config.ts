@@ -2,7 +2,7 @@
 // Change the model by updating CHAT_MODEL. Any OpenRouter-compatible model works.
 // See https://openrouter.ai/models for options.
 
-export const CHAT_MODEL = 'x-ai/grok-4.1-fast'
+export const CHAT_MODEL = 'openrouter/pony-alpha'
 
 export const CHAT_MAX_TOKENS = 1500
 
