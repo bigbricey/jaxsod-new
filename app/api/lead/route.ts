@@ -190,6 +190,7 @@ export async function POST(req: NextRequest) {
               description: notes || `${name} - website inquiry`,
               source: 'website_bot',
               status: 'draft',
+              amount: 0,
             }),
           })
           console.log('CrewOS estimate created for lead', leadId)
