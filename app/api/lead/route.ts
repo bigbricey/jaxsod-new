@@ -139,6 +139,71 @@ export async function POST(req: NextRequest) {
     errors.push('email')
   }
 
+  // 4. Sync to CrewOS dashboard (Supabase direct insert)
+  try {
+    const supabaseUrl = process.env.SUPABASE_URL
+    const supabaseKey = process.env.SUPABASE_ANON_KEY
+    if (supabaseUrl && supabaseKey) {
+      const leadPayload = {
+        name,
+        phone,
+        email: null,
+        address: address || null,
+        source: 'website_bot',
+        message: [
+          notes || '',
+          grassType ? `Grass Type: ${grassType}` : '',
+          yardSize ? `Yard Size: ${yardSize}` : '',
+        ].filter(Boolean).join('\n') || null,
+        service_interest: grassType || 'sod',
+        status: 'new',
+      }
+
+      const supaRes = await fetch(`${supabaseUrl}/rest/v1/leads`, {
+        method: 'POST',
+        headers: {
+          'apikey': supabaseKey,
+          'Authorization': `Bearer ${supabaseKey}`,
+          'Content-Type': 'application/json',
+          'Prefer': 'return=representation',
+        },
+        body: JSON.stringify(leadPayload),
+      })
+
+      if (supaRes.ok) {
+        const result = await supaRes.json()
+        const leadId = result?.[0]?.id
+        console.log('CrewOS lead synced:', leadId)
+
+        // Auto-create estimate if we have enough info
+        if (leadId) {
+          await fetch(`${supabaseUrl}/rest/v1/estimates`, {
+            method: 'POST',
+            headers: {
+              'apikey': supabaseKey,
+              'Authorization': `Bearer ${supabaseKey}`,
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              lead_id: leadId,
+              service_type: grassType || 'sod',
+              description: notes || `${name} - website inquiry`,
+              source: 'website_bot',
+              status: 'draft',
+            }),
+          })
+          console.log('CrewOS estimate created for lead', leadId)
+        }
+      } else {
+        console.error('CrewOS sync failed:', supaRes.status, await supaRes.text())
+        errors.push('crewos')
+      }
+    }
+  } catch (err) {
+    console.error('Failed to sync to CrewOS:', err)
+    errors.push('crewos')
+  }
+
   return new Response(
     JSON.stringify({
       success: true,
