@@ -1,5 +1,5 @@
-import Link from 'next/link'
 import { PHONE, PHONE_HREF, getExperienceText } from '@/lib/constants'
+import OpenChatButton from './OpenChatButton'
 
 interface CTASectionProps {
   title?: string
@@ -17,9 +17,9 @@ const CTASection = ({
           <h2 className="heading-lg mb-6">{title}</h2>
           <p className="text-xl mb-8 opacity-90">{description}</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact" className="btn-outline text-lg px-8 py-4">
-              Get a Free Quote
-            </Link>
+            <OpenChatButton className="btn-outline text-lg px-8 py-4">
+              Get a Free Estimate
+            </OpenChatButton>
             <a
               href={PHONE_HREF}
               className="bg-white text-primary-700 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors inline-block text-center"

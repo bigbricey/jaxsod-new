@@ -8,6 +8,7 @@ interface HeroProps {
   description: string
   ctaText?: string
   ctaLink?: string
+  ctaSlot?: React.ReactNode
   secondaryCtaText?: string
   secondaryCtaLink?: string
   backgroundImage: string
@@ -20,6 +21,7 @@ const Hero = ({
   description,
   ctaText = 'Get a Free Quote',
   ctaLink = '/contact',
+  ctaSlot,
   secondaryCtaText,
   secondaryCtaLink,
   backgroundImage,
@@ -53,9 +55,11 @@ const Hero = ({
           <h1 className="heading-xl mb-6">{title}</h1>
           <p className="text-lg md:text-xl text-gray-200 mb-8 leading-relaxed">{description}</p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <Link href={ctaLink} className="btn-primary text-lg px-8 py-4">
-              {ctaText}
-            </Link>
+            {ctaSlot || (
+              <Link href={ctaLink} className="btn-primary text-lg px-8 py-4">
+                {ctaText}
+              </Link>
+            )}
             {secondaryCtaText && secondaryCtaLink && (
               <Link href={secondaryCtaLink} className="btn-outline text-lg px-8 py-4">
                 {secondaryCtaText}

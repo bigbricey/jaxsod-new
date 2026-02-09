@@ -1,9 +1,11 @@
 import Link from 'next/link'
-import { FiPhone, FiMapPin, FiClock } from 'react-icons/fi'
+import { FiPhone, FiMapPin, FiClock, FiMail } from 'react-icons/fi'
 import {
   BUSINESS_NAME,
   PHONE,
   PHONE_HREF,
+  EMAIL,
+  EMAIL_HREF,
   ADDRESS,
   BUSINESS_HOURS,
   getExperienceText,
@@ -57,13 +59,24 @@ const Footer = () => {
 
           <div>
             <h4 className="text-lg font-semibold mb-4">Our Services</h4>
-            <ul className="space-y-2 text-secondary-300">
-              <li>Residential Sod Installation</li>
-              <li>Commercial Sod Installation</li>
-              <li>Sod Replacement</li>
-              <li>Lawn Renovation</li>
-              <li>New Construction Sod</li>
-              <li>Erosion Control</li>
+            <ul className="space-y-2">
+              {[
+                { label: 'Residential Sod Installation', href: '/services' },
+                { label: 'Commercial Sod Installation', href: '/services' },
+                { label: 'Sod Replacement', href: '/services' },
+                { label: 'Lawn Renovation', href: '/services' },
+                { label: 'New Construction Sod', href: '/services' },
+                { label: 'Erosion Control', href: '/services' },
+              ].map((service) => (
+                <li key={service.label}>
+                  <Link
+                    href={service.href}
+                    className="text-secondary-300 hover:text-primary-400 transition-colors"
+                  >
+                    {service.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -77,6 +90,15 @@ const Footer = () => {
                   className="text-secondary-300 hover:text-primary-400 transition-colors"
                 >
                   {PHONE}
+                </a>
+              </li>
+              <li className="flex items-start gap-3">
+                <FiMail className="text-primary-400 mt-1 flex-shrink-0" />
+                <a
+                  href={EMAIL_HREF}
+                  className="text-secondary-300 hover:text-primary-400 transition-colors"
+                >
+                  {EMAIL}
                 </a>
               </li>
               <li className="flex items-start gap-3">

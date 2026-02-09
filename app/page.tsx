@@ -3,6 +3,7 @@ import ServiceCard from '@/components/ServiceCard'
 import TestimonialCard from '@/components/TestimonialCard'
 import ContactForm from '@/components/ContactForm'
 import CTASection from '@/components/CTASection'
+import OpenChatButton from '@/components/OpenChatButton'
 import Image from 'next/image'
 import Link from 'next/link'
 import {
@@ -90,14 +91,52 @@ export default function Home() {
     },
   ]
 
+  const homepageFaqs = [
+    {
+      q: 'How much does sod installation cost in Jacksonville?',
+      a: 'Pricing depends on the sod variety, square footage, and site conditions like accessibility and prep work needed. Every yard is different, so we provide free on-site estimates with transparent, all-inclusive pricing — no hidden fees.',
+    },
+    {
+      q: 'What is the best type of sod for shade in Florida?',
+      a: 'St. Augustine varieties like Palmetto and CitraBlue are the top performers in shade for Northeast Florida. They handle the humidity well and stay green under Jacksonville\'s large oak canopies. We assess your yard\'s specific sun and shade patterns during the free estimate.',
+    },
+    {
+      q: 'How long does it take for new sod to root in Jacksonville?',
+      a: 'In Florida\'s growing season (spring and summer), sod typically roots in 2–4 weeks. Winter installations take 6–8 weeks since growth slows. Full establishment with deep roots takes 30–60 days with proper watering.',
+    },
+    {
+      q: 'When is the best time to install sod in Jacksonville, FL?',
+      a: 'Spring (March–May) is ideal — warm soil, mild temps, and the full growing season ahead. Early fall (September–October) is also excellent. Summer works with diligent watering, and Jacksonville\'s mild winters allow year-round installation.',
+    },
+    {
+      q: 'How often should I water new sod?',
+      a: 'For the first 7–10 days, water 2–3 times daily to keep the sod pad moist. Weeks 2–3, reduce to once daily with deeper soaking. After 3–4 weeks, transition to 2–3 times per week. We provide a watering schedule customized to your sod type and season.',
+    },
+    {
+      q: 'How quickly can you install after I approve a quote?',
+      a: 'Most Jacksonville projects start within 1–2 weeks of approval, depending on scope, sod availability, and weather. We coordinate fresh sod delivery directly from the farm for maximum vitality.',
+    },
+    {
+      q: 'Do you help choose the right sod for my yard?',
+      a: 'Yes — during the free on-site assessment, we evaluate your sun and shade conditions, foot traffic, soil type, and maintenance preferences to recommend the best sod variety for your specific yard.',
+    },
+    {
+      q: 'What does your sod installation include?',
+      a: 'Every installation includes old turf removal, surface smoothing and prep, professional sod laying with staggered seams, rolling for soil contact, and a custom aftercare plan. We handle everything from start to finish.',
+    },
+  ]
+
   return (
     <>
       <Hero
         title="Professional Sod Installation in Jacksonville, FL"
         subtitle={`${experienceText} of Excellence`}
         description="Transform your property with expert sod installation services. Our network of professional installers delivers beautiful, healthy lawns for residential and commercial properties throughout Jacksonville."
-        ctaText="Get a Free Quote"
-        ctaLink="/contact"
+        ctaSlot={
+          <OpenChatButton className="btn-primary text-lg px-8 py-4">
+            Get a Free Estimate
+          </OpenChatButton>
+        }
         secondaryCtaText="View Our Services"
         secondaryCtaLink="/services"
         backgroundImage="https://images.unsplash.com/photo-1595757872761-992fd6d3ab25?auto=format&fit=crop&w=2000&q=80"
@@ -386,9 +425,21 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FAQ Teaser */}
+      {/* FAQ Section with Schema */}
       <section className="section-padding">
         <div className="container-custom">
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'FAQPage',
+              mainEntity: homepageFaqs.map((faq) => ({
+                '@type': 'Question',
+                name: faq.q,
+                acceptedAnswer: { '@type': 'Answer', text: faq.a },
+              })),
+            }) }}
+          />
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8 mb-8">
             <div>
               <h2 className="heading-lg">Frequently Asked Questions</h2>
@@ -400,21 +451,8 @@ export default function Home() {
               View All FAQs
             </Link>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
-              {
-                q: 'How quickly can you install after a quote?',
-                a: 'Most Jacksonville projects start within 1–2 weeks depending on scope and weather.',
-              },
-              {
-                q: 'Do you help choose the right sod?',
-                a: 'Yes, we match varieties to your sun, shade, and foot-traffic needs during the assessment.',
-              },
-              {
-                q: 'What prep is included?',
-                a: 'Old turf removal, site prep, and surface smoothing are part of every installation.',
-              },
-            ].map((faq) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {homepageFaqs.map((faq) => (
               <div key={faq.q} className="bg-white p-6 rounded-lg shadow-md">
                 <h3 className="font-semibold text-secondary-900 mb-2">{faq.q}</h3>
                 <p className="text-secondary-700">{faq.a}</p>

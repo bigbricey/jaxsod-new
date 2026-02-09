@@ -2,6 +2,9 @@
 
 import { useState, useRef, useEffect, useCallback } from 'react'
 
+// Custom event name for opening the chat from external buttons
+export const OPEN_CHAT_EVENT = 'open-chat-widget'
+
 interface Message {
   role: 'user' | 'assistant'
   content: string
@@ -34,6 +37,7 @@ export default function ChatWidget() {
   const [messages, setMessages] = useState<Message[]>([])
   const [input, setInput] = useState('')
   const [isLoading, setIsLoading] = useState(false)
+  const [showLabel, setShowLabel] = useState(true)
   const messagesEndRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLTextAreaElement>(null)
 
@@ -49,6 +53,23 @@ export default function ChatWidget() {
     if (isOpen && inputRef.current) {
       inputRef.current.focus()
     }
+  }, [isOpen])
+
+  // Listen for external open events (from CTA buttons)
+  useEffect(() => {
+    const handler = () => setIsOpen(true)
+    window.addEventListener(OPEN_CHAT_EVENT, handler)
+    return () => window.removeEventListener(OPEN_CHAT_EVENT, handler)
+  }, [])
+
+  // Hide the label after 8 seconds or when chat is opened
+  useEffect(() => {
+    if (isOpen) {
+      setShowLabel(false)
+      return
+    }
+    const timer = setTimeout(() => setShowLabel(false), 8000)
+    return () => clearTimeout(timer)
   }, [isOpen])
 
   const sendMessage = async () => {
@@ -143,22 +164,35 @@ export default function ChatWidget() {
 
   return (
     <>
-      {/* Chat Button */}
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-5 right-5 z-50 w-14 h-14 rounded-full bg-primary-600 text-white shadow-lg hover:bg-primary-700 transition-all duration-200 flex items-center justify-center hover:scale-105"
-        aria-label={isOpen ? 'Close chat' : 'Open chat'}
-      >
-        {isOpen ? (
-          <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        ) : (
-          <svg xmlns="http://www.w3.org/2000/svg" className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-          </svg>
+      {/* Chat Button with Label */}
+      <div className="fixed bottom-5 right-5 z-50 flex items-center gap-3">
+        {/* Floating label - shows briefly to draw attention */}
+        {!isOpen && showLabel && (
+          <div className="bg-white text-secondary-900 px-4 py-2 rounded-lg shadow-lg text-sm font-semibold animate-fade-in whitespace-nowrap">
+            Get a Free Estimate
+            <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1 w-2 h-2 bg-white rotate-45" />
+          </div>
         )}
-      </button>
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="relative w-14 h-14 rounded-full bg-primary-600 text-white shadow-lg hover:bg-primary-700 transition-all duration-200 flex items-center justify-center hover:scale-105"
+          aria-label={isOpen ? 'Close chat' : 'Get a free estimate'}
+        >
+          {/* Pulse ring when closed */}
+          {!isOpen && (
+            <span className="absolute inset-0 rounded-full bg-primary-600 animate-ping opacity-20" />
+          )}
+          {isOpen ? (
+            <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 relative z-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          ) : (
+            <svg xmlns="http://www.w3.org/2000/svg" className="w-7 h-7 relative z-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+            </svg>
+          )}
+        </button>
+      </div>
 
       {/* Chat Window */}
       {isOpen && (
@@ -180,11 +214,11 @@ export default function ChatWidget() {
               <div className="text-center py-8">
                 <div className="text-4xl mb-3">🌱</div>
                 <p className="text-secondary-600 text-sm font-medium">Hi! I&apos;m your landscaping expert.</p>
-                <p className="text-secondary-400 text-xs mt-1">Ask me about sod, lawn care, plants, mulch — anything!</p>
+                <p className="text-secondary-400 text-xs mt-1">Ask me about sod, lawn care, or get a free estimate!</p>
                 <div className="mt-4 space-y-2">
                   {[
+                    'I need a sod estimate',
                     'What type of sod is best for shade?',
-                    'When should I fertilize in Jacksonville?',
                     'How do I fix brown patches?',
                   ].map((q) => (
                     <button

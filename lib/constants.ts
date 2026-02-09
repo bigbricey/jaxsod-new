@@ -9,6 +9,9 @@ export const PHONE_E164 = '+19049011457'
 export const PHONE_HREF = `tel:${PHONE_E164}`
 export const SMS_HREF = `sms:${PHONE_E164}`
 
+export const EMAIL = 'info@jaxsod.com'
+export const EMAIL_HREF = `mailto:${EMAIL}`
+
 export const SITE_URL = 'https://jaxsod.com'
 
 // ─── Address ─────────────────────────────────────────────────────────────────
