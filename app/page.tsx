@@ -1,7 +1,7 @@
 import Hero from '@/components/Hero'
 import ServiceCard from '@/components/ServiceCard'
 import TestimonialCard from '@/components/TestimonialCard'
-import ContactForm from '@/components/ContactForm'
+import EstimateForm from '@/components/EstimateForm'
 import CTASection from '@/components/CTASection'
 import OpenChatButton from '@/components/OpenChatButton'
 import Image from 'next/image'
@@ -344,7 +344,7 @@ export default function Home() {
                 ))}
               </ul>
             </div>
-            <ContactForm />
+            <EstimateForm />
           </div>
         </div>
       </section>

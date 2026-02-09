@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import Hero from '@/components/Hero'
 import Breadcrumbs from '@/components/Breadcrumbs'
-import ContactForm from '@/components/ContactForm'
+import EstimateForm from '@/components/EstimateForm'
 import OpenChatButton from '@/components/OpenChatButton'
 import { FiPhone, FiMapPin, FiClock, FiCheckCircle, FiMessageCircle } from 'react-icons/fi'
 import { BUSINESS_NAME, PHONE, PHONE_HREF, EMAIL, EMAIL_HREF, SITE_URL, BUSINESS_HOURS, getExperienceText } from '@/lib/constants'
@@ -132,7 +132,28 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <ContactForm />
+            <EstimateForm />
+          </div>
+
+          {/* Google Map */}
+          <div className="mt-12">
+            <h2 className="heading-md mb-6">Our Service Area</h2>
+            <div className="rounded-xl overflow-hidden shadow-md">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d220441.4!2d-81.6557!3d30.3322!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88e5b716f1ceafeb%3A0xc4cd7d3896fcc7e2!2sJacksonville%2C+FL!5e0!3m2!1sen!2sus!4v1707500000000!5m2!1sen!2sus"
+                width="100%"
+                height="400"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Jax Sod service area - Jacksonville, FL"
+              />
+            </div>
+            <p className="text-secondary-600 text-sm mt-3">
+              Serving Jacksonville, Atlantic Beach, Fleming Island, Mandarin, Ponte Vedra,
+              Nocatee, Orange Park, St. Augustine, and Jacksonville Beach.
+            </p>
           </div>
         </div>
       </section>

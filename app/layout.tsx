@@ -7,6 +7,7 @@ import LocalBusinessSchema from '@/components/LocalBusinessSchema'
 import { BUSINESS_NAME, SITE_URL, getExperienceText } from '@/lib/constants'
 import { Analytics } from '@vercel/analytics/react'
 import ChatWidget from '@/components/ChatWidget'
+import GoogleAnalytics from '@/components/GoogleAnalytics'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -78,6 +79,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main className="min-h-screen">{children}</main>
         <Footer />
         <ChatWidget />
+        <GoogleAnalytics />
         <Analytics />
       </body>
     </html>
