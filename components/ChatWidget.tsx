@@ -203,8 +203,8 @@ export default function ChatWidget() {
               🌿
             </div>
             <div>
-              <div className="font-semibold text-sm">Jax Sod Assistant</div>
-              <div className="text-xs text-primary-100">Ask me anything about landscaping</div>
+              <div className="font-semibold text-sm">Jax Sod</div>
+              <div className="text-xs text-primary-100">Estimates &amp; lawn questions</div>
             </div>
           </div>
 
@@ -213,13 +213,12 @@ export default function ChatWidget() {
             {messages.length === 0 && (
               <div className="text-center py-8">
                 <div className="text-4xl mb-3">🌱</div>
-                <p className="text-secondary-600 text-sm font-medium">Hi! I&apos;m your landscaping expert.</p>
-                <p className="text-secondary-400 text-xs mt-1">Ask me about sod, lawn care, or get a free estimate!</p>
+                <p className="text-secondary-600 text-sm font-medium">Hey! What can we help with?</p>
                 <div className="mt-4 space-y-2">
                   {[
                     'I need a sod estimate',
-                    'What type of sod is best for shade?',
-                    'How do I fix brown patches?',
+                    'What sod is best for shade?',
+                    'My lawn has brown patches',
                   ].map((q) => (
                     <button
                       key={q}
