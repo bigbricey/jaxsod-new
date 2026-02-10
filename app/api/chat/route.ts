@@ -22,7 +22,7 @@ function stripLeakedPrices(text: string): string {
 }
 
 export async function POST(req: NextRequest) {
-  const apiKey = process.env.OPENROUTER_API_KEY
+  const apiKey = process.env.NVIDIA_API_KEY
   if (!apiKey) {
     return new Response(
       JSON.stringify({ error: 'Chat is not configured. Missing API key.' }),
@@ -76,21 +76,19 @@ export async function POST(req: NextRequest) {
   // Context + bookend reminders are the dynamic suffix
   const fullSystemMessage = `${STATIC_SYSTEM_PROMPT}\n\n${contextBlock}\n\n${BOOKEND_REMINDERS}`
 
-  // Build the messages for OpenRouter
+  // Build the messages for the LLM
   const apiMessages = [
     { role: 'system', content: fullSystemMessage },
     // Include last 10 messages for conversation context (5 exchanges)
     ...messages.slice(-10).map(m => ({ role: m.role, content: m.content })),
   ]
 
-  // Stream the response from OpenRouter
-  const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
+  // Stream the response from NVIDIA NIM API
+  const response = await fetch('https://integrate.api.nvidia.com/v1/chat/completions', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
       'Authorization': `Bearer ${apiKey}`,
-      'HTTP-Referer': 'https://jaxsod.com',
-      'X-Title': 'Jax Sod Landscaping Assistant',
     },
     body: JSON.stringify({
       model: CHAT_MODEL,
@@ -102,7 +100,7 @@ export async function POST(req: NextRequest) {
 
   if (!response.ok) {
     const errorText = await response.text()
-    console.error('OpenRouter error:', response.status, errorText)
+    console.error('NVIDIA API error:', response.status, errorText)
     return new Response(
       JSON.stringify({ error: 'Failed to get a response. Please try again.' }),
       { status: 502, headers: { 'Content-Type': 'application/json' } }
