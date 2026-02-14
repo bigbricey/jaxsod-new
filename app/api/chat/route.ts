@@ -22,7 +22,7 @@ function stripLeakedPrices(text: string): string {
 }
 
 export async function POST(req: NextRequest) {
-  const apiKey = process.env.NVIDIA_API_KEY
+  const apiKey = process.env.OPENROUTER_API_KEY
   if (!apiKey) {
     return new Response(
       JSON.stringify({ error: 'Chat is not configured. Missing API key.' }),
@@ -83,8 +83,8 @@ export async function POST(req: NextRequest) {
     ...messages.slice(-10).map(m => ({ role: m.role, content: m.content })),
   ]
 
-  // Stream the response from NVIDIA NIM API
-  const response = await fetch('https://integrate.api.nvidia.com/v1/chat/completions', {
+  // Stream the response from OpenRouter API
+  const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -100,7 +100,7 @@ export async function POST(req: NextRequest) {
 
   if (!response.ok) {
     const errorText = await response.text()
-    console.error('NVIDIA API error:', response.status, errorText)
+    console.error('OpenRouter API error:', response.status, errorText)
     return new Response(
       JSON.stringify({ error: 'Failed to get a response. Please try again.' }),
       { status: 502, headers: { 'Content-Type': 'application/json' } }

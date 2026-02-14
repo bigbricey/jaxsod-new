@@ -2,11 +2,10 @@
 // Change the model by updating CHAT_MODEL. Any OpenRouter-compatible model works.
 // See https://openrouter.ai/models for options.
 
-export const CHAT_MODEL = 'moonshotai/kimi-k2.5'
+export const CHAT_MODEL = 'x-ai/grok-4.1-fast'
 
-// Kimi K2.5 is a reasoning model — thinking tokens count against this limit,
-// so we need extra headroom beyond just the visible response.
-export const CHAT_MAX_TOKENS = 4096
+// Grok 4.1 Fast — $0.50/M output, 2M context window via OpenRouter
+export const CHAT_MAX_TOKENS = 1500
 
 // How many article chunks to include as context for each question
 export const CHAT_CONTEXT_CHUNKS = 5
