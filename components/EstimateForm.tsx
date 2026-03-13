@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { FiCheckCircle } from 'react-icons/fi'
 
 export default function EstimateForm() {
-  const [form, setForm] = useState({ name: '', phone: '', address: '', notes: '' })
+  const [form, setForm] = useState({ name: '', phone: '', address: '', notes: '', website: '' })
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -21,11 +21,12 @@ export default function EstimateForm() {
           phone: form.phone.trim(),
           address: form.address.trim(),
           notes: form.notes.trim() || undefined,
+          website: form.website.trim(),
         }),
       })
       if (res.ok) {
         setStatus('success')
-        setForm({ name: '', phone: '', address: '', notes: '' })
+        setForm({ name: '', phone: '', address: '', notes: '', website: '' })
       } else {
         setStatus('error')
       }
@@ -115,6 +116,19 @@ export default function EstimateForm() {
         {status === 'error' && (
           <p className="text-red-400 text-sm">Something went wrong. Please try again or call us at (904) 901-1457.</p>
         )}
+
+        {/* Honeypot - hidden from real users, bots fill it */}
+        <div style={{ position: 'absolute', left: '-9999px', opacity: 0, height: 0, overflow: 'hidden' }} aria-hidden="true">
+          <label htmlFor="est-website">Website</label>
+          <input
+            id="est-website"
+            type="text"
+            tabIndex={-1}
+            autoComplete="off"
+            value={form.website}
+            onChange={(e) => setForm(prev => ({ ...prev, website: e.target.value }))}
+          />
+        </div>
 
         <button
           type="submit"

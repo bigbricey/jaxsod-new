@@ -9,6 +9,52 @@ export interface LeadData {
   grassType?: string
   yardSize?: string
   notes?: string
+  website?: string  // honeypot field
+}
+
+// Spam keywords - if notes/address/name contain these, it's a sales pitch not a real lead
+const SPAM_KEYWORDS = [
+  'calendly', 'freelance', 'portfolio', 'hire me', 'my services', 'content writer',
+  'seo services', 'web design services', 'marketing services', 'book a call',
+  'schedule a call', 'i can help', 'we can help', 'our agency', 'our company',
+  'outsource', 'virtual assistant', 'link building', 'backlinks', 'guest post',
+  'partnership opportunity', 'collaboration opportunity', 'business proposal',
+  'i noticed your website', 'i came across your', 'i found your website',
+  'social media management', 'lead generation service', 'growth hacking',
+  'digital marketing', 'increase your revenue', 'boost your sales',
+  'affordable rates', 'competitive pricing', 'free consultation',
+  'interested in working', 'offering my services', 'reach out to discuss',
+]
+
+function isSpam(data: LeadData): boolean {
+  // Check honeypot - if filled, it's a bot
+  if (data.website && data.website.trim().length > 0) {
+    return true
+  }
+
+  // Check all text fields for spam keywords
+  const allText = [data.name, data.address, data.notes, data.grassType, data.yardSize]
+    .filter(Boolean)
+    .join(' ')
+    .toLowerCase()
+
+  for (const keyword of SPAM_KEYWORDS) {
+    if (allText.includes(keyword)) {
+      return true
+    }
+  }
+
+  // Check if "notes" contains a URL (real customers don't paste links)
+  if (data.notes && /https?:\/\/|www\.|\.com\/|\.io\/|\.co\//.test(data.notes)) {
+    return true
+  }
+
+  // Check if name contains a URL
+  if (data.name && /https?:\/\/|www\.|\.com|\.io|\.co\//.test(data.name)) {
+    return true
+  }
+
+  return false
 }
 
 export async function POST(req: NextRequest) {
@@ -28,6 +74,18 @@ export async function POST(req: NextRequest) {
     return new Response(
       JSON.stringify({ error: 'Name and phone are required.' }),
       { status: 400, headers: { 'Content-Type': 'application/json' } }
+    )
+  }
+
+  // Spam check - silently accept but don't process (bot thinks it worked)
+  if (isSpam(body)) {
+    console.log('=== SPAM BLOCKED ===')
+    console.log(`Name: ${name}, Phone: ${phone}`)
+    console.log(`Reason: spam filter triggered`)
+    console.log('====================')
+    return new Response(
+      JSON.stringify({ success: true, message: 'Lead captured successfully.' }),
+      { status: 200, headers: { 'Content-Type': 'application/json' } }
     )
   }
 
