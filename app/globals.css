@@ -3,24 +3,67 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --green: #22c55e;
+    --green-light: #4ade80;
+    --green-dark: #15803d;
+    --green-glow: rgba(34, 197, 94, 0.3);
+    --bg: #0a0f0a;
+    --bg-card: rgba(15, 25, 15, 0.6);
+    --text: #e8f5e8;
+    --text-dim: rgba(200, 230, 200, 0.5);
+    --border: rgba(34, 197, 94, 0.15);
+  }
+
   html {
     scroll-behavior: smooth;
   }
   body {
-    @apply bg-white text-secondary-900;
+    @apply bg-[#0a0f0a] text-[#e8f5e8];
   }
 }
 
 @layer components {
   .btn-primary {
-    @apply bg-primary-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-700 transition-colors duration-200 inline-block text-center;
+    @apply bg-[#22c55e] text-[#0a0f0a] px-6 py-3 rounded-full font-bold hover:bg-[#4ade80] transition-all duration-300 inline-block text-center relative overflow-hidden;
   }
+  .btn-primary::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.6s;
+  }
+  .btn-primary:hover::after {
+    transform: translateX(100%);
+  }
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 40px var(--green-glow);
+  }
+
   .btn-secondary {
-    @apply bg-white text-primary-600 border-2 border-primary-600 px-6 py-3 rounded-lg font-semibold hover:bg-primary-50 transition-colors duration-200 inline-block text-center;
+    @apply text-[#e8f5e8] px-6 py-3 rounded-full font-semibold transition-all duration-300 inline-block text-center;
+    border: 1px solid var(--border);
+    backdrop-filter: blur(10px);
   }
+  .btn-secondary:hover {
+    border-color: var(--green);
+    color: var(--green);
+    background: rgba(34, 197, 94, 0.05);
+  }
+
   .btn-outline {
-    @apply border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-primary-600 transition-colors duration-200 inline-block text-center;
+    @apply border-2 border-[rgba(34,197,94,0.3)] text-[#e8f5e8] px-6 py-3 rounded-full font-semibold transition-all duration-300 inline-block text-center;
+    backdrop-filter: blur(10px);
   }
+  .btn-outline:hover {
+    border-color: var(--green);
+    color: var(--green);
+    background: rgba(34, 197, 94, 0.05);
+  }
+
   .container-custom {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
@@ -45,29 +88,185 @@
   .prose {
     @apply leading-relaxed;
     line-height: 1.75;
+    color: var(--text);
   }
   .prose p { @apply mb-6; }
   .prose blockquote {
-    @apply bg-green-50 border-l-4 border-green-600 p-5 my-8 rounded-r-lg not-italic text-secondary-800;
+    @apply p-5 my-8 rounded-r-lg not-italic;
+    background: rgba(15, 25, 15, 0.6);
+    border-left: 4px solid var(--green);
+    color: var(--text);
   }
   .prose blockquote p { @apply mb-0; }
-  .prose blockquote strong { @apply text-green-800; }
+  .prose blockquote strong { color: var(--green-light); }
   .prose hr {
     @apply border-0 h-px my-12;
-    background: linear-gradient(90deg, transparent, #9ca3af, transparent);
+    background: linear-gradient(90deg, transparent, var(--green), transparent);
+    opacity: 0.3;
   }
   .prose table { @apply w-full my-8 text-sm; }
-  .prose thead { @apply bg-gray-100; }
-  .prose th { @apply font-semibold text-left p-3 border-b-2 border-gray-300 text-secondary-900; }
-  .prose td { @apply p-3 border-b border-gray-200 text-secondary-700; }
-  .prose tbody tr:hover { @apply bg-gray-50; }
+  .prose thead {
+    background: rgba(15, 25, 15, 0.8);
+  }
+  .prose th {
+    @apply font-semibold text-left p-3;
+    border-bottom: 2px solid var(--border);
+    color: var(--text);
+  }
+  .prose td {
+    @apply p-3;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-dim);
+  }
+  .prose tbody tr:hover {
+    background: rgba(34, 197, 94, 0.03);
+  }
   .prose ul { @apply my-6 space-y-2; }
   .prose ul li { @apply pl-2; }
   .prose ol { @apply my-6 space-y-3; }
-  .prose strong { @apply font-bold text-secondary-900; }
-  .prose h2 { @apply text-2xl md:text-3xl font-bold text-secondary-900 mt-10 mb-6; }
-  .prose h3 { @apply text-xl md:text-2xl font-bold text-secondary-900 mt-8 mb-4; }
+  .prose strong { @apply font-bold; color: var(--text); }
+  .prose h2 { @apply text-2xl md:text-3xl font-bold mt-10 mb-6; color: var(--text); }
+  .prose h3 { @apply text-xl md:text-2xl font-bold mt-8 mb-4; color: var(--text); }
 }
+
+/* ---- Glow card hover effect ---- */
+.glow-card {
+  position: relative;
+  overflow: hidden;
+}
+.glow-card::after {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(34, 197, 94, 0.12), transparent 70%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+  transform: translate(-50%, -50%);
+  top: var(--mouse-y, -1000px);
+  left: var(--mouse-x, -1000px);
+}
+.glow-card:hover::after {
+  opacity: 1;
+}
+
+/* ---- Scroll reveal ---- */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.scroll-reveal.scroll-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---- Glow divider ---- */
+.glow-divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--green), transparent);
+  opacity: 0.2;
+}
+
+/* ---- Keyframe animations ---- */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.5); }
+}
+
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+@keyframes ctaPulse {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.2; }
+  50% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.4; }
+}
+
+/* ---- Dark theme overrides for sub-pages ---- */
+/* These remap light-theme utility classes used across 18+ sub-pages
+   so they match the dark futuristic theme without rewriting every file. */
+
+/* Background overrides */
+.bg-white { background-color: rgba(15, 25, 15, 0.6) !important; }
+.bg-secondary-50, .bg-gray-50 { background-color: rgba(10, 15, 10, 0.4) !important; }
+.bg-secondary-100 { background-color: rgba(15, 25, 15, 0.3) !important; }
+.bg-primary-50, .bg-green-50 { background-color: rgba(34, 197, 94, 0.05) !important; }
+.bg-primary-100 { background-color: rgba(34, 197, 94, 0.1) !important; }
+.bg-primary-700 { background-color: rgba(34, 197, 94, 0.15) !important; }
+.bg-gray-100 { background-color: rgba(15, 25, 15, 0.6) !important; }
+
+/* Chat widget: restore light theme inside the chat popup */
+.chat-widget-light,
+.chat-widget-light * {
+  color: inherit;
+}
+.chat-widget-light {
+  background-color: #ffffff !important;
+  color: #111827 !important;
+}
+.chat-widget-light .bg-white { background-color: #ffffff !important; }
+.chat-widget-light .bg-gray-100 { background-color: #f3f4f6 !important; }
+.chat-widget-light .bg-primary-50 { background-color: rgb(240 253 244) !important; }
+.chat-widget-light .text-secondary-600 { color: #4b5563 !important; }
+.chat-widget-light .text-secondary-800 { color: #1f2937 !important; }
+.chat-widget-light .text-primary-700 { color: #15803d !important; }
+.chat-widget-light .border-gray-200 { border-color: #e5e7eb !important; }
+.chat-widget-light .border-gray-300 { border-color: #d1d5db !important; }
+.chat-widget-light textarea { color: #111827 !important; background-color: #ffffff !important; }
+.chat-widget-light .text-secondary-900 { color: #111827 !important; }
+
+/* Text overrides for light-colored backgrounds that are now dark */
+.text-secondary-900 { color: #e8f5e8 !important; }
+.text-secondary-800 { color: #e8f5e8 !important; }
+.text-secondary-700 { color: rgba(200, 230, 200, 0.6) !important; }
+.text-secondary-600 { color: rgba(200, 230, 200, 0.5) !important; }
+.text-secondary-500 { color: rgba(200, 230, 200, 0.4) !important; }
+.text-secondary-400 { color: rgba(200, 230, 200, 0.3) !important; }
+.text-secondary-300 { color: rgba(200, 230, 200, 0.5) !important; }
+
+/* Green text stays green */
+.text-primary-600 { color: #22c55e !important; }
+.text-primary-700 { color: #22c55e !important; }
+.text-primary-800 { color: #4ade80 !important; }
+.text-primary-400 { color: #4ade80 !important; }
+
+/* Border overrides */
+.border-secondary-100, .border-secondary-200, .border-secondary-800 {
+  border-color: rgba(34, 197, 94, 0.15) !important;
+}
+.border-gray-200, .border-gray-300 {
+  border-color: rgba(34, 197, 94, 0.15) !important;
+}
+.border-primary-600 {
+  border-color: rgba(34, 197, 94, 0.3) !important;
+}
+
+/* Shadow overrides — shadows look harsh on dark bg */
+.shadow-md, .shadow-lg, .shadow-sm, .shadow-xl {
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3) !important;
+}
+.hover\:shadow-lg:hover, .hover\:shadow-xl:hover, .hover\:shadow-md:hover {
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Hover bg overrides */
+.hover\:bg-primary-50:hover { background-color: rgba(34, 197, 94, 0.05) !important; }
+.hover\:bg-gray-50:hover { background-color: rgba(34, 197, 94, 0.03) !important; }
+.hover\:bg-gray-100:hover { background-color: rgba(34, 197, 94, 0.05) !important; }
+
+/* Fill overrides for star icons */
+.fill-yellow-400 { fill: #22c55e !important; }
+.text-yellow-400 { color: #22c55e !important; }
 
 /* Chat widget animations */
 @keyframes fade-in {

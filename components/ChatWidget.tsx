@@ -168,7 +168,7 @@ export default function ChatWidget() {
       <div className="fixed bottom-5 right-5 z-50 flex items-center gap-3">
         {/* Floating label - shows briefly to draw attention */}
         {!isOpen && showLabel && (
-          <div className="bg-white text-secondary-900 px-4 py-2 rounded-lg shadow-lg text-sm font-semibold animate-fade-in whitespace-nowrap">
+          <div className="chat-widget-light bg-white text-secondary-900 px-4 py-2 rounded-lg shadow-lg text-sm font-semibold animate-fade-in whitespace-nowrap">
             Get a Free Estimate
             <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1 w-2 h-2 bg-white rotate-45" />
           </div>
@@ -196,7 +196,7 @@ export default function ChatWidget() {
 
       {/* Chat Window */}
       {isOpen && (
-        <div className="fixed bottom-24 right-5 z-50 w-[360px] max-w-[calc(100vw-40px)] h-[500px] max-h-[calc(100vh-120px)] bg-white rounded-2xl shadow-2xl border border-gray-200 flex flex-col overflow-hidden">
+        <div className="chat-widget-light fixed bottom-24 right-5 z-50 w-[360px] max-w-[calc(100vw-40px)] h-[500px] max-h-[calc(100vh-120px)] bg-white text-gray-900 rounded-2xl shadow-2xl border border-gray-200 flex flex-col overflow-hidden">
           {/* Header */}
           <div className="bg-primary-600 text-white px-4 py-3 flex items-center gap-3 shrink-0">
             <div className="w-9 h-9 bg-primary-500 rounded-full flex items-center justify-center text-lg font-bold">
@@ -274,7 +274,7 @@ export default function ChatWidget() {
                 onKeyDown={handleKeyDown}
                 placeholder="Type your question..."
                 rows={1}
-                className="flex-1 resize-none border border-gray-300 rounded-xl px-3 py-2 text-sm focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 max-h-24"
+                className="flex-1 resize-none border border-gray-300 rounded-xl px-3 py-2 text-sm text-gray-900 placeholder-gray-400 bg-white focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 max-h-24"
                 disabled={isLoading}
               />
               <button

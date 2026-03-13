@@ -15,11 +15,11 @@ export default function Error({
   }, [error])
 
   return (
-    <section className="section-padding">
+    <section className="section-padding mt-[100px]">
       <div className="container-custom text-center">
-        <h1 className="heading-xl mb-4 text-primary-600">Oops</h1>
+        <h1 className="heading-xl mb-4 text-[#22c55e]">Oops</h1>
         <h2 className="heading-md mb-6">Something Went Wrong</h2>
-        <p className="text-lg text-secondary-600 mb-8 max-w-2xl mx-auto">
+        <p className="text-lg text-[rgba(200,230,200,0.5)] mb-8 max-w-2xl mx-auto">
           We&apos;re sorry, but something unexpected happened. Please try again
           or head back to the home page.
         </p>

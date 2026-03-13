@@ -15,23 +15,26 @@ const Footer = () => {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="bg-secondary-900 text-white">
+    <footer className="bg-[#050805] border-t border-[rgba(34,197,94,0.15)] text-[#e8f5e8]">
       <div className="container-custom section-padding">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-2xl font-bold text-primary-400 mb-4">{BUSINESS_NAME}</h3>
-            <p className="text-secondary-300 mb-4">
+            <h3 className="text-2xl font-extrabold mb-4">
+              <span className="text-[#22c55e]">Jax</span>
+              <span className="text-[#e8f5e8]">Sod</span>
+            </h3>
+            <p className="text-[rgba(200,230,200,0.5)] mb-4">
               Jacksonville&apos;s trusted sod company with {getExperienceText().toLowerCase()} of experience.
               Connecting you with expert installers for residential and commercial projects.
             </p>
-            <p className="text-secondary-400 text-sm">
+            <p className="text-[rgba(200,230,200,0.4)] text-sm">
               Serving Jacksonville, Atlantic Beach, Fleming Island, Mandarin, Ponte Vedra,
               Nocatee, Orange Park, St. Augustine, and Jacksonville Beach.
             </p>
           </div>
 
           <div>
-            <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
+            <h4 className="text-sm font-semibold uppercase tracking-wider mb-4 text-[#e8f5e8]">Quick Links</h4>
             <ul className="space-y-2">
               {[
                 { href: '/', label: 'Home' },
@@ -48,7 +51,7 @@ const Footer = () => {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-secondary-300 hover:text-primary-400 transition-colors"
+                    className="text-[rgba(200,230,200,0.5)] hover:text-[#22c55e] transition-colors text-sm"
                   >
                     {link.label}
                   </Link>
@@ -58,7 +61,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="text-lg font-semibold mb-4">Our Services</h4>
+            <h4 className="text-sm font-semibold uppercase tracking-wider mb-4 text-[#e8f5e8]">Our Services</h4>
             <ul className="space-y-2">
               {[
                 { label: 'Residential Sod Installation', href: '/services' },
@@ -71,7 +74,7 @@ const Footer = () => {
                 <li key={service.label}>
                   <Link
                     href={service.href}
-                    className="text-secondary-300 hover:text-primary-400 transition-colors"
+                    className="text-[rgba(200,230,200,0.5)] hover:text-[#22c55e] transition-colors text-sm"
                   >
                     {service.label}
                   </Link>
@@ -81,33 +84,33 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="text-lg font-semibold mb-4">Contact Us</h4>
+            <h4 className="text-sm font-semibold uppercase tracking-wider mb-4 text-[#e8f5e8]">Contact Us</h4>
             <ul className="space-y-3">
               <li className="flex items-start gap-3">
-                <FiPhone className="text-primary-400 mt-1 flex-shrink-0" />
+                <FiPhone className="text-[#22c55e] mt-1 flex-shrink-0" />
                 <a
                   href={PHONE_HREF}
-                  className="text-secondary-300 hover:text-primary-400 transition-colors"
+                  className="text-[rgba(200,230,200,0.5)] hover:text-[#22c55e] transition-colors text-sm"
                 >
                   {PHONE}
                 </a>
               </li>
               <li className="flex items-start gap-3">
-                <FiMail className="text-primary-400 mt-1 flex-shrink-0" />
+                <FiMail className="text-[#22c55e] mt-1 flex-shrink-0" />
                 <a
                   href={EMAIL_HREF}
-                  className="text-secondary-300 hover:text-primary-400 transition-colors"
+                  className="text-[rgba(200,230,200,0.5)] hover:text-[#22c55e] transition-colors text-sm"
                 >
                   {EMAIL}
                 </a>
               </li>
               <li className="flex items-start gap-3">
-                <FiMapPin className="text-primary-400 mt-1 flex-shrink-0" />
-                <span className="text-secondary-300">{ADDRESS.short}</span>
+                <FiMapPin className="text-[#22c55e] mt-1 flex-shrink-0" />
+                <span className="text-[rgba(200,230,200,0.5)] text-sm">{ADDRESS.short}</span>
               </li>
               <li className="flex items-start gap-3">
-                <FiClock className="text-primary-400 mt-1 flex-shrink-0" />
-                <div className="text-secondary-300">
+                <FiClock className="text-[#22c55e] mt-1 flex-shrink-0" />
+                <div className="text-[rgba(200,230,200,0.5)] text-sm">
                   {BUSINESS_HOURS.weekdays.days}: {BUSINESS_HOURS.weekdays.open} - {BUSINESS_HOURS.weekdays.close}
                   <br />
                   {BUSINESS_HOURS.saturday.days}: {BUSINESS_HOURS.saturday.open} - {BUSINESS_HOURS.saturday.close}
@@ -118,15 +121,15 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="border-t border-secondary-800">
+      <div className="border-t border-[rgba(34,197,94,0.1)]">
         <div className="container-custom py-6">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-secondary-400">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-[rgba(200,230,200,0.4)]">
             <p>&copy; {currentYear} {BUSINESS_NAME}. All rights reserved.</p>
             <div className="flex gap-6">
-              <Link href="/privacy" className="hover:text-primary-400 transition-colors">
+              <Link href="/privacy" className="hover:text-[#22c55e] transition-colors">
                 Privacy Policy
               </Link>
-              <Link href="/terms" className="hover:text-primary-400 transition-colors">
+              <Link href="/terms" className="hover:text-[#22c55e] transition-colors">
                 Terms of Service
               </Link>
             </div>

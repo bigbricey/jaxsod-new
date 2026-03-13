@@ -1,5 +1,7 @@
+'use client'
+
 import Link from 'next/link'
-import { ReactNode } from 'react'
+import { ReactNode, useRef } from 'react'
 
 interface ServiceCardProps {
   icon: ReactNode
@@ -18,38 +20,49 @@ const ServiceCard = ({
   link,
   linkText = 'Learn More',
 }: ServiceCardProps) => {
+  const cardRef = useRef<HTMLDivElement>(null)
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    const card = cardRef.current
+    if (!card) return
+    const rect = card.getBoundingClientRect()
+    card.style.setProperty('--mouse-x', (e.clientX - rect.left) + 'px')
+    card.style.setProperty('--mouse-y', (e.clientY - rect.top) + 'px')
+  }
+
   return (
-    <div className="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-shadow duration-300">
-      <div className="text-primary-600 mb-4 text-4xl">{icon}</div>
-      <h3 className="heading-sm mb-4 text-secondary-900">{title}</h3>
-      <p className="text-secondary-600 mb-6 leading-relaxed">{description}</p>
+    <div
+      ref={cardRef}
+      onMouseMove={handleMouseMove}
+      className="glow-card border border-[rgba(34,197,94,0.15)] rounded-[20px] p-8 bg-[rgba(15,25,15,0.6)] backdrop-blur-[20px] transition-all duration-500 hover:border-[rgba(34,197,94,0.3)] hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(0,0,0,0.3)] relative overflow-hidden group"
+    >
+      {/* Top glow line on hover */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#22c55e] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+      <div className="w-[50px] h-[50px] rounded-xl bg-[rgba(34,197,94,0.1)] flex items-center justify-center mb-6 text-[#22c55e] text-2xl">
+        {icon}
+      </div>
+      <h3 className="text-xl font-bold mb-3 text-[#e8f5e8]">{title}</h3>
+      <p className="text-[rgba(200,230,200,0.5)] mb-6 leading-relaxed text-sm">{description}</p>
       {features && features.length > 0 && (
-        <ul className="space-y-2 mb-6">
+        <div className="flex flex-wrap gap-2 mb-6">
           {features.map((feature, index) => (
-            <li key={index} className="flex items-start gap-2 text-secondary-700">
-              <svg
-                className="w-5 h-5 text-primary-600 mt-0.5 flex-shrink-0"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clipRule="evenodd"
-                />
-              </svg>
-              <span>{feature}</span>
-            </li>
+            <span
+              key={index}
+              className="px-3 py-1.5 border border-[rgba(34,197,94,0.15)] rounded-full text-xs text-[rgba(200,230,200,0.5)]"
+            >
+              {feature}
+            </span>
           ))}
-        </ul>
+        </div>
       )}
       {link && (
         <Link
           href={link}
-          className="text-primary-600 font-semibold hover:text-primary-700 transition-colors inline-flex items-center gap-2"
+          className="text-[#22c55e] font-semibold hover:text-[#4ade80] transition-colors inline-flex items-center gap-2 text-sm"
         >
           {linkText}
-          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
           </svg>
         </Link>

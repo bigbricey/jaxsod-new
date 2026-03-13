@@ -10,22 +10,24 @@ interface TestimonialCardProps {
 
 const TestimonialCard = ({ name, location, rating, text, date }: TestimonialCardProps) => {
   return (
-    <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-300">
-      <div className="flex gap-1 mb-3" aria-label={`${rating} out of 5 stars`}>
+    <div className="border border-[rgba(34,197,94,0.15)] rounded-[20px] p-8 bg-[rgba(15,25,15,0.6)] backdrop-blur-[20px] transition-all duration-500 hover:border-[rgba(34,197,94,0.3)] hover:-translate-y-1">
+      <div className="flex gap-1 mb-4 text-[#22c55e] tracking-wider" aria-label={`${rating} out of 5 stars`}>
         {[...Array(5)].map((_, i) => (
           <FiStar
             key={i}
-            className={`w-5 h-5 ${
-              i < rating ? 'fill-yellow-400 text-yellow-400' : 'text-secondary-300'
+            className={`w-4 h-4 ${
+              i < rating ? 'fill-[#22c55e] text-[#22c55e]' : 'text-[rgba(200,230,200,0.2)]'
             }`}
           />
         ))}
       </div>
-      <p className="text-secondary-700 mb-4 leading-relaxed italic">&ldquo;{text}&rdquo;</p>
-      <div className="border-t border-secondary-200 pt-4">
-        <p className="font-semibold text-secondary-900">{name}</p>
-        <p className="text-sm text-secondary-600">{location}</p>
-        <p className="text-xs text-secondary-500 mt-1">{date}</p>
+      <blockquote className="text-[#e8f5e8] mb-6 leading-relaxed italic text-sm">
+        &ldquo;{text}&rdquo;
+      </blockquote>
+      <div>
+        <p className="font-semibold text-[#e8f5e8] text-sm">{name}</p>
+        <p className="text-xs text-[rgba(200,230,200,0.5)]">{location}</p>
+        <p className="text-xs text-[rgba(200,230,200,0.3)] mt-1">{date}</p>
       </div>
     </div>
   )

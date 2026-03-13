@@ -2,11 +2,11 @@ import Link from 'next/link'
 
 export default function NotFound() {
   return (
-    <section className="section-padding">
+    <section className="section-padding mt-[100px]">
       <div className="container-custom text-center">
-        <h1 className="heading-xl mb-4 text-primary-600">404</h1>
+        <h1 className="heading-xl mb-4 text-[#22c55e]">404</h1>
         <h2 className="heading-md mb-6">Page Not Found</h2>
-        <p className="text-lg text-secondary-600 mb-8 max-w-2xl mx-auto">
+        <p className="text-lg text-[rgba(200,230,200,0.5)] mb-8 max-w-2xl mx-auto">
           Sorry, the page you&apos;re looking for doesn&apos;t exist. It may have been moved or
           removed. Let&apos;s get you back on track.
         </p>

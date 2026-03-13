@@ -1,8 +1,9 @@
-import Hero from '@/components/Hero'
+import AnimatedGrassHero from '@/components/AnimatedGrassHero'
 import ServiceCard from '@/components/ServiceCard'
 import TestimonialCard from '@/components/TestimonialCard'
 import EstimateForm from '@/components/EstimateForm'
 import CTASection from '@/components/CTASection'
+import ScrollReveal from '@/components/ScrollReveal'
 import OpenChatButton from '@/components/OpenChatButton'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -35,6 +36,7 @@ export default function Home() {
         'Thrives in coastal humidity and salt exposure',
         'Ideal for shady spots under Jacksonville oaks',
       ],
+      gradient: 'from-[#166534] to-[#22c55e]',
     },
     {
       name: 'Zoysia',
@@ -45,6 +47,7 @@ export default function Home() {
         'Dense, carpet-like texture for active yards',
         'Handles heavy foot traffic from kids and pets',
       ],
+      gradient: 'from-[#14532d] to-[#16a34a]',
     },
     {
       name: 'Bermuda',
@@ -55,6 +58,7 @@ export default function Home() {
         'Excellent for full-sun properties',
         'Recovers quickly from wear in high-traffic areas',
       ],
+      gradient: 'from-[#365314] to-[#65a30d]',
     },
     {
       name: 'Bahia',
@@ -65,29 +69,34 @@ export default function Home() {
         'Budget-friendly with strong drought tolerance',
         'Great for larger lots and utility areas',
       ],
+      gradient: 'from-[#3f6212] to-[#84cc16]',
     },
   ]
 
   const processSteps = [
     {
-      title: 'Free Property Assessment',
+      num: '01',
+      title: 'Free Assessment',
       description:
-        'We walk your site, evaluate sunlight conditions, and capture accurate square footage for precise pricing.',
+        'We walk your property, evaluate sunlight and soil conditions, and measure every square foot. No cost, no commitment.',
     },
     {
-      title: 'Old Turf Removal & Surface Prep',
+      num: '02',
+      title: 'Surface Prep',
       description:
-        'Existing grass is cleared and the surface is smoothed to ensure new sod lies flat against the soil.',
+        'Old turf removed. Ground leveled and graded. The foundation for a lawn that lasts starts here.',
     },
     {
-      title: 'Premium Sod Installation',
+      num: '03',
+      title: 'Sod Installation',
       description:
-        'Fresh sod is delivered directly from the farm and installed with expert technique — staggered seams, tight joints, and proper rolling.',
+        'Premium, farm-fresh sod delivered and installed same day. Staggered seams, rolled tight, edges cut clean.',
     },
     {
-      title: 'Custom Aftercare Plan',
+      num: '04',
+      title: 'Aftercare Plan',
       description:
-        'Before we leave, we provide a watering and mowing schedule tailored specifically to your yard and sod type.',
+        'Custom watering schedule and maintenance guide tailored to your grass type and property. We don\'t disappear after install.',
     },
   ]
 
@@ -128,32 +137,56 @@ export default function Home() {
 
   return (
     <>
-      <Hero
-        title="Professional Sod Installation in Jacksonville, FL"
-        subtitle={`${experienceText} of Excellence`}
-        description="Transform your property with expert sod installation services. Our network of professional installers delivers beautiful, healthy lawns for residential and commercial properties throughout Jacksonville."
-        ctaSlot={
-          <OpenChatButton className="btn-primary text-lg px-8 py-4">
-            Get a Free Estimate
-          </OpenChatButton>
-        }
-        secondaryCtaText="View Our Services"
-        secondaryCtaLink="/services"
-        backgroundImage="https://images.unsplash.com/photo-1595757872761-992fd6d3ab25?auto=format&fit=crop&w=2000&q=80"
+      {/* Animated Grass Hero */}
+      <AnimatedGrassHero
+        title="Beautiful Lawns"
+        highlightText="Delivered."
+        description="Transform your property with expert sod installation. Nearly 40 years of excellence across Northeast Florida. From first assessment to final roll."
+        badgeText="Serving Jacksonville Since 1986"
       />
 
-      {/* Why Choose Us */}
-      <section className="section-padding bg-secondary-50">
+      {/* Stats Bar */}
+      <div className="border-t border-b border-[rgba(34,197,94,0.15)] py-12 bg-[rgba(34,197,94,0.02)]">
         <div className="container-custom">
-          <div className="text-center mb-16">
-            <h2 className="heading-lg mb-4">Why Choose {BUSINESS_NAME}?</h2>
-            <p className="text-lg text-secondary-600 max-w-2xl mx-auto">
-              Nearly four decades of expertise delivering beautiful, healthy lawns across
-              Jacksonville and Northeast Florida.
-            </p>
-          </div>
+          <ScrollReveal>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+              {[
+                { value: '38+', label: 'Years of Experience' },
+                { value: '5,000+', label: 'Lawns Installed' },
+                { value: '9', label: 'Service Areas' },
+                { value: '100%', label: 'Satisfaction Guaranteed' },
+              ].map((stat) => (
+                <div key={stat.label}>
+                  <div className="text-4xl md:text-5xl font-black text-[#22c55e] tracking-tight leading-none">
+                    {stat.value}
+                  </div>
+                  <div className="text-sm text-[rgba(200,230,200,0.5)] mt-2 font-medium">
+                    {stat.label}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </ScrollReveal>
+        </div>
+      </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {/* Why Choose Us */}
+      <section className="section-padding">
+        <div className="container-custom">
+          <ScrollReveal>
+            <div className="text-center mb-16">
+              <p className="text-xs font-semibold uppercase tracking-[0.15em] text-[#22c55e] mb-3">
+                Why Choose Us
+              </p>
+              <h2 className="heading-lg mb-4">Why Choose {BUSINESS_NAME}?</h2>
+              <p className="text-lg text-[rgba(200,230,200,0.5)] max-w-2xl mx-auto">
+                Nearly four decades of expertise delivering beautiful, healthy lawns across
+                Jacksonville and Northeast Florida.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
                 icon: <FiAward />,
@@ -185,243 +218,279 @@ export default function Home() {
                 title: 'Licensed & Insured',
                 desc: 'Fully licensed and insured for your protection and peace of mind.',
               },
-            ].map((item) => (
-              <div
-                key={item.title}
-                className="bg-white p-8 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow"
-              >
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-primary-100 text-primary-600 rounded-full mb-4 text-3xl">
-                  {item.icon}
+            ].map((item, i) => (
+              <ScrollReveal key={item.title} delay={i * 100}>
+                <div className="border border-[rgba(34,197,94,0.15)] rounded-[20px] p-8 bg-[rgba(15,25,15,0.6)] backdrop-blur-[20px] transition-all duration-500 hover:border-[rgba(34,197,94,0.3)] hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(0,0,0,0.3)] text-center h-full">
+                  <div className="inline-flex items-center justify-center w-14 h-14 bg-[rgba(34,197,94,0.1)] text-[#22c55e] rounded-xl mb-4 text-2xl">
+                    {item.icon}
+                  </div>
+                  <h3 className="text-lg font-bold mb-3">{item.title}</h3>
+                  <p className="text-sm text-[rgba(200,230,200,0.5)]">{item.desc}</p>
                 </div>
-                <h3 className="text-xl font-bold mb-3">{item.title}</h3>
-                <p className="text-secondary-600">{item.desc}</p>
-              </div>
+              </ScrollReveal>
             ))}
           </div>
         </div>
       </section>
 
+      <div className="glow-divider" />
+
       {/* Our Process */}
       <section className="section-padding">
         <div className="container-custom">
-          <div className="text-center mb-12">
-            <h2 className="heading-lg mb-3">Our Sod Installation Process</h2>
-            <p className="text-lg text-secondary-600 max-w-3xl mx-auto">
-              A proven process that ensures your new lawn is set up for long-term success.
-            </p>
-          </div>
+          <ScrollReveal>
+            <div className="mb-12">
+              <p className="text-xs font-semibold uppercase tracking-[0.15em] text-[#22c55e] mb-3">
+                Steps
+              </p>
+              <h2 className="heading-lg mb-3">How it works</h2>
+              <p className="text-lg text-[rgba(200,230,200,0.5)] max-w-[600px] leading-relaxed">
+                From your first call to a finished lawn. Four steps, no surprises.
+              </p>
+            </div>
+          </ScrollReveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {processSteps.map((step, index) => (
-              <div key={step.title} className="bg-white rounded-lg shadow-md p-6 relative">
-                <div className="w-12 h-12 rounded-full bg-primary-600 text-white font-bold flex items-center justify-center text-xl mb-4">
-                  {index + 1}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-[rgba(34,197,94,0.15)] rounded-[20px] overflow-hidden mt-8">
+            {processSteps.map((step, i) => (
+              <ScrollReveal key={step.title} delay={i * 100}>
+                <div className="bg-[rgba(15,25,15,0.6)] backdrop-blur-[20px] p-8 transition-all duration-500 hover:bg-[rgba(34,197,94,0.05)] h-full">
+                  <div className="text-5xl font-black text-[rgba(34,197,94,0.1)] leading-none mb-6">
+                    {step.num}
+                  </div>
+                  <h3 className="text-lg font-bold mb-3">{step.title}</h3>
+                  <p className="text-sm text-[rgba(200,230,200,0.5)] leading-relaxed">{step.description}</p>
                 </div>
-                <h3 className="text-lg font-bold text-secondary-900 mb-2">{step.title}</h3>
-                <p className="text-secondary-700">{step.description}</p>
-              </div>
+              </ScrollReveal>
             ))}
           </div>
         </div>
       </section>
 
       {/* Services */}
-      <section className="section-padding bg-secondary-50">
+      <section className="section-padding">
         <div className="container-custom">
-          <div className="text-center mb-16">
-            <h2 className="heading-lg mb-4">Our Sod Installation Services</h2>
-            <p className="text-lg text-secondary-600 max-w-2xl mx-auto">
-              Professional sod installation tailored to your needs.
-            </p>
+          <ScrollReveal>
+            <div className="mb-12">
+              <p className="text-xs font-semibold uppercase tracking-[0.15em] text-[#22c55e] mb-3">
+                Services
+              </p>
+              <h2 className="heading-lg mb-3">What we do</h2>
+              <p className="text-lg text-[rgba(200,230,200,0.5)] max-w-[600px] leading-relaxed">
+                Residential and commercial sod installation across Northeast Florida.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            <ScrollReveal>
+              <ServiceCard
+                icon={<FiHome />}
+                title="Residential Installation"
+                description="Front yards, backyards, new construction, renovations. We handle every size property and make it look like a magazine cover."
+                features={['Front & Back Yards', 'New Construction', 'Renovation', 'Expert Prep']}
+                link="/services"
+                linkText="Learn More"
+              />
+            </ScrollReveal>
+            <ScrollReveal delay={100}>
+              <ServiceCard
+                icon={<FiBriefcase />}
+                title="Commercial Installation"
+                description="Office complexes, retail centers, HOA communities, hotels. Large-scale projects completed on schedule and on budget."
+                features={['Office Complexes', 'Retail Centers', 'HOA Communities', 'Hotels']}
+                link="/services"
+                linkText="Learn More"
+              />
+            </ScrollReveal>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-            <ServiceCard
-              icon={<FiHome />}
-              title="Residential Sod Installation"
-              description="Transform your home's curb appeal with a lush, healthy lawn. Perfect for new construction, lawn replacement, or landscape renovation."
-              features={[
-                'Front and backyard installation',
-                'New construction lawns',
-                'Lawn replacement and renovation',
-                'Expert ground preparation',
-              ]}
-              link="/services"
-              linkText="Learn More"
-            />
-            <ServiceCard
-              icon={<FiBriefcase />}
-              title="Commercial Sod Installation"
-              description="Large-scale sod installation for commercial properties. On-schedule delivery and professional results."
-              features={[
-                'Office complexes and parks',
-                'Retail and shopping centers',
-                'Hotels and resorts',
-                'HOA and community projects',
-              ]}
-              link="/services"
-              linkText="Learn More"
-            />
-          </div>
-
-          <div className="text-center">
-            <Link href="/services" className="btn-primary">
-              View All Services
-            </Link>
-          </div>
+          <ScrollReveal>
+            <div className="text-center">
+              <Link href="/services" className="btn-primary">
+                View All Services
+              </Link>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
+
+      <div className="glow-divider" />
 
       {/* Sod Varieties */}
       <section className="section-padding">
         <div className="container-custom">
-          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 mb-12">
-            <div>
-              <h2 className="heading-lg mb-3">
-                Sod Varieties for Northeast Florida
-              </h2>
-              <p className="text-lg text-secondary-600 max-w-2xl">
-                Choose from proven grasses that handle Jacksonville&apos;s heat, humidity, and
-                coastal conditions. We help you pick the best match.
+          <ScrollReveal>
+            <div className="text-center mb-12">
+              <p className="text-xs font-semibold uppercase tracking-[0.15em] text-[#22c55e] mb-3">
+                Sod Types
+              </p>
+              <h2 className="heading-lg mb-3">Engineered for Florida</h2>
+              <p className="text-lg text-[rgba(200,230,200,0.5)] max-w-[600px] mx-auto leading-relaxed">
+                Every grass type we install is selected for Northeast Florida&apos;s climate, soil, and conditions.
               </p>
             </div>
-            <Link href="/sod-types" className="btn-primary self-start">
-              View All Sod Types
-            </Link>
-          </div>
+          </ScrollReveal>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {sodVarieties.map((v) => (
-              <div key={v.name} className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                <div className="w-20 h-20 mx-auto mb-4 relative">
-                  <Image
-                    src={v.image}
-                    alt={`${v.name} sod in Jacksonville`}
-                    width={80}
-                    height={80}
-                    className="w-20 h-20 rounded-full object-cover"
-                  />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {sodVarieties.map((v, i) => (
+              <ScrollReveal key={v.name} delay={i * 100}>
+                <div className="border border-[rgba(34,197,94,0.15)] rounded-[20px] p-8 bg-[rgba(10,15,10,0.8)] backdrop-blur-[30px] text-center transition-all duration-500 hover:-translate-y-2 hover:border-[#22c55e] hover:shadow-[0_20px_60px_rgba(34,197,94,0.15)] h-full">
+                  {/* Gradient circle */}
+                  <div className={`w-24 h-24 rounded-full mx-auto mb-6 bg-gradient-to-br ${v.gradient} relative overflow-hidden`}>
+                    <div className="absolute inset-[3px] rounded-full" style={{ background: 'radial-gradient(circle at 30% 30%, rgba(255,255,255,0.15), transparent)' }} />
+                  </div>
+                  <h3 className="text-lg font-bold mb-2">{v.name}</h3>
+                  <ul className="space-y-2 text-sm text-[rgba(200,230,200,0.5)] text-left">
+                    {v.bullets.map((b) => (
+                      <li key={b} className="flex items-start gap-2">
+                        <FiCheckCircle className="text-[#22c55e] mt-0.5 flex-shrink-0 w-4 h-4" />
+                        <span>{b}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <h3 className="text-xl font-bold text-center mb-3">{v.name}</h3>
-                <ul className="space-y-2 text-secondary-700">
-                  {v.bullets.map((b) => (
-                    <li key={b} className="flex items-start gap-2">
-                      <FiCheckCircle className="text-primary-600 mt-1 flex-shrink-0" />
-                      <span>{b}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              </ScrollReveal>
             ))}
           </div>
+
+          <ScrollReveal>
+            <div className="text-center mt-8">
+              <Link href="/sod-types" className="btn-secondary">
+                View All Sod Types
+              </Link>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
       {/* Quote + Contact Form */}
-      <section className="section-padding bg-secondary-50">
+      <section className="section-padding">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-            <div className="bg-white p-8 rounded-lg shadow-md">
-              <h2 className="heading-lg mb-4">Get Your Free Custom Quote</h2>
-              <p className="text-lg text-secondary-700 mb-6">
-                Every sod project is unique. We tailor recommendations for your square footage,
-                sunlight, and soil so you get exactly what your lawn needs to thrive.
-              </p>
-              <p className="text-secondary-900 font-semibold mb-3">
-                What&apos;s included in your quote:
-              </p>
-              <ul className="space-y-3 text-secondary-700">
-                {[
-                  'Free on-site property assessment',
-                  'Detailed pricing with no hidden fees',
-                  'Expert sod type recommendations',
-                  'Custom aftercare plan',
-                ].map((item) => (
-                  <li key={item} className="flex items-start gap-3">
-                    <FiCheckCircle className="text-primary-600 mt-1 flex-shrink-0" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <EstimateForm />
+            <ScrollReveal>
+              <div className="border border-[rgba(34,197,94,0.15)] rounded-[20px] p-8 bg-[rgba(15,25,15,0.6)] backdrop-blur-[20px]">
+                <h2 className="heading-lg mb-4">Get Your Free Custom Quote</h2>
+                <p className="text-lg text-[rgba(200,230,200,0.5)] mb-6 leading-relaxed">
+                  Every sod project is unique. We tailor recommendations for your square footage,
+                  sunlight, and soil so you get exactly what your lawn needs to thrive.
+                </p>
+                <p className="font-semibold mb-3">
+                  What&apos;s included in your quote:
+                </p>
+                <ul className="space-y-3 text-[rgba(200,230,200,0.5)]">
+                  {[
+                    'Free on-site property assessment',
+                    'Detailed pricing with no hidden fees',
+                    'Expert sod type recommendations',
+                    'Custom aftercare plan',
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-3">
+                      <FiCheckCircle className="text-[#22c55e] mt-1 flex-shrink-0" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </ScrollReveal>
+            <ScrollReveal delay={150}>
+              <EstimateForm />
+            </ScrollReveal>
           </div>
         </div>
       </section>
+
+      <div className="glow-divider" />
 
       {/* Testimonials */}
       <section className="section-padding">
         <div className="container-custom">
-          <div className="text-center mb-16">
-            <h2 className="heading-lg mb-4">What Our Customers Say</h2>
-            <p className="text-lg text-secondary-600 max-w-2xl mx-auto">
-              Hear from Jacksonville homeowners and businesses who trust {BUSINESS_NAME}.
-            </p>
+          <ScrollReveal>
+            <div className="text-center mb-12">
+              <p className="text-xs font-semibold uppercase tracking-[0.15em] text-[#22c55e] mb-3">
+                Reviews
+              </p>
+              <h2 className="heading-lg mb-4">What our customers say</h2>
+            </div>
+          </ScrollReveal>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <ScrollReveal>
+              <TestimonialCard
+                name="Michael Thompson"
+                location="Jacksonville, FL"
+                rating={5}
+                text="Incredible work on our front and back yard. The crew was professional from start to finish. Our neighbors can't stop asking who did the lawn."
+                date="September 2024"
+              />
+            </ScrollReveal>
+            <ScrollReveal delay={100}>
+              <TestimonialCard
+                name="Sarah Martinez"
+                location="Jacksonville Beach, FL"
+                rating={5}
+                text="Quick installation and the sod is thriving months later. They really know which grass works for our area. Worth every penny."
+                date="August 2024"
+              />
+            </ScrollReveal>
+            <ScrollReveal delay={200}>
+              <TestimonialCard
+                name="David Chen"
+                location="Mandarin, FL"
+                rating={5}
+                text="New construction home and Jax Sod made the yard look amazing. Completed on time for our move-in. Couldn't be happier with the results."
+                date="July 2024"
+              />
+            </ScrollReveal>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <TestimonialCard
-              name="Michael Thompson"
-              location="Jacksonville, FL"
-              rating={5}
-              text="Jax Sod did an amazing job on our front and back yards. The crew was professional, efficient, and the lawn looks fantastic. Highly recommend!"
-              date="September 2024"
-            />
-            <TestimonialCard
-              name="Sarah Martinez"
-              location="Jacksonville Beach, FL"
-              rating={5}
-              text="With decades of experience, you can tell they know what they're doing. Our new sod is thriving and the installation was quick and clean."
-              date="August 2024"
-            />
-            <TestimonialCard
-              name="David Chen"
-              location="Mandarin, FL"
-              rating={5}
-              text="Best decision we made for our new construction home. The sod looks beautiful and the team was very knowledgeable about care and maintenance."
-              date="July 2024"
-            />
-          </div>
-          <div className="text-center mt-8">
-            <Link
-              href="/reviews"
-              className="text-primary-600 font-semibold hover:text-primary-700 inline-flex items-center gap-2"
-            >
-              Read More Reviews <FiArrowRight />
-            </Link>
-          </div>
+          <ScrollReveal>
+            <div className="text-center mt-8">
+              <Link
+                href="/reviews"
+                className="text-[#22c55e] font-semibold hover:text-[#4ade80] inline-flex items-center gap-2"
+              >
+                Read More Reviews <FiArrowRight />
+              </Link>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
       {/* Service Areas */}
-      <section className="section-padding bg-secondary-50">
+      <section className="section-padding">
         <div className="container-custom">
-          <div className="text-center mb-12">
-            <h2 className="heading-lg mb-4">Serving All of Northeast Florida</h2>
-            <p className="text-lg text-secondary-600 max-w-2xl mx-auto">
-              Professional sod installation across Jacksonville and surrounding communities.
-            </p>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-            {[
-              { name: 'Jacksonville', slug: 'jacksonville' },
-              { name: 'Atlantic Beach', slug: 'atlantic-beach' },
-              { name: 'Fleming Island', slug: 'fleming-island' },
-              { name: 'Mandarin', slug: 'mandarin' },
-              { name: 'Ponte Vedra', slug: 'ponte-vedra' },
-              { name: 'Nocatee', slug: 'nocatee' },
-              { name: 'Orange Park', slug: 'orange-park' },
-              { name: 'St. Augustine', slug: 'st-augustine' },
-              { name: 'Jacksonville Beach', slug: 'jacksonville-beach' },
-            ].map((area) => (
-              <Link
-                key={area.slug}
-                href={`/service-areas/${area.slug}`}
-                className="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow text-center font-medium text-secondary-700 hover:text-primary-600"
-              >
-                {area.name}
-              </Link>
-            ))}
-          </div>
+          <ScrollReveal>
+            <div className="text-center mb-12">
+              <p className="text-xs font-semibold uppercase tracking-[0.15em] text-[#22c55e] mb-3">
+                Coverage
+              </p>
+              <h2 className="heading-lg mb-3">Where we work</h2>
+              <p className="text-lg text-[rgba(200,230,200,0.5)] mx-auto">
+                Serving all of Northeast Florida.
+              </p>
+            </div>
+          </ScrollReveal>
+          <ScrollReveal>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+              {[
+                { name: 'Jacksonville', slug: 'jacksonville' },
+                { name: 'Atlantic Beach', slug: 'atlantic-beach' },
+                { name: 'Fleming Island', slug: 'fleming-island' },
+                { name: 'Mandarin', slug: 'mandarin' },
+                { name: 'Ponte Vedra', slug: 'ponte-vedra' },
+                { name: 'Nocatee', slug: 'nocatee' },
+                { name: 'Orange Park', slug: 'orange-park' },
+                { name: 'St. Augustine', slug: 'st-augustine' },
+                { name: 'Jacksonville Beach', slug: 'jacksonville-beach' },
+              ].map((area) => (
+                <Link
+                  key={area.slug}
+                  href={`/service-areas/${area.slug}`}
+                  className="border border-[rgba(34,197,94,0.15)] rounded-xl p-4 bg-[rgba(15,25,15,0.6)] font-semibold text-sm text-center transition-all duration-300 hover:border-[#22c55e] hover:text-[#22c55e] hover:bg-[rgba(34,197,94,0.05)] hover:-translate-y-0.5"
+                >
+                  {area.name}
+                </Link>
+              ))}
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
@@ -440,23 +509,27 @@ export default function Home() {
               })),
             }) }}
           />
-          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8 mb-8">
-            <div>
-              <h2 className="heading-lg">Frequently Asked Questions</h2>
-              <p className="text-secondary-700 max-w-3xl mt-2">
-                Quick answers for Jacksonville homeowners and property managers.
-              </p>
-            </div>
-            <Link href="/faq" className="btn-secondary self-start">
-              View All FAQs
-            </Link>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {homepageFaqs.map((faq) => (
-              <div key={faq.q} className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="font-semibold text-secondary-900 mb-2">{faq.q}</h3>
-                <p className="text-secondary-700">{faq.a}</p>
+          <ScrollReveal>
+            <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8 mb-8">
+              <div>
+                <h2 className="heading-lg">Frequently Asked Questions</h2>
+                <p className="text-[rgba(200,230,200,0.5)] max-w-3xl mt-2">
+                  Quick answers for Jacksonville homeowners and property managers.
+                </p>
               </div>
+              <Link href="/faq" className="btn-secondary self-start">
+                View All FAQs
+              </Link>
+            </div>
+          </ScrollReveal>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {homepageFaqs.map((faq, i) => (
+              <ScrollReveal key={faq.q} delay={(i % 2) * 100}>
+                <div className="border border-[rgba(34,197,94,0.15)] rounded-[20px] p-6 bg-[rgba(15,25,15,0.6)] backdrop-blur-[20px] transition-all duration-300 hover:border-[rgba(34,197,94,0.3)] h-full">
+                  <h3 className="font-semibold mb-2">{faq.q}</h3>
+                  <p className="text-sm text-[rgba(200,230,200,0.5)] leading-relaxed">{faq.a}</p>
+                </div>
+              </ScrollReveal>
             ))}
           </div>
         </div>

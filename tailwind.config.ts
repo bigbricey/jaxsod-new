@@ -35,6 +35,13 @@ const config: Config = {
           900: '#0f172a',
           950: '#020617',
         },
+        dark: {
+          bg: '#0a0f0a',
+          card: 'rgba(15, 25, 15, 0.6)',
+          text: '#e8f5e8',
+          'text-dim': 'rgba(200, 230, 200, 0.5)',
+          border: 'rgba(34, 197, 94, 0.15)',
+        },
       },
       fontFamily: {
         sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
